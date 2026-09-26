@@ -1,0 +1,38 @@
+@prefix ns1: <http://www.wikidata.org/prop/direct/> .
+@prefix ns2: <http://example.org/property/> .
+
+<http://example.org/movies/Star_Wars_Episode_VII_The_Force_Awakens>
+    ns2:title "Star Wars Episode VII: The Force Awakens" ;
+    ns2:rating 8.1 ;
+    ns2:tag "good_versus_evil"@en,
+        "humor"@en,
+        "murder"@en,
+        "revenge"@en,
+        "violence"@en ;
+    ns2:description "2015 American epic space opera film directed by J. J. Abrams"@en ;
+    ns1:P31 <http://www.wikidata.org/entity/Q229390>,
+        <http://www.wikidata.org/entity/Q24869> .
+        
+<http://example.org/movies/Pirates_of_the_Caribbean_On_Stranger_Tides> 
+    ns2:title "Pirates of the Caribbean: On Stranger Tides";
+    ns2:tag "action"@en,
+        "boring"@en,
+        "entertaining"@en,
+        "fantasy"@en,
+        "murder"@en,
+        "revenge"@en ;
+    ns2:description "2011 film by Rob Marshall"@en ;
+    ns1:P31 <http://www.wikidata.org/entity/Q229390>,
+        <http://www.wikidata.org/entity/Q24869> .
+
+<http://www.wikidata.org/entity/Alice_in_Wonderland>
+    ns2:title "Alice in Wonderland";
+    ns2:tag "alternate_reality"@en,
+        "fantasy"@en,
+        "flashback"@en,
+        "insanity"@en,
+        "inspiring"@en,
+        "psychedelic"@en ;
+    ns2:description "2010 film by Tim Burton, produced by Walt Disney"@en ;
+    ns1:P31 <http://www.wikidata.org/entity/Q229390>,
+        <http://www.wikidata.org/entity/Q24869> .
