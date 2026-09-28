@@ -4,7 +4,7 @@ from rdflib import Graph, URIRef, Literal, BNode
 
 class SPARQLAgent:
     """
-    Simple SPARQL agent for querying a local RDF knowledge graph.
+    Simple SPARQL agent for querying a local RDF KG.
     """
 
     def __init__(self, graph_path):
@@ -14,14 +14,10 @@ class SPARQLAgent:
             raise FileNotFoundError(
                 f"Knowledge graph not found: {self.graph_path.resolve()}"
             )
-
         self.graph = Graph()
-
         print(f"Loading knowledge graph: {self.graph_path}")
-
         # Detect format from extension
         extension = self.graph_path.suffix.lower()
-
         formats = {
             ".ttl": "turtle",
             ".nt": "nt",

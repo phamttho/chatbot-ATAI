@@ -131,7 +131,7 @@ run_test(
 # =========================================================
 
 query5 = """
-SELECT (COUNT(DISTINCT ?movie) AS ?count)
+SELECT (COUNT(ç ?movie) AS ?count)
 WHERE {
     ?movie
         <http://example.org/property/title>
