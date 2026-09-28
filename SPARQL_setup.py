@@ -1,11 +1,11 @@
 from pathlib import Path
-from rdflib import Graph, URIRef, Literal, BNode
+from typing import Any
+
+from rdflib import BNode, Graph, Literal, URIRef
 
 
 class SPARQLAgent:
-    """
-    Simple SPARQL agent for querying a local RDF KG.
-    """
+    """Execute plain SPARQL queries against a local RDF knowledge graph."""
 
     def __init__(self, graph_path):
         self.graph_path = Path(graph_path)
@@ -14,9 +14,7 @@ class SPARQLAgent:
             raise FileNotFoundError(
                 f"Knowledge graph not found: {self.graph_path.resolve()}"
             )
-        self.graph = Graph()
-        print(f"Loading knowledge graph: {self.graph_path}")
-        # Detect format from extension
+
         extension = self.graph_path.suffix.lower()
         formats = {
             ".ttl": "turtle",
@@ -26,119 +24,73 @@ class SPARQLAgent:
             ".n3": "n3",
             ".jsonld": "json-ld",
         }
-
         rdf_format = formats.get(extension)
 
         if rdf_format is None:
-            raise ValueError(
-                f"Unsupported RDF format: {extension}"
-            )
+            raise ValueError(f"Unsupported RDF format: {extension}")
 
-        self.graph.parse(
-            self.graph_path,
-            format=rdf_format
-        )
-
+        self.graph = Graph()
+        print(f"Loading knowledge graph: {self.graph_path}")
+        self.graph.parse(self.graph_path, format=rdf_format)
         print(f"Loaded {len(self.graph):,} triples.")
 
-    # -----------------------------------------------------
-    # Execute SPARQL
-    # -----------------------------------------------------
+    def handle_message(self, text: str) -> str:
+        """Process one Speakeasy message and return the text to send back."""
+        if not isinstance(text, str) or not text.strip():
+            return "Please send a non-empty SPARQL query."
 
-    def answer(self, query):
-        """
-        Execute a SPARQL query against the knowledge graph.
+        result = self.answer(text)
+        return self.format_answer(result)
 
-        Supports:
-        - SELECT
-        - ASK
-        """
+    def answer(self, query: str) -> Any:
+        """Execute a SPARQL query. Stage 1 supports SELECT and ASK."""
+        if not isinstance(query, str) or not query.strip():
+            return {"error": "SPARQL query is empty."}
 
         try:
             result = self.graph.query(query)
+        except Exception as error:
+            return {"error": f"SPARQL query failed: {error}"}
 
-        except Exception as e:
-            return {
-                "error": f"SPARQL query failed: {e}"
-            }
-
-        # ASK query
         if result.type == "ASK":
             return bool(result.askAnswer)
 
-        # SELECT query
         if result.type == "SELECT":
             return self._parse_select(result)
 
-        return {
-            "error": f"Unsupported SPARQL query type: {result.type}"
-        }
-
-    # -----------------------------------------------------
-    # Parse SELECT
-    # -----------------------------------------------------
+        return {"error": f"Unsupported SPARQL query type: {result.type}"}
 
     def _parse_select(self, result):
         answers = []
-
-        variables = [str(v) for v in result.vars]
+        variables = [str(variable) for variable in result.vars]
 
         for row in result:
             item = {}
-
             for variable, value in zip(variables, row):
-
-                if value is None:
-                    item[variable] = None
-                    continue
-
-                item[variable] = self._convert_value(value)
-
+                item[variable] = None if value is None else self._convert_value(value)
             answers.append(item)
 
         return answers
 
-    # -----------------------------------------------------
-    # Convert RDF values
-    # -----------------------------------------------------
-
-    def _convert_value(self, value):
-        """
-        Convert RDFLib objects into normal Python strings.
-        """
-
-        if isinstance(value, URIRef):
+    @staticmethod
+    def _convert_value(value):
+        """Convert RDFLib terms into serializable Python strings."""
+        if isinstance(value, (URIRef, Literal, BNode)):
             return str(value)
-
-        if isinstance(value, Literal):
-            return str(value)
-
-        if isinstance(value, BNode):
-            return str(value)
-
         return str(value)
 
-    # -----------------------------------------------------
-    # Human-readable output
-    # -----------------------------------------------------
-
-    def format_answer(self, result):
-        """
-        Convert query results into a simple answer suitable
-        for sending back to Speakeasy.
-        """
-
+    def format_answer(self, result) -> str:
+        """Turn RDFLib query results into a compact Speakeasy response."""
         if isinstance(result, dict) and "error" in result:
             return result["error"]
 
-        # ASK
         if isinstance(result, bool):
             return "true" if result else "false"
 
         if not result:
             return "No results found."
 
-        # Single row, single value
+        # Common case: one aggregate, date, rating, count, etc.
         if len(result) == 1 and len(result[0]) == 1:
             value = next(iter(result[0].values()))
             return self._pretty_value(value)
@@ -146,84 +98,45 @@ class SPARQLAgent:
         output = []
 
         for row in result:
-
-            # Common course format:
-            #
-            # ?answerLabel ?answerItem
-            #
+            # Course examples commonly use ?answerLabel and ?answerItem.
+            # Keep the Q-ID because it is useful for debugging and is accepted
+            # by the example format, while the human-readable label comes first.
             if "answerLabel" in row and "answerItem" in row:
                 label = row["answerLabel"]
                 entity = self._entity_id(row["answerItem"])
-
                 output.append(
-                    f"{label} ({entity})"
+                    f"{label} ({entity})" if entity else self._pretty_value(label)
                 )
-
                 continue
 
-            # Another common format:
-            #
-            # ?movieLabel ?movieItem
-            #
             if "movieLabel" in row and "movieItem" in row:
                 label = row["movieLabel"]
                 entity = self._entity_id(row["movieItem"])
-
                 output.append(
-                    f"{label} ({entity})"
+                    f"{label} ({entity})" if entity else self._pretty_value(label)
                 )
-
                 continue
 
-            # Generic single-column results
             if len(row) == 1:
-                value = next(iter(row.values()))
-                output.append(self._pretty_value(value))
+                output.append(self._pretty_value(next(iter(row.values()))))
                 continue
 
-            # Generic multi-column results
-            values = []
-
-            for value in row.values():
-                values.append(self._pretty_value(value))
-
-            output.append(" | ".join(values))
+            output.append(" | ".join(self._pretty_value(value) for value in row.values()))
 
         return ", ".join(output)
 
-    # -----------------------------------------------------
-    # Helper methods
-    # -----------------------------------------------------
-
-    def _entity_id(self, uri):
-        """
-        Convert:
-        http://www.wikidata.org/entity/Q455401
-
-        into:
-        Q455401
-        """
-
+    @staticmethod
+    def _entity_id(uri):
         if uri is None:
             return ""
-
-        uri = str(uri)
-
-        if "/" in uri:
-            return uri.rsplit("/", 1)[-1]
-
-        return uri
+        value = str(uri)
+        return value.rsplit("/", 1)[-1] if "/" in value else value
 
     def _pretty_value(self, value):
         if value is None:
             return ""
 
         value = str(value)
-
-        # Wikidata URI -> Q-ID
-        if value.startswith(
-            "http://www.wikidata.org/entity/"
-        ):
+        if value.startswith("http://www.wikidata.org/entity/"):
             return self._entity_id(value)
-
         return value
