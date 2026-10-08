@@ -5,17 +5,14 @@ import requests
 
 
 class SpeakeasyClient:
-    """Minimal Speakeasy HTTP client used by the working Stage 1 prototype."""
+    """Minimal Speakeasy HTTP client for the ATAI bot."""
 
     def __init__(self, base_url, request_timeout=(5, 20)):
         self.base_url = base_url.rstrip("/")
         self.session = requests.Session()
         self.request_timeout = request_timeout
-
         self.username = os.environ.get("SPEAKEASY_USERNAME")
         self.password = os.environ.get("SPEAKEASY_PASSWORD")
-
-        # IDs are stored as (room_id, message_id), so simultaneous rooms work.
         self.processed_messages = set()
         self.sent_messages = set()
 
@@ -40,10 +37,11 @@ class SpeakeasyClient:
         )
         response.raise_for_status()
         data = response.json()
-
         if isinstance(data, dict):
             return data.get("rooms", [])
-        return data if isinstance(data, list) else []
+        if isinstance(data, list):
+            return data
+        return []
 
     def get_room(self, room_id, since=0):
         response = self.session.get(
@@ -88,7 +86,6 @@ class SpeakeasyClient:
     def get_message_id(message, room_id=None):
         if not isinstance(message, dict):
             return None
-
         message_id = (
             message.get("id")
             or message.get("messageId")
@@ -97,7 +94,6 @@ class SpeakeasyClient:
         )
         if message_id is None:
             return None
-
         if room_id is not None:
             return str(room_id), str(message_id)
         return str(message_id)
@@ -105,7 +101,6 @@ class SpeakeasyClient:
     def is_bot_message(self, room, room_state, message, room_id):
         if not isinstance(message, dict):
             return False
-
         if message.get("bot") is True:
             return True
 
@@ -132,31 +127,72 @@ class SpeakeasyClient:
 
         return str(author) in bot_aliases
 
+    @staticmethod
+    def is_sparql_message(text):
+        if not isinstance(text, str):
+            return False
+        meaningful = []
+        for line in text.strip().splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            meaningful.append(line)
+        if not meaningful:
+            return False
+        first = meaningful[0].upper()
+        return first.startswith(
+            ("PREFIX", "BASE", "SELECT", "ASK", "CONSTRUCT", "DESCRIBE")
+        )
+
+    @classmethod
+    def is_question_message(cls, text):
+        """Keep old chat answers from being reprocessed after a restart."""
+        if not isinstance(text, str):
+            return False
+
+        stripped = text.strip()
+        if not stripped:
+            return False
+
+        if cls.is_sparql_message(stripped):
+            return True
+
+        lowered = stripped.casefold()
+        if "?" in stripped:
+            return True
+
+        question_starts = (
+            "who ", "what ", "when ", "where ", "which ", "how ", "please ",
+            "tell me ", "name ", "give me ", "factual approach",
+        )
+        return lowered.startswith(question_starts)
+
     def process_message(self, agent, message):
         text = self.get_message_text(message)
         if text is None:
+            return None
+        text = text.strip()
+
+        if not self.is_question_message(text):
+            print("\nIgnoring old/non-question message:")
+            print(text)
             return None
 
         print("\nReceived:")
         print(text)
 
         try:
-            if hasattr(agent, "handle_message"):
-                answer = agent.handle_message(text)
-            else:
-                result = agent.answer(text)
-                answer = agent.format_answer(result)
+            answer = agent.handle_message(text)
         except Exception as error:
-            # The outer loop must stay alive even if one message is malformed.
             print("Message processing error:", error)
-            answer = "Sorry, I could not process that SPARQL query."
+            answer = "Sorry, I could not process that question."
 
         print("\nAnswer:")
         print(answer)
         return answer
 
     def run(self, agent, poll_interval=2):
-        """Poll all assigned rooms and answer unprocessed human messages."""
+        """Poll assigned rooms and answer user questions."""
         while True:
             try:
                 rooms = self.get_rooms()
@@ -169,41 +205,59 @@ class SpeakeasyClient:
                     if room_id is None:
                         continue
 
-                    room_state = self.get_room(room_id)
-                    messages = self.get_messages(room_state)
+                    try:
+                        room_state = self.get_room(room_id)
+                    except requests.HTTPError as error:
+                        status = (
+                            error.response.status_code
+                            if error.response is not None
+                            else None
+                        )
+                        if status in (400, 404, 409):
+                            print(f"Skipping inactive room {room_id}.")
+                            continue
+                        raise
 
-                    for message in messages:
+                    for message in self.get_messages(room_state):
                         message_id = self.get_message_id(message, room_id)
                         if message_id is None or message_id in self.processed_messages:
                             continue
 
-                        # Bot messages can safely be marked as seen immediately.
                         if self.is_bot_message(room, room_state, message, room_id):
                             self.processed_messages.add(message_id)
                             continue
 
                         answer = self.process_message(agent, message)
-
                         if answer is None:
                             self.processed_messages.add(message_id)
                             continue
 
-                        # Important: only mark a human message processed after the
-                        # reply was successfully posted. If the POST fails, the next
-                        # poll can retry instead of silently losing the answer.
-                        self.send_message(room_id, answer)
-                        self.processed_messages.add(message_id)
+                        try:
+                            self.send_message(room_id, answer)
+                            self.processed_messages.add(message_id)
+                        except requests.HTTPError as error:
+                            status = (
+                                error.response.status_code
+                                if error.response is not None
+                                else None
+                            )
+                            if status in (400, 404, 409):
+                                print(
+                                    f"Could not reply to inactive room "
+                                    f"{room_id}; skipping."
+                                )
+                                self.processed_messages.add(message_id)
+                                continue
+                            raise
 
                 time.sleep(poll_interval)
 
             except KeyboardInterrupt:
                 print("\nBot stopped.")
                 break
-
             except requests.RequestException as error:
                 print("Speakeasy API error:", error)
                 time.sleep(5)
-
             except Exception as error:
                 print("Unexpected error:", error)
                 time.sleep(5)

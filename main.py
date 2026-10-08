@@ -1,26 +1,51 @@
 import os
 from pathlib import Path
 
-from SPARQL_setup import SPARQLAgent
+from factual_qa import FactualQAAgent
 from speakeasy_client import SpeakeasyClient
 
 
 BASE_DIR = Path(__file__).resolve().parent
 
+# Real course graph on Nuvolos.
+NUVOLOS_GRAPH = Path("/space_mounts/atai-hs26/dataset/graph.nt")
+
+# Real course graph when downloaded locally into this repository.
+LOCAL_FULL_GRAPH = BASE_DIR / "dataset" / "graph.nt"
+
+# Tiny graph kept only as a fallback for Stage 1-style local smoke tests.
+SMALL_GRAPH = BASE_DIR / "small_graph.ttl"
+
+
+def choose_graph_path():
+    """Choose the graph in a predictable order without hard-coding credentials."""
+    env_graph_path = os.environ.get("KNOWLEDGE_GRAPH_PATH")
+
+    if env_graph_path:
+        return Path(env_graph_path)
+    if NUVOLOS_GRAPH.exists():
+        return NUVOLOS_GRAPH
+    if LOCAL_FULL_GRAPH.exists():
+        return LOCAL_FULL_GRAPH
+    return SMALL_GRAPH
+
 
 def main():
-    # Keep the sample graph as a default for local testing. On Nuvolos, point
-    # KNOWLEDGE_GRAPH_PATH at the real course knowledge graph instead.
-    graph_path = Path(
-        os.environ.get("KNOWLEDGE_GRAPH_PATH", BASE_DIR / "small_graph.ttl")
-    )
+    graph_path = choose_graph_path()
+    print(f"Using knowledge graph: {graph_path}")
+
+    if graph_path == SMALL_GRAPH:
+        print(
+            "WARNING: using small_graph.ttl. Stage 2 factual questions need "
+            "dataset/graph.nt for realistic testing."
+        )
 
     base_url = os.environ.get(
         "SPEAKEASY_BASE_URL",
         "https://speakeasy.ifi.uzh.ch",
     )
 
-    agent = SPARQLAgent(graph_path)
+    agent = FactualQAAgent(graph_path)
     client = SpeakeasyClient(base_url=base_url)
 
     client.login()

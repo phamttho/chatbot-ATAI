@@ -3,3 +3,11 @@ __pycache__/
 *.py[cod]
 .venv/
 .DS_Store
+.env
+
+# Do not commit the downloaded course dataset.
+dataset/*
+!dataset/README.md
+!dataset/.gitkeep
+
+*.zip
