@@ -1,10 +1,14 @@
+import sys
 from pathlib import Path
 
-from SPARQL_setup import SPARQLAgent
+SRC_DIR = Path(__file__).resolve().parents[1] / "src" / "chatbot"
+sys.path.insert(0, str(SRC_DIR))
+
+from knowledge_graph import SPARQLAgent
 
 
-BASE_DIR = Path(__file__).resolve().parent
-GRAPH_PATH = BASE_DIR / "small_graph.ttl"
+BASE_DIR = Path(__file__).resolve().parents[1]
+GRAPH_PATH = BASE_DIR / "examples" / "small_graph.ttl"
 agent = SPARQLAgent(GRAPH_PATH)
 
 

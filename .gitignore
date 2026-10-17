@@ -6,8 +6,8 @@ __pycache__/
 .env
 
 # Do not commit the downloaded course dataset.
-dataset/*
-!dataset/README.md
-!dataset/.gitkeep
+data/*
+!data/README.md
+!data/.gitkeep
 
 *.zip

@@ -1,11 +1,13 @@
+import sys
 from pathlib import Path
+
+SRC_DIR = Path(__file__).resolve().parents[1] / "src" / "chatbot"
+sys.path.insert(0, str(SRC_DIR))
 
 from factual_qa import FactualQAAgent
 
-
-BASE_DIR = Path(__file__).resolve().parent
-GRAPH_PATH = BASE_DIR / "dataset" / "graph.nt"
-
+BASE_DIR = Path(__file__).resolve().parents[1]
+GRAPH_PATH = BASE_DIR / "data" / "graph.nt"
 
 TESTS = [
     (
@@ -53,7 +55,7 @@ TESTS = [
 def main():
     if not GRAPH_PATH.exists():
         raise FileNotFoundError(
-            "dataset/graph.nt was not found. Copy the downloaded course graph to "
+            "data/graph.nt was not found. Copy the downloaded course graph to "
             f"{GRAPH_PATH}"
         )
 

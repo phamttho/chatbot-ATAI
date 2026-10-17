@@ -11,10 +11,10 @@ BASE_DIR = Path(__file__).resolve().parent
 NUVOLOS_GRAPH = Path("/space_mounts/atai-hs26/dataset/graph.nt")
 
 # Real course graph when downloaded locally into this repository.
-LOCAL_FULL_GRAPH = BASE_DIR / "dataset" / "graph.nt"
+LOCAL_FULL_GRAPH = BASE_DIR.parents[1] / "data" / "graph.nt"
 
 # Tiny graph kept only as a fallback for Stage 1-style local smoke tests.
-SMALL_GRAPH = BASE_DIR / "small_graph.ttl"
+SMALL_GRAPH = BASE_DIR.parents[1] / "examples" / "small_graph.ttl"
 
 
 def choose_graph_path():
@@ -36,8 +36,8 @@ def main():
 
     if graph_path == SMALL_GRAPH:
         print(
-            "WARNING: using small_graph.ttl. Stage 2 factual questions need "
-            "dataset/graph.nt for realistic testing."
+            "WARNING: using examples/small_graph.ttl. Stage 2 factual questions need "
+            "data/graph.nt for realistic testing."
         )
 
     base_url = os.environ.get(

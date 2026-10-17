@@ -26,15 +26,15 @@ Generated SPARQL is printed in the terminal to make debugging easy.
 
 ## Files
 
-- `main.py` — chooses the graph and starts the bot
-- `factual_qa.py` — Stage 2 natural-language-to-SPARQL logic
-- `SPARQL_setup.py` — RDFLib graph loading and SPARQL execution
-- `speakeasy_client.py` — Speakeasy transport/polling
-- `Test_Factual_QA.py` — tests the published Stage 2 example questions
-- `Test_SPARQL.py` — original small-graph Stage 1 tests
-- `small_graph.ttl` — tiny Stage 1 fallback graph
-- `dataset/` — put the downloaded course dataset here
-- `requirement.txt` — dependencies
+- `src/chatbot/main.py` — chooses the graph and starts the bot
+- `src/chatbot/factual_qa.py` — Stage 2 natural-language-to-SPARQL logic
+- `src/chatbot/knowledge_graph.py` — RDFLib graph loading and SPARQL execution
+- `src/chatbot/speakeasy_client.py` — Speakeasy transport/polling
+- `tests/Test_Factual_QA.py` — tests the published Stage 2 example questions
+- `tests/Test_SPARQL.py` — original small-graph Stage 1 tests
+- `examples/small_graph.ttl` — tiny Stage 1 fallback graph
+- `data/` — downloaded course dataset
+- `requirements.txt` — dependencies
 
 ## 1. Put the real graph in the repository
 
@@ -42,15 +42,19 @@ Your local folder should look like:
 
 ```
 chatbot-ATAI/
-├── main.py
-├── factual_qa.py
-├── SPARQL_setup.py
-├── speakeasy_client.py
-├── Test_Factual_QA.py
-├── Test_SPARQL.py
-├── small_graph.ttl
-├── requirement.txt
-└── dataset/
+├── src/
+│   └── chatbot/
+│       ├── main.py
+│       ├── factual_qa.py
+│       ├── knowledge_graph.py
+│       └── speakeasy_client.py
+├── tests/
+│   ├── Test_Factual_QA.py
+│   └── Test_SPARQL.py
+├── examples/
+│   └── small_graph.ttl
+├── requirements.txt
+└── data/
     ├── graph.nt
     ├── item_ratings.csv
     ├── plots.csv
@@ -60,39 +64,40 @@ chatbot-ATAI/
 
 Only `graph.nt` is needed for the Stage 2 factual approach.
 
-## 2. Install dependencies on Windows PowerShell
+## 2. Install dependencies in a Bash terminal
 
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirement.txt
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
 ```
 
 ## 3. Test Stage 2 locally without Speakeasy
 
-```powershell
-.\.venv\Scripts\python.exe Test_Factual_QA.py
+```bash
+.venv/bin/python tests/Test_Factual_QA.py
 ```
 
-The test loads `dataset/graph.nt` and checks the published Stage 2 examples,
+The test loads `data/graph.nt` and checks the published Stage 2 examples,
 including The Handmaiden, Interstellar, Manchester by the Sea, Sofia Coppola,
 There Will Be Blood, and The Father.
 
 ## 4. Run the bot locally with Speakeasy
 
-Set the bot credentials in the current PowerShell session:
+Set the bot credentials in the current terminal session:
 
-```powershell
-$env:SPEAKEASY_USERNAME="TitaniumTwinklingSnake"
-$env:SPEAKEASY_PASSWORD="YOUR_BOT_PASSWORD"
-.\.venv\Scripts\python.exe main.py
+```bash
+export SPEAKEASY_USERNAME="TitaniumTwinklingSnake"
+export SPEAKEASY_PASSWORD="DipInJKw"
+.venv/bin/python src/chatbot/main.py
 ```
 
 Do not put the password in the repository.
 
-When `dataset/graph.nt` exists, `main.py` automatically selects it. You should see:
+When `data/graph.nt` exists, `main.py` automatically selects it. You should see:
 
-```
-Using knowledge graph: ...\dataset\graph.nt
-Loading knowledge graph: ...\dataset\graph.nt
+```text
+Using knowledge graph: .../data/graph.nt
+Loading knowledge graph: .../data/graph.nt
 Loaded 2,413,825 triples.
 ...
 Logged into Speakeasy.
@@ -103,13 +108,13 @@ Bot is running...
 
 Send natural-language questions such as:
 
-```
+```text
 Please answer this question with a factual approach: Who wrote the screenplay for 'The Handmaiden'?
 ```
 
 Expected style:
 
-```
+```text
 The factual answer is: Jeong Seo-kyeong and Park Chan-wook
 ```
 
@@ -121,13 +126,13 @@ The bot also still accepts the raw SPARQL queries used in Stage 1.
 
 1. `KNOWLEDGE_GRAPH_PATH`, if explicitly set.
 2. `/space_mounts/atai-hs26/dataset/graph.nt` on Nuvolos.
-3. `dataset/graph.nt` locally.
-4. `small_graph.ttl` only as a final fallback.
+3. `data/graph.nt` locally.
+4. `examples/small_graph.ttl` only as a final fallback.
 
 If the small graph is selected, the program prints a warning because it is not
 sufficient for realistic Stage 2 questions.
 
 ## Git
 
-The `dataset/` contents and `.env` are ignored. Do not commit the large course
+The `data/` contents and `.env` are ignored. Do not commit the large course
 dataset or credentials.
