@@ -9,7 +9,6 @@
 \usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage{booktabs}
-\usepackage{float}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,fit,shapes.geometric}
 \usepackage[hidelinks]{hyperref}
@@ -33,15 +32,15 @@
 \vspace{-3 em}
 
 \begin{abstract}
-We present a natural-language factual question answering chatbot for the movie knowledge graph. The system resolves entities and relations from English questions, generates transparent SPARQL, executes it over RDFLib~\cite{rdflib}, and verbalizes the result. It extends the Stage 1 SPARQL bot while supporting typos, alternative relation directions, negation, aggregation, sorting, and simple filtering.
+We present a natural-language factual question answering chatbot for the movie knowledge graph. The system resolves entities and relations from English questions, generates transparent SPARQL, executes it over RDFLib , and verbalizes the result. It extends the Stage 1 SPARQL bot while supporting typos, alternative relation directions, negation, aggregation, sorting, and simple filtering.
 \end{abstract}
 
 \section{Problem and scope}
-The input is a factual question about movies, people, countries, dates, awards, or related knowledge-graph entities. Movie names do not need quotation marks. The intended questions contain identifiable entities, including small misspellings; vague descriptions are outside the scope. Answers are returned as entity labels rather than only Wikidata identifiers~\cite{wikidata}.
+The input is a factual question about movies, people, countries, dates, awards, or related knowledge-graph entities. Movie names do not need quotation marks. The intended questions contain identifiable entities, including small misspellings; vague descriptions are outside the scope. Answers are returned as entity labels rather than only Wikidata identifiers.
 
 
 \section{Chatbot structure}
-The chatbot has four conceptual layers. First, the interface receives a user question and manages communication with the bot service~\cite{speakeasy}. Second, the language-understanding layer identifies entities, relations, direction, and operators such as negation or counting. Third, the query layer converts this interpretation into SPARQL. Finally, the knowledge-graph layer executes the query over RDFLib and turns the returned entities into a concise natural-language answer. Separate evaluation data and test cases verify the factual examples. The interaction between the parties is shown in Figure~\ref{fig:party-relations}; the internal processing flow is shown in Figure~\ref{fig:conceptual-structure}.
+The chatbot has four conceptual layers. First, the interface receives a user question and manages communication with the bot service. Second, the language-understanding layer identifies entities, relations, direction, and operators such as negation or counting. Third, the query layer converts this interpretation into SPARQL. Finally, the knowledge-graph layer executes the query over RDFLib and turns the returned entities into a concise natural-language answer. Separate evaluation data and test cases verify the factual examples. The interaction between the parties is shown in Figure~\ref{fig:party-relations}; the internal processing flow is shown in Figure~\ref{fig:conceptual-structure}.
 
 \begin{center}
 \begin{tikzpicture}[
@@ -115,7 +114,7 @@ The system is designed for the constrained factual questions rather than open-do
 This page provides the two complementary views of the chatbot. Figure~\ref{fig:party-relations} describes how the user, messaging API, chatbot service, reasoning layer, and knowledge graph exchange information. Figure~\ref{fig:conceptual-structure} shows the internal processing sequence that converts a natural-language question into a formatted answer.
 
 \textbf{Relations between the parties}
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[
     font=\sffamily\small,
@@ -142,7 +141,7 @@ This page provides the two complementary views of the chatbot. Figure~\ref{fig:p
 
 \vspace{0.7em}
 \textbf{Conceptual code structure}
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[
     font=\sffamily\small,
@@ -178,19 +177,5 @@ Evaluation layer & Published examples, smoke tests, and local fallback data \\
 \end{tabular}
 \end{center}
 
-\footnotesize
-\begin{thebibliography}{9}
-\setlength{\itemsep}{0pt}
-\bibitem{wikidata}
-Wikimedia Foundation, ``Wikidata: The free collaborative knowledge base,''
-\url{https://www.wikidata.org/}, accessed October 2026.
-
-\bibitem{rdflib}
-RDFLib Developers, ``RDFLib: A Python library for working with RDF,''
-\url{https://rdflib.readthedocs.io/}, accessed October 2026.
-
-\bibitem{speakeasy}
-University of Zurich, ``Speakeasy chatbot platform,'' course infrastructure for ATAI 2026.
-\end{thebibliography}
 
 \end{document}
