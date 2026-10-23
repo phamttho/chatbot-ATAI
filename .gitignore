@@ -12,3 +12,4 @@ data/*
 
 *.zip
 backups/
+run_stage3_local.py
