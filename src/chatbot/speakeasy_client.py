@@ -173,11 +173,6 @@ class SpeakeasyClient:
             return None
         text = text.strip()
 
-        if not self.is_question_message(text):
-            print("\nIgnoring old/non-question message:")
-            print(text)
-            return None
-
         print("\nReceived:")
         print(text)
 
