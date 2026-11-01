@@ -1,15 +1,19 @@
-.idea/
-__pycache__/
-*.py[cod]
-.venv/
+
+backups/
+data/*
+!data/.gitkeep
+!data/README.md
+# Do not commit the downloaded course dataset.
 .DS_Store
 .env
-
-# Do not commit the downloaded course dataset.
-data/*
-!data/README.md
-!data/.gitkeep
-
-*.zip
-backups/
+evaluation/results/
+.idea/
+models/
+__pycache__/
+*.py[cod]
+pytorch_model*.bin
 run_stage3_local.py
+*.safetensors
+# Stage 3 local model / generated evaluation files
+.venv/
+*.zip
