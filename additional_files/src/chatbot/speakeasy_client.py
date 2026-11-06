@@ -1,4 +1,5 @@
 import os
+import signal
 import time
 
 import requests
@@ -15,6 +16,7 @@ class SpeakeasyClient:
         self.password = os.environ.get("SPEAKEASY_PASSWORD")
         self.processed_messages = set()
         self.sent_messages = set()
+        self.inactive_rooms = set()
 
     def login(self):
         if not self.username or not self.password:
@@ -173,22 +175,40 @@ class SpeakeasyClient:
             return None
         text = text.strip()
 
-        if not self.is_question_message(text):
-            print("\nIgnoring old/non-question message:")
+        debug = os.environ.get("DEBUG_LOGGING", "").lower() in {"1", "true", "yes"}
+        if debug:
+            print("\nReceived:")
             print(text)
-            return None
 
-        print("\nReceived:")
-        print(text)
+        timeout_seconds = float(os.environ.get("MESSAGE_TIMEOUT_SECONDS", "5"))
 
+        class MessageTimeout(Exception):
+            pass
+
+        def timeout_handler(signum, frame):
+            raise MessageTimeout
+
+        previous_handler = signal.getsignal(signal.SIGALRM)
+        signal.signal(signal.SIGALRM, timeout_handler)
+        signal.setitimer(signal.ITIMER_REAL, timeout_seconds)
         try:
             answer = agent.handle_message(text)
+        except MessageTimeout:
+            answer = (
+                "Sorry, that took too long to process. "
+                "Please try a shorter movie-related question."
+            )
         except Exception as error:
-            print("Message processing error:", error)
+            if os.environ.get("DEBUG_LOGGING", "").lower() in {"1", "true", "yes"}:
+                print("Message processing error:", error)
             answer = "Sorry, I could not process that question."
+        finally:
+            signal.setitimer(signal.ITIMER_REAL, 0)
+            signal.signal(signal.SIGALRM, previous_handler)
 
-        print("\nAnswer:")
-        print(answer)
+        if debug:
+            print("\nAnswer:")
+            print(answer)
         return answer
 
     def run(self, agent, poll_interval=2):
@@ -204,6 +224,9 @@ class SpeakeasyClient:
                     room_id = room.get("id") or room.get("roomId") or room.get("uid")
                     if room_id is None:
                         continue
+                    room_key = str(room_id)
+                    if room_key in self.inactive_rooms:
+                        continue
 
                     try:
                         room_state = self.get_room(room_id)
@@ -214,7 +237,7 @@ class SpeakeasyClient:
                             else None
                         )
                         if status in (400, 404, 409):
-                            print(f"Skipping inactive room {room_id}.")
+                            self.inactive_rooms.add(room_key)
                             continue
                         raise
 
@@ -242,10 +265,7 @@ class SpeakeasyClient:
                                 else None
                             )
                             if status in (400, 404, 409):
-                                print(
-                                    f"Could not reply to inactive room "
-                                    f"{room_id}; skipping."
-                                )
+                                self.inactive_rooms.add(room_key)
                                 self.processed_messages.add(message_id)
                                 continue
                             raise

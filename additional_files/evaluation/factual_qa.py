@@ -1,4 +1,5 @@
 import re
+import os
 from difflib import SequenceMatcher
 
 from rdflib import Literal, URIRef
@@ -322,10 +323,22 @@ class FactualQAAgent:
 
         mention_words = normalized.split()
         candidates = []
+        first_character = normalized[0]
+        max_length_delta = max(3, int(len(normalized) * 0.25))
         for word_count in range(max(1, len(mention_words) - 1), len(mention_words) + 2):
             for label_normalized, label_text in self.labels_by_word_count.get(
                 word_count, {}
             ).items():
+                # Avoid comparing a typo against every graph label. Small
+                # misspellings normally preserve the first character and have
+                # a similar length; this keeps fuzzy matching responsive on
+                # the full 123k-label graph.
+                if not label_normalized:
+                    continue
+                if label_normalized[0] != first_character:
+                    continue
+                if abs(len(label_normalized) - len(normalized)) > max_length_delta:
+                    continue
                 score = SequenceMatcher(None, normalized, label_normalized).ratio()
                 if score >= threshold:
                     candidates.append((score, label_text))
@@ -515,7 +528,7 @@ SELECT DISTINCT ?answer ?answerLabel WHERE {{
 
         return "\n    ".join(f"FILTER({item})" for item in filters)
 
-    def _build_global_release_query(self, question, count=False):
+    def _build_global_release_query(self, question, count=False, negated=False):
         """Query release-date constraints that do not name one entity."""
         q = self._normalize(question)
         years = re.findall(r"\b(?:18|19|20)\d{2}\b", q)
@@ -538,6 +551,9 @@ SELECT DISTINCT ?answer ?answerLabel WHERE {{
             else "SELECT DISTINCT ?answer ?answerLabel"
         )
         projection = "" if count else "BIND(?movie AS ?answer)"
+        if negated:
+            comparison = f"NOT ({comparison})"
+
         return f"""{PREFIXES}
 {select} WHERE {{
     ?movie wdt:P577 ?date .
@@ -550,7 +566,7 @@ SELECT DISTINCT ?answer ?answerLabel WHERE {{
 }}
 """
 
-    def _direct_global_release_answers(self, question, count=False):
+    def _direct_global_release_answers(self, question, count=False, negated=False):
         q = self._normalize(question)
         years = re.findall(r"\b(?:18|19|20)\d{2}\b", q)
         if not years:
@@ -576,8 +592,57 @@ SELECT DISTINCT ?answer ?answerLabel WHERE {{
                 for date in self.graph.objects(film, date_predicate)
             ):
                 answers.add(self.preferred_label_by_subject.get(film, str(film)))
+        if negated:
+            # Recompute against the complement of the date predicate. This
+            # keeps the direct RDFLib path consistent with the SPARQL query.
+            all_films = set(self.graph.subjects(predicate=date_predicate))
+            matching = set()
+            for film in all_films:
+                if any(
+                    str(date)[:4].isdigit() and matches(int(str(date)[:4]))
+                    for date in self.graph.objects(film, date_predicate)
+                ):
+                    matching.add(film)
+            answers = {
+                self.preferred_label_by_subject.get(film, str(film))
+                for film in all_films - matching
+            }
+
         values = sorted(answers, key=str.casefold)
         return [str(len(values))] if count else values
+
+    def _direct_global_release_superlative(self, question):
+        """Return the earliest/latest release matching a year filter."""
+        q = self._normalize(question)
+        years = re.findall(r"\b(?:18|19|20)\d{2}\b", q)
+        if not years:
+            return None
+        year = int(years[0])
+        if re.search(r"\b(before|earlier than|prior to)\b", q):
+            matches = lambda value: value < year
+        elif re.search(r"\b(after|later than|since)\b", q):
+            matches = lambda value: value > year
+        elif re.search(r"\b(in|during)\s+" + str(year) + r"\b", q):
+            matches = lambda value: value == year
+        else:
+            return None
+
+        latest = any(word in q for word in ("latest", "newest", "most recent"))
+        earliest = any(word in q for word in ("first", "earliest", "oldest"))
+        if not (latest or earliest):
+            return None
+
+        candidates = []
+        for movie in self.graph.subjects(predicate=URIRef(WDT + "P577")):
+            for date in self.graph.objects(movie, URIRef(WDT + "P577")):
+                date_text = str(date)
+                if date_text[:4].isdigit() and matches(int(date_text[:4])):
+                    label = self.preferred_label_by_subject.get(movie, str(movie))
+                    candidates.append((int(date_text[:4]), label))
+        if not candidates:
+            return []
+        candidates.sort(key=lambda item: (item[0], item[1].casefold()), reverse=latest)
+        return [candidates[0][1]]
 
     def _build_superlative_query(self, mention, filter_pid, descending=False):
         label_literal = self._literal_n3(mention)
@@ -657,8 +722,9 @@ LIMIT 1
         return f"{joined}, ..." if truncated else joined
 
     def _run_query(self, query, direct_answers=None):
-        print("\nGenerated SPARQL:")
-        print(query.strip())
+        if os.environ.get("DEBUG_LOGGING", "").lower() in {"1", "true", "yes"}:
+            print("\nGenerated SPARQL:")
+            print(query.strip())
         if direct_answers is not None:
             return direct_answers, None
         result = self.sparql_agent.answer(query)
@@ -757,12 +823,25 @@ LIMIT 1
             return f"I could not execute the generated SPARQL query: {error}"
         if not answers:
             return "I could not find a factual answer in the knowledge graph."
-        return f"The factual answer is: {self._join_answers(answers)}"
+        return self._join_answers(answers)
 
     def answer_natural_language(self, question):
         clean_question = self._strip_instruction(question)
         normalized_question = self._normalize(clean_question)
         pid = self._detect_relation(clean_question)
+
+        # Handle global release-date superlatives before entity extraction;
+        # generic graph labels such as "heist film" must not become entities.
+        if (
+            pid == "P577"
+            and re.search(r"\b(?:first|earliest|oldest|latest|newest|most recent)\b", normalized_question)
+            and re.search(r"\b(?:before|after|in|during|since)\b", normalized_question)
+            and re.search(r"\b(?:movie|movies|film|films)\b", normalized_question)
+        ):
+            superlative_answers = self._direct_global_release_superlative(clean_question)
+            if superlative_answers is not None:
+                return self._join_answers(superlative_answers)
+
         mention = self._extract_entity_mention(clean_question)
 
         if not mention:
@@ -771,10 +850,20 @@ LIMIT 1
                 normalized_question,
             ))
             if pid == "P577":
-                global_query = self._build_global_release_query(clean_question, count=count)
+                negated = self._is_negated(clean_question)
+                superlative_answers = self._direct_global_release_superlative(clean_question)
+                if superlative_answers is not None:
+                    return self._join_answers(superlative_answers)
+                global_query = self._build_global_release_query(
+                    clean_question,
+                    count=count,
+                    negated=negated,
+                )
                 if global_query:
                     direct_answers = self._direct_global_release_answers(
-                        clean_question, count=count
+                        clean_question,
+                        count=count,
+                        negated=negated,
                     )
                     answers, error = self._run_query(
                         global_query, direct_answers=direct_answers
@@ -783,7 +872,7 @@ LIMIT 1
                         return f"I could not execute the generated SPARQL query: {error}"
                     if answers:
                         limit = None if count else 4
-                        return f"The factual answer is: {self._join_answers(answers, limit=limit)}"
+                        return self._join_answers(answers, limit=limit)
                     return "I could not find a factual answer in the knowledge graph."
             return (
                 "I could not identify the entity in the question. "
@@ -845,7 +934,7 @@ LIMIT 1
 
             if answers:
                 limit = 4 if (negated or filter_clause) and not count else None
-                return f"The factual answer is: {self._join_answers(answers, limit=limit)}"
+                return self._join_answers(answers, limit=limit)
 
         if last_error:
             return f"I could not execute the generated SPARQL query: {last_error}"

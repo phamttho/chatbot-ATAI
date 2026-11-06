@@ -1,138 +1,124 @@
-# ATAI Stage 2 — Natural-language factual QA
+# Local movie knowledge graph assistant
 
-This version extends the working Stage 1 bot with the factual part of Evaluation 2.
-Embedding questions were removed from the Stage 2 scope in the October 6, 2026
-course update, so this implementation focuses on natural-language factual questions.
+`python main.py` starts the Qwen3.5-4B movie agent on Speakeasy,
+using the credentials already configured in the root `main.py`. The local HTTP
+entry point (`python local.py`) runs the same agent without connecting to Speakeasy.
+Legacy and local-API support files are kept in `additional_files/evaluation/`;
+the Speakeasy deployment uses the active agent modules in `additional_files/src/chatbot/`.
 
-## What changed
-
-The bot now supports both:
-
-1. Plain SPARQL queries from Stage 1.
-2. Natural-language factual movie questions for Stage 2.
-
-For Stage 2 the pipeline is:
-
-```
-English question
-    -> identify the named entity
-    -> identify the requested KG relation
-    -> construct SPARQL
-    -> execute it with RDFLib
-    -> verbalize the answer
-```
-
-Generated SPARQL is printed in the terminal to make debugging easy.
-
-## Files
-
-- `src/chatbot/main.py` — chooses the graph and starts the bot
-- `src/chatbot/factual_qa.py` — Stage 2 natural-language-to-SPARQL logic
-- `src/chatbot/knowledge_graph.py` — RDFLib graph loading and SPARQL execution
-- `src/chatbot/speakeasy_client.py` — Speakeasy transport/polling
-- `tests/Test_Factual_QA.py` — tests the published Stage 2 example questions
-- `tests/Test_SPARQL.py` — original small-graph Stage 1 tests
-- `examples/small_graph.ttl` — tiny Stage 1 fallback graph
-- `data/` — downloaded course dataset
-- `requirements.txt` — dependencies
-
-## 1. Put the real graph in the repository
-
-Your local folder should look like:
-
-```
-chatbot-ATAI/
-├── src/
-│   └── chatbot/
-│       ├── main.py
-│       ├── factual_qa.py
-│       ├── knowledge_graph.py
-│       └── speakeasy_client.py
-├── tests/
-│   ├── Test_Factual_QA.py
-│   └── Test_SPARQL.py
-├── examples/
-│   └── small_graph.ttl
-├── requirements.txt
-└── data/
-    ├── graph.nt
-    ├── item_ratings.csv
-    ├── plots.csv
-    ├── user_comments.csv
-    └── user_ratings.csv
-```
-
-Only `graph.nt` is needed for the Stage 2 factual approach.
-
-## 2. Install dependencies in a Bash terminal
+To run the Speakeasy bot from the project directory:
 
 ```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
+source .venv/bin/activate
+python main.py
 ```
 
-## 3. Test Stage 2 locally without Speakeasy
+Keep the terminal running while the bot polls its assigned rooms. Press Ctrl+C
+to stop it. `MOVIE_LLM_MODEL` overrides the default model, `KNOWLEDGE_GRAPH_PATH`
+overrides the graph, and `SPEAKEASY_BASE_URL` overrides the service URL. The
+Speakeasy message timeout defaults to 30 seconds and can be overridden with
+`MESSAGE_TIMEOUT_SECONDS`. Historical benchmark source snapshots remain intact;
+the original agent remains available through `local.py --engine legacy`.
+
+## Install
+
+Use Python 3.11+ and a virtual environment. Install the CUDA-enabled PyTorch build
+appropriate for your device first, then:
 
 ```bash
-.venv/bin/python tests/Test_Factual_QA.py
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-The test loads `data/graph.nt` and checks the published Stage 2 examples,
-including The Handmaiden, Interstellar, Manchester by the Sea, Sofia Coppola,
-There Will Be Blood, and The Father.
+Tested on NVIDIA GB10 with PyTorch 2.12.0+cu130 and Transformers 5.12.1; exact
+package versions used for the benchmarks are in
+`additional_files/evaluation/results/environment.json`. The working environment
+on this machine reuses the preinstalled CUDA packages via a local `.pth` file;
+that machine-specific setup is not needed with a normal PyTorch installation.
+CUDA is preferred automatically, then MPS, then CPU. `--device` overrides this
+for the new implementation. The GB10 needs a PyTorch build supporting its GPU
+architecture; an older CUDA wheel may not work. BF16 is used on CUDA GPUs that
+support it, and FP16 on other CUDA GPUs. MPS and CPU use float32 for compatibility.
+MPS was not benchmarked here.
 
-## 4. Run the bot locally with Speakeasy
-
-Set the bot credentials in the current terminal session:
+## Serve and ask questions
 
 ```bash
-export SPEAKEASY_USERNAME="TitaniumTwinklingSnake"
-export SPEAKEASY_PASSWORD="DipInJKw"
-.venv/bin/python src/chatbot/main.py
+.venv/bin/python local.py --engine llm --model Qwen/Qwen3.5-4B --port 8001
+curl http://127.0.0.1:8001/health
+curl http://127.0.0.1:8001/chat \
+  -H 'Content-Type: application/json' \
+  -d '{"message":"Who directed Inception?"}'
 ```
 
-Do not put the password in the repository.
+The working default is Qwen 3.5 4B: the requested 0.8B model was tested first
+and struggled with SPARQL generation. Use `--model Qwen/Qwen3.5-0.8B` to
+reproduce that smaller-model configuration. The first launch downloads public model weights. Subsequent runs use the
+Hugging Face cache. Use a local model directory and `HF_HUB_OFFLINE=1` to prevent
+network downloads. Inference and graph queries run locally; no hosted inference
+API or account is required. HTTP binds to loopback by default. Swagger API docs
+are at `/docs`. Responses include labels, route, answer, generated SPARQL, graph
+values, candidate entities, raw model outputs, model-call count, and latency.
 
-When `data/graph.nt` exists, `main.py` automatically selects it. You should see:
+To compare the original system on the same API:
 
-```text
-Using knowledge graph: .../data/graph.nt
-Loading knowledge graph: .../data/graph.nt
-Loaded 2,413,825 triples.
-...
-Logged into Speakeasy.
-Bot is running...
+```bash
+.venv/bin/python local.py --engine legacy --port 8000
 ```
 
-## 5. Example website questions
+The baseline uses its original `Qwen/Qwen2.5-1.5B-Instruct` and unchanged agent
+code. It requires a successfully loaded model rather than silently benchmarking
+a degraded fallback. `--model` can override it for a separate experiment.
 
-Send natural-language questions such as:
+## Evaluation
 
-```text
-Please answer this question with a factual approach: Who wrote the screenplay for 'The Handmaiden'?
+The saved Qwen 3.5 4B benchmark scored **2,966/3,000 (98.87%)** on complete
+answers and query grounding. See the [benchmark report](additional_files/evaluation/BENCHMARK.md).
+It was run against an earlier saved source revision, so it is a historical
+benchmark rather than a measurement of every later code change.
+
+For a quick local HTTP evaluation, start `local.py` and run `local_eval.py` with
+the retained `test_cases.jsonl` dataset. Results can be saved under
+`additional_files/evaluation/`.
+
+## New architecture
+
+1. Qwen classifies intent and all applicable guardrail labels. Blocked requests
+   receive fixed refusals; mixed requests can carry multiple labels.
+2. For safe factual requests, a lexical index retrieves graph entity candidates
+   using full labels, graph aliases, omitted articles, and bounded fuzzy matching
+   for quoted names or a trailing name. Release years help disambiguate titles.
+3. A second Qwen call returns a structured plan: operation, entity, property,
+   relation direction, and optionally date ordering or a numeric comparison.
+   The graph context includes the custom `atai:tag` and `atai:rating` properties.
+4. Python validates the plan and builds SPARQL from narrow templates. Supported
+   operations are one-edge lookups in either direction, earliest/latest inverse
+   lookups, distinct counts, numeric rating filters, and movie release-date
+   filters. The validator rejects
+   arbitrary joins, remote services, updates, unknown IDs, and invalid parameters.
+5. Oxigraph executes the validated query. Graph labels, dates, and counts are
+   formatted directly. Complete answers remain in metadata; displayed lists
+   contain at most ten comma-separated values. Equally plausible names
+   request clarification rather than accepting the model's arbitrary choice.
+
+Safe recommendations and movie discussion are generated directly by Qwen, with
+one title and a brief reason when one movie is requested. The API identifies
+these as `movie_discussion` with `answer_source: language_model`; they are not
+presented as graph-verified factual answers. Blocked labels stop generation and
+return the existing conversation stoppers. There is no embedding-based or
+personalized recommendation subsystem, arbitrary multi-hop reasoning, or conversational memory. Fuzzy
+matching is bounded and can still miss names; a structured plan can still select
+the wrong relation. Model safety classification is measured by evaluation rather
+than assumed reliable.
+
+## Tests
+
+```bash
+.venv/bin/python -m unittest discover -s additional_files/tests -v
 ```
 
-Expected style:
-
-```text
-The factual answer is: Jeong Seo-kyeong and Park Chan-wook
-```
-
-The bot also still accepts the raw SPARQL queries used in Stage 1.
-
-## Graph selection order
-
-`main.py` uses:
-
-1. `KNOWLEDGE_GRAPH_PATH`, if explicitly set.
-2. `/space_mounts/atai-hs26/dataset/graph.nt` on Nuvolos.
-3. `data/graph.nt` locally.
-4. `examples/small_graph.ttl` only as a final fallback.
-
-If the small graph is selected, the program prints a warning because it is not
-sufficient for realistic Stage 2 questions.
-
-## Git
-
-The `data/` contents and `.env` are ignored. Do not commit the large course
-dataset or credentials.
+The new contract tests use a tiny temporary graph and fake model outputs, covering
+complete multi-answer retrieval, inverse/date-ordered queries, refusal routing,
+query isolation, failure handling, and HTTP validation. Model quality is checked
+separately by the saved live benchmarks.
