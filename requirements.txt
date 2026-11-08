@@ -1,10 +1,19 @@
-rdflib>=7.1.0,<8.0.0
+rdflib==7.6.0
 requests>=2.32.0,<3.0.0
-torch>=2.10.0
-transformers>=5.12.1,<6.0.0
+
+# Tested on the course Nuvolos Python 3.13 / Tesla T4 environment.
+torch==2.8.0
+transformers==5.20.2
+
 huggingface_hub>=0.23.0
-pyoxigraph>=0.5.0,<0.6.0
-flash-linear-attention
+pyoxigraph==0.5.13
+
+flash-linear-attention==0.6.0
+
+# Prebuilt CUDA wheel tested successfully with Python 3.13 + Torch 2.8.
+# Without this package Qwen3.5 falls back to a very slow reference kernel.
+causal-conv1d @ https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.7.0/causal_conv1d-1.7.0%2Bcu12torch2.8cxx11abiTRUE-cp313-cp313-linux_x86_64.whl
+
 fastapi>=0.115.0,<1.0.0
 uvicorn>=0.34.0,<1.0.0
-httpx>=0.28.0,<1.0.0
+httpx==0.28.1

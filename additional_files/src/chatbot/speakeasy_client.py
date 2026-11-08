@@ -180,7 +180,7 @@ class SpeakeasyClient:
             print("\nReceived:")
             print(text)
 
-        timeout_seconds = float(os.environ.get("MESSAGE_TIMEOUT_SECONDS", "5"))
+        timeout_seconds = float(os.environ.get("MESSAGE_TIMEOUT_SECONDS", "90"))
 
         class MessageTimeout(Exception):
             pass

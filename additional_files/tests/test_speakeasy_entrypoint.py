@@ -31,7 +31,7 @@ class SpeakeasyEntrypointTests(unittest.TestCase):
             client_factory.assert_called_once_with(base_url='https://speakeasy.ifi.uzh.ch')
             self.assertEqual(client_factory.return_value.method_calls,
                              [unittest.mock.call.login(), unittest.mock.call.run(factory.return_value)])
-            self.assertEqual(os.environ['MESSAGE_TIMEOUT_SECONDS'], '30')
+            self.assertEqual(os.environ['MESSAGE_TIMEOUT_SECONDS'], '90')
 
     def test_graph_model_url_and_timeout_overrides_are_retained(self):
         config = {'KNOWLEDGE_GRAPH_PATH': '/tmp/custom-movie-graph.nt',

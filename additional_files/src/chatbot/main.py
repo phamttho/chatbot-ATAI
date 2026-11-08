@@ -42,7 +42,7 @@ def main():
     agent = MovieAgent(graph_path, model_name=model_name)
 
     # The benchmark includes requests above the client's old five-second limit.
-    os.environ.setdefault("MESSAGE_TIMEOUT_SECONDS", "30")
+    os.environ.setdefault("MESSAGE_TIMEOUT_SECONDS", "90")
 
     client = SpeakeasyClient(base_url=base_url)
 
