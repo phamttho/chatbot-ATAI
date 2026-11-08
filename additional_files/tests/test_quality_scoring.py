@@ -3,10 +3,15 @@ from pathlib import Path
 import unittest
 
 path=Path(__file__).resolve().parents[1]/'evaluation/quality/run_suite.py'
-spec=importlib.util.spec_from_file_location('quality_scoring',path)
-m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+
+if path.exists():
+ spec=importlib.util.spec_from_file_location('quality_scoring',path)
+ m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+else:
+ m=None
 
 
+@unittest.skipUnless(path.exists(), 'quality scoring harness is not included in Stage 3 V2')
 class QualityScoringTests(unittest.TestCase):
  def case(self):
   return {'gold_answers':[{'value':'wd:1','aliases':['Ann Lee','A. Lee']},{'value':'wd:2','aliases':['John Smith']}]}

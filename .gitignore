@@ -13,3 +13,8 @@ data/*
 *.zip
 
 /additional_files/data/graph.nt
+backups/
+evaluation/
+run_stage3_local.py
+additional_files/models/
+*.safetensors
