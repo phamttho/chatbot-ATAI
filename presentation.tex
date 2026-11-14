@@ -47,7 +47,7 @@
   \node[anchor=west,text=gold!80!ink,font=\sffamily\bfseries\fontsize{10}{12}\selectfont]
     at ([xshift=28mm,yshift=30mm]current page.south west) {Only retrieved film IDs become recommendations};
   \node[anchor=west,text=teal,font=\sffamily\bfseries\fontsize{11}{13}\selectfont]
-    at ([xshift=16mm,yshift=11mm]current page.south west) {Qwen3.5-4B  \textbullet  Transformers  \textbullet  PyTorch  \textbullet  PyOxigraph};
+    at ([xshift=16mm,yshift=11mm]current page.south west) {Qwen3.5-4B  \textbullet  vLLM  \textbullet  Python  \textbullet  PyOxigraph};
 \end{tikzpicture}
 \end{frame}
 
@@ -77,26 +77,24 @@
 \end{tikzpicture}
 \end{frame}
 
-% Slide 3: Model, framework, GPU, and graph interaction
+% Slide 3: Report-based model, inference engine, and GPU flow
 \begin{frame}[plain]
 \begin{tikzpicture}[remember picture,overlay]
   \fill[paper] (current page.south west) rectangle (current page.north east);
   \slidetitle{How the stack works}
-  \tikzset{stack/.style={draw=teal!55,fill=white,rounded corners=2mm,minimum width=31mm,minimum height=19mm,align=center,text=ink,font=\sffamily\fontsize{10}{12}\selectfont},
+  \tikzset{stack/.style={draw=teal!55,fill=white,rounded corners=2mm,minimum width=36mm,minimum height=19mm,align=center,text=ink,font=\sffamily\fontsize{10}{12}\selectfont},
            arrow/.style={-{Stealth[length=2mm]},draw=teal,line width=1.1pt}}
-  \node[stack] (model) at ([xshift=25mm,yshift=57mm]current page.south west) {\textbf{Qwen3.5-4B}\\Model};
-  \node[stack] (framework) at ([xshift=62mm,yshift=57mm]current page.south west) {\textbf{Transformers}\\Loads model};
-  \node[stack] (backend) at ([xshift=100mm,yshift=57mm]current page.south west) {\textbf{PyTorch + CUDA}\\Runs inference};
-  \node[stack] (gpu) at ([xshift=138mm,yshift=57mm]current page.south west) {\textbf{NVIDIA GB10}\\GPU acceleration};
-  \draw[arrow] (model) -- (framework);
-  \draw[arrow] (framework) -- (backend);
-  \draw[arrow] (backend) -- (gpu);
+  \node[stack] (model) at ([xshift=39mm,yshift=57mm]current page.south west) {\textbf{Qwen3.5-4B}\\Language model};
+  \node[stack] (engine) at ([xshift=86mm,yshift=57mm]current page.south west) {\textbf{vLLM}\\Inference engine};
+  \node[stack] (gpu) at ([xshift=133mm,yshift=57mm]current page.south west) {\textbf{CUDA GPU}\\Accelerates inference};
+  \draw[arrow] (model) -- (engine);
+  \draw[arrow] (engine) -- (gpu);
   \tikzset{subflow/.style={draw=linegray,fill=pale,rounded corners=2mm,minimum width=38mm,minimum height=13mm,align=center,text=ink,font=\sffamily\fontsize{9}{11}\selectfont}}
-  \node[subflow] (orchestrate) at ([xshift=37mm,yshift=28mm]current page.south west) {Python\\routes requests};
+  \node[subflow] (orchestrate) at ([xshift=37mm,yshift=28mm]current page.south west) {Python\\routes prompts};
   \node[subflow] (retrieve) at ([xshift=82mm,yshift=28mm]current page.south west) {PyOxigraph\\retrieves graph films};
-  \node[subflow] (explain) at ([xshift=127mm,yshift=28mm]current page.south west) {Qwen\\explains results};
+  \node[subflow] (answer) at ([xshift=127mm,yshift=28mm]current page.south west) {Qwen\\grounds suggestions};
   \draw[arrow] (orchestrate) -- (retrieve);
-  \draw[arrow] (retrieve) -- (explain);
+  \draw[arrow] (retrieve) -- (answer);
 \end{tikzpicture}
 \end{frame}
 
