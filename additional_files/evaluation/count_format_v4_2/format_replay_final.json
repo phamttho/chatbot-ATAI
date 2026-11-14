@@ -1,0 +1,7 @@
+{
+  "n": 243,
+  "passed": 243,
+  "failed": [],
+  "scorer_sha256": "ec047e6d0ea84ff4c0a37ac3a94e7d12b058464a3e3e5d179309aeebf9c7f8c6",
+  "note": "Offline formatter replay only; no new model inference. Corrected CSV doubled-quote decoding in the evaluator after its false negative on CV042. Application source, gold and all model outputs unchanged."
+}

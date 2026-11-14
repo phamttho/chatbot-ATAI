@@ -1,0 +1,155 @@
+{
+  "started_at": "2026-11-06T16:10:20.741338+00:00",
+  "url": "http://127.0.0.1:8001",
+  "server": {
+    "status": "ready",
+    "engine": "llm",
+    "model": "Qwen/Qwen3.5-4B",
+    "device": "cuda",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "version": "capabilities-v2",
+    "source_hashes": {
+      "movie_agent.py": "97f889b29491e69d7267b702c2e799088bbdf3e48a4ad2fada2ed96792be0592",
+      "graph_store.py": "6f05320b445f7c59a30648689adce4b7d80ed8cbfb7d17d4df889448ff6f0c02",
+      "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+    }
+  },
+  "manifest": {
+    "timestamp": "2026-11-06T15:50:04.291275+00:00",
+    "seed": 2026110603,
+    "cases": 3000,
+    "original_sha256": "de29d13ad5828abfa1175db96bc7d5ed759b1f6e0c8cfe21832d01ab93298bab",
+    "factual_sha256": "c51a48bdf19fca400c3fb017a6d6db31353d21813986127034fd0b078fc93c9b",
+    "corrections_sha256": "d6d0f6c68613e7723cf201556027bd6f33bdd0953c24914caa113d03edb69b22",
+    "graph_sha256": "11073431030bde60d971f0e5b2c1f9c1e7f7ca2a91519bfe1bb7229cdc6b5c6a",
+    "source_hashes": {
+      "factual_qa.py": "64f4fe0f6a755a86fa35b0434b62ad0ba6b9676b3630ac1f021ccab11bb584e6",
+      "movie_agent.py": "97f889b29491e69d7267b702c2e799088bbdf3e48a4ad2fada2ed96792be0592",
+      "llm_client.py": "a624c94c3adc556fa0eb158e2caf7704254132444af756ae6a919da8eef1fc1a",
+      "knowledge_graph.py": "898140ab18cadf743e1f1a2af95c5cc0bbc3a6e3bdb0a8f99f120f7086e822d5",
+      "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18",
+      "graph_store.py": "6f05320b445f7c59a30648689adce4b7d80ed8cbfb7d17d4df889448ff6f0c02",
+      "main.py": "9b4b46e8d56d23c5c7c26a27d60b5ecf12dd123290144ff9ff88d07f48c58c0c",
+      "stage3_agent.py": "49c0643e95e09d65d8e137bbc3643be33c23b2a98bfb7255db27490c5e01eeb2",
+      "local_api.py": "f5cabde326265873f9fe59c4798263e460b33e41ed018b423e500a0efcdaf78e",
+      "guardrails.py": "b93dac44d34acd2619e480b9721331d77f6a2bf1d22d0e6a9afc17313060a1b0",
+      "speakeasy_client.py": "b413ef41fb4eea1b3c9f96cd1ba76d6b3909338116a4816e9f58114d30e44f1a"
+    },
+    "build_script_sha256": "c96a105066270ed585882009742e9833ad9ca13eb2451ad69c97ebf1508fb8b5",
+    "replaced_records": 101,
+    "correction_counts": {
+      "complete_graph_answer_set": 3000,
+      "explicit_film_context_and_paired_quotes": 3000,
+      "replace_platform_claim_with_distributor_relation": 114,
+      "replace_remake_claim_with_derivative_work_relation": 321,
+      "replace_tag_text_with_distinct_count": 473,
+      "resolved_title_year_suffix": 169,
+      "add_release_year_disambiguation": 165,
+      "graph_only_same_relation_replacement": 101,
+      "ambiguous_original_film_title": 30,
+      "duplicate_entity_relation": 43
+    },
+    "relation_counts": {
+      "director": 5,
+      "screenwriter": 27,
+      "composer": 57,
+      "production_company": 438,
+      "distributor": 114,
+      "filming_location": 478,
+      "derivative_work": 321,
+      "user_rating": 479,
+      "count_tags": 473,
+      "editor": 223,
+      "cinematographer": 62,
+      "cast": 20,
+      "narrative_location": 247,
+      "producer": 50,
+      "original_language": 6
+    },
+    "note": "Corrected graph-grounded coverage suite, not a production sample. Original relation counts retained; graph-only replacements recorded. No agent imports or inference during construction."
+  },
+  "validation_sha256": "79e42fd6bc9ce925760d1008cd7248881b086bfa20f9db3f61d937711ffb2426",
+  "benchmark_script_sha256": "7bf4ab02c2e233e09a31885434e216563376f1792134464b84ca23da349152be",
+  "scoring_script_sha256": "0761f2d539e88489f573b85a736d6e6c0bca7f117e0839ae6f82c645fb7fdcfc",
+  "note": "All cases frozen and independently validated before inference; only natural-language input is sent. Sequential requests; no model/source tuning during run.",
+  "imported_prefix": {
+    "count": 290,
+    "source": "/home/ariel/thoprojects/atai/atai-for-spark/additional_files/evaluation/corrected_3k/results_20261106",
+    "responses_sha256": "ba62c3146d7c5859ce212059bfe07282406aa6616a2d8b3094e08f52c826907e",
+    "original_provenance": {
+      "started_at": "2026-11-06T15:51:02.160976+00:00",
+      "url": "http://127.0.0.1:8001",
+      "server": {
+        "status": "ready",
+        "engine": "llm",
+        "model": "Qwen/Qwen3.5-4B",
+        "device": "cuda",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "version": "capabilities-v2",
+        "source_hashes": {
+          "movie_agent.py": "97f889b29491e69d7267b702c2e799088bbdf3e48a4ad2fada2ed96792be0592",
+          "graph_store.py": "6f05320b445f7c59a30648689adce4b7d80ed8cbfb7d17d4df889448ff6f0c02",
+          "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+        }
+      },
+      "manifest": {
+        "timestamp": "2026-11-06T15:50:04.291275+00:00",
+        "seed": 2026110603,
+        "cases": 3000,
+        "original_sha256": "de29d13ad5828abfa1175db96bc7d5ed759b1f6e0c8cfe21832d01ab93298bab",
+        "factual_sha256": "c51a48bdf19fca400c3fb017a6d6db31353d21813986127034fd0b078fc93c9b",
+        "corrections_sha256": "d6d0f6c68613e7723cf201556027bd6f33bdd0953c24914caa113d03edb69b22",
+        "graph_sha256": "11073431030bde60d971f0e5b2c1f9c1e7f7ca2a91519bfe1bb7229cdc6b5c6a",
+        "source_hashes": {
+          "factual_qa.py": "64f4fe0f6a755a86fa35b0434b62ad0ba6b9676b3630ac1f021ccab11bb584e6",
+          "movie_agent.py": "97f889b29491e69d7267b702c2e799088bbdf3e48a4ad2fada2ed96792be0592",
+          "llm_client.py": "a624c94c3adc556fa0eb158e2caf7704254132444af756ae6a919da8eef1fc1a",
+          "knowledge_graph.py": "898140ab18cadf743e1f1a2af95c5cc0bbc3a6e3bdb0a8f99f120f7086e822d5",
+          "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18",
+          "graph_store.py": "6f05320b445f7c59a30648689adce4b7d80ed8cbfb7d17d4df889448ff6f0c02",
+          "main.py": "9b4b46e8d56d23c5c7c26a27d60b5ecf12dd123290144ff9ff88d07f48c58c0c",
+          "stage3_agent.py": "49c0643e95e09d65d8e137bbc3643be33c23b2a98bfb7255db27490c5e01eeb2",
+          "local_api.py": "f5cabde326265873f9fe59c4798263e460b33e41ed018b423e500a0efcdaf78e",
+          "guardrails.py": "b93dac44d34acd2619e480b9721331d77f6a2bf1d22d0e6a9afc17313060a1b0",
+          "speakeasy_client.py": "b413ef41fb4eea1b3c9f96cd1ba76d6b3909338116a4816e9f58114d30e44f1a"
+        },
+        "build_script_sha256": "c96a105066270ed585882009742e9833ad9ca13eb2451ad69c97ebf1508fb8b5",
+        "replaced_records": 101,
+        "correction_counts": {
+          "complete_graph_answer_set": 3000,
+          "explicit_film_context_and_paired_quotes": 3000,
+          "replace_platform_claim_with_distributor_relation": 114,
+          "replace_remake_claim_with_derivative_work_relation": 321,
+          "replace_tag_text_with_distinct_count": 473,
+          "resolved_title_year_suffix": 169,
+          "add_release_year_disambiguation": 165,
+          "graph_only_same_relation_replacement": 101,
+          "ambiguous_original_film_title": 30,
+          "duplicate_entity_relation": 43
+        },
+        "relation_counts": {
+          "director": 5,
+          "screenwriter": 27,
+          "composer": 57,
+          "production_company": 438,
+          "distributor": 114,
+          "filming_location": 478,
+          "derivative_work": 321,
+          "user_rating": 479,
+          "count_tags": 473,
+          "editor": 223,
+          "cinematographer": 62,
+          "cast": 20,
+          "narrative_location": 247,
+          "producer": 50,
+          "original_language": 6
+        },
+        "note": "Corrected graph-grounded coverage suite, not a production sample. Original relation counts retained; graph-only replacements recorded. No agent imports or inference during construction."
+      },
+      "validation_sha256": "79e42fd6bc9ce925760d1008cd7248881b086bfa20f9db3f61d937711ffb2426",
+      "benchmark_script_sha256": "dd0da34caf4f405e166d6626fdb404b6c4557bec65091ec1df66a525d43d4417",
+      "scoring_script_sha256": "0761f2d539e88489f573b85a736d6e6c0bca7f117e0839ae6f82c645fb7fdcfc",
+      "note": "All cases frozen and independently validated before inference; only natural-language input is sent. Sequential requests; no model/source tuning during run."
+    }
+  }
+}

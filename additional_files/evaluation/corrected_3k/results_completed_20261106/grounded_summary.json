@@ -1,0 +1,196 @@
+{
+  "timestamp": "2026-11-06T18:51:28.925359+00:00",
+  "server": {
+    "status": "ready",
+    "engine": "llm",
+    "model": "Qwen/Qwen3.5-4B",
+    "device": "cuda",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "version": "capabilities-v2",
+    "source_hashes": {
+      "movie_agent.py": "97f889b29491e69d7267b702c2e799088bbdf3e48a4ad2fada2ed96792be0592",
+      "graph_store.py": "6f05320b445f7c59a30648689adce4b7d80ed8cbfb7d17d4df889448ff6f0c02",
+      "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+    }
+  },
+  "suite_sha256": "c51a48bdf19fca400c3fb017a6d6db31353d21813986127034fd0b078fc93c9b",
+  "n": 3000,
+  "passed": 2966,
+  "pass_rate": 0.9886666666666667,
+  "classification_accuracy": 1.0,
+  "errors": 9,
+  "routes": {
+    "unsupported_query": 4,
+    "knowledge_graph": 2983,
+    "clarification": 4,
+    "error": 9
+  },
+  "latency_ms": {
+    "mean": 3557.6301633333333,
+    "median": 3520.64,
+    "p95": 4108.76,
+    "max": 10031.69
+  },
+  "groups": {
+    "cast": {
+      "n": 20,
+      "passed": 20,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "cinematographer": {
+      "n": 62,
+      "passed": 61,
+      "pass_rate": 0.9838709677419355,
+      "classification_accuracy": 1.0
+    },
+    "composer": {
+      "n": 57,
+      "passed": 55,
+      "pass_rate": 0.9649122807017544,
+      "classification_accuracy": 1.0
+    },
+    "count_tags": {
+      "n": 473,
+      "passed": 472,
+      "pass_rate": 0.9978858350951374,
+      "classification_accuracy": 1.0
+    },
+    "derivative_work": {
+      "n": 321,
+      "passed": 305,
+      "pass_rate": 0.9501557632398754,
+      "classification_accuracy": 1.0
+    },
+    "director": {
+      "n": 5,
+      "passed": 4,
+      "pass_rate": 0.8,
+      "classification_accuracy": 1.0
+    },
+    "distributor": {
+      "n": 114,
+      "passed": 114,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "editor": {
+      "n": 223,
+      "passed": 223,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "filming_location": {
+      "n": 478,
+      "passed": 471,
+      "pass_rate": 0.9853556485355649,
+      "classification_accuracy": 1.0
+    },
+    "narrative_location": {
+      "n": 247,
+      "passed": 247,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "original_language": {
+      "n": 6,
+      "passed": 6,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "producer": {
+      "n": 50,
+      "passed": 50,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "production_company": {
+      "n": 438,
+      "passed": 435,
+      "pass_rate": 0.9931506849315068,
+      "classification_accuracy": 1.0
+    },
+    "screenwriter": {
+      "n": 27,
+      "passed": 26,
+      "pass_rate": 0.9629629629629629,
+      "classification_accuracy": 1.0
+    },
+    "user_rating": {
+      "n": 479,
+      "passed": 477,
+      "pass_rate": 0.9958246346555324,
+      "classification_accuracy": 1.0
+    }
+  },
+  "exact_graph_answer_rate": 0.9913333333333333,
+  "text_all_reference_answers_rate": 0.9923333333333333,
+  "query_visible_rate": 0.9943333333333333,
+  "multi_answer_cases": 503,
+  "multi_answer_pass_rate": 0.9860834990059643,
+  "directions": {
+    "count": {
+      "n": 473,
+      "passed": 472
+    },
+    "outgoing": {
+      "n": 2527,
+      "passed": 2494
+    }
+  },
+  "frozen_answer_passed": 2968,
+  "frozen_answer_pass_rate": 0.9893333333333333,
+  "additional_grounding_failures": [
+    {
+      "id": "D2356",
+      "input": "Where was the film \"Author! Author!\" filmed?",
+      "expected_property": "P915",
+      "observed_plan": {
+        "operation": "lookup",
+        "entity": "Q646972",
+        "property": "P840",
+        "direction": "outgoing"
+      },
+      "expected_answers": [
+        "New York City"
+      ],
+      "observed_answers": [
+        "New York City"
+      ]
+    },
+    {
+      "id": "D2510",
+      "input": "Where was the film \"Bad Boys\" released in 1983 filmed?",
+      "expected_property": "P915",
+      "observed_plan": {
+        "operation": "lookup",
+        "entity": "Q798650",
+        "property": "P840",
+        "direction": "outgoing"
+      },
+      "expected_answers": [
+        "Chicago"
+      ],
+      "observed_answers": [
+        "Chicago"
+      ]
+    }
+  ],
+  "total_request_seconds": 10672.89049,
+  "imported_prefix_count": 290,
+  "provenance": {
+    "audit_script_sha256": "8c1d625a9757b4f9df76487beab57d57ef191bfb77eb4925a56e7485a7686c6f",
+    "responses_sha256": "7471d7b4f3601fcfd6f8433cdbb06615b803926c1689de29fda6e54b3b6d349a",
+    "note": "Post-inference audit of every executed query against its reference entity, relation and operation; frozen answer scores and raw traces are unchanged."
+  },
+  "correction_subsets": {
+    "retained_subjects": {
+      "n": 2899,
+      "passed": 2868
+    },
+    "replaced_records": {
+      "n": 101,
+      "passed": 98
+    }
+  }
+}

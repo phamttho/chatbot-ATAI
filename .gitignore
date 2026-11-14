@@ -1,20 +1,24 @@
 .idea/
+.venv/
 __pycache__/
 *.py[cod]
-.venv/
 .DS_Store
 .env
+.cache/
 
-# Do not commit the downloaded course dataset.
+# Do not commit downloaded course data or model weights.
 data/*
 !data/README.md
 !data/.gitkeep
-
-*.zip
-
-/additional_files/data/graph.nt
-backups/
-evaluation/
-run_stage3_local.py
+additional_files/data/graph.nt
 additional_files/models/
 *.safetensors
+*.zip
+
+backups/
+/evaluation/
+run_stage3_local.py
+
+# Runtime output
+*.log
+*.pid

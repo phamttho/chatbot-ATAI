@@ -1,0 +1,568 @@
+{
+  "health": {
+    "status": "ready",
+    "engine": "llm",
+    "model": "Qwen/Qwen3.5-4B",
+    "device": "cuda",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "version": "capabilities-v2",
+    "source_hashes": {
+      "movie_agent.py": "5f18094a25707435ffe4383fc746f5ecd266e3941af3c281ec572777154c837a",
+      "graph_store.py": "6f05320b445f7c59a30648689adce4b7d80ed8cbfb7d17d4df889448ff6f0c02",
+      "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+    }
+  },
+  "results": [
+    {
+      "id": "Q3",
+      "question": "Who composed the music for 'Gravity'?",
+      "response": {
+        "query": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX atai: <http://ddis.ch/atai/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nSELECT DISTINCT ?answer WHERE { wd:Q2579784 wdt:P86 ?answer . }",
+        "answers": [
+          "Steven Price"
+        ],
+        "values": [
+          "http://www.wikidata.org/entity/Q15104233"
+        ],
+        "candidates": [
+          {
+            "id": "Q2579784",
+            "label": "Gravity",
+            "outgoing": [
+              "P1040",
+              "P136",
+              "P1411",
+              "P1434",
+              "P1552",
+              "P161",
+              "P162",
+              "P1657",
+              "P166",
+              "P175",
+              "P1889",
+              "P1981",
+              "P2061",
+              "P2079",
+              "P2142",
+              "P2363",
+              "P2515",
+              "P2554",
+              "P2629",
+              "P2684",
+              "P272",
+              "P2756",
+              "P2758",
+              "P31",
+              "P3216",
+              "P3306",
+              "P3402",
+              "P344",
+              "P345",
+              "P364",
+              "P3650",
+              "P3834",
+              "P406",
+              "P437",
+              "P462",
+              "P495",
+              "P5021",
+              "P5201",
+              "P57",
+              "P577",
+              "P58",
+              "P5970",
+              "P6658",
+              "P750",
+              "P840",
+              "P86",
+              "P915",
+              "P921",
+              "tag"
+            ],
+            "incoming": [
+              "P1445",
+              "P800"
+            ],
+            "match_score": 114,
+            "matched_name": "gravity",
+            "is_film": true,
+            "release_dates": [
+              "2013-08-28"
+            ]
+          },
+          {
+            "id": "Q11412",
+            "label": "gravity",
+            "outgoing": [
+              "P1343",
+              "P2579",
+              "P31",
+              "P61"
+            ],
+            "incoming": [
+              "P101",
+              "P1552",
+              "P1889",
+              "P2650"
+            ],
+            "match_score": 114,
+            "matched_name": "gravity",
+            "is_film": false,
+            "release_dates": []
+          },
+          {
+            "id": "Q638",
+            "label": "music",
+            "outgoing": [
+              "P1056",
+              "P1343",
+              "P1552",
+              "P1889",
+              "P2184",
+              "P2579",
+              "P279",
+              "P3095",
+              "P31"
+            ],
+            "incoming": [
+              "P101",
+              "P1056",
+              "P2650",
+              "P366",
+              "P425",
+              "P452",
+              "P641",
+              "P800",
+              "P812",
+              "P825",
+              "P921"
+            ],
+            "match_score": 14,
+            "matched_name": "music",
+            "is_film": false,
+            "release_dates": []
+          }
+        ],
+        "planner_output": "{\"operation\":\"lookup\",\"entity\":\"Q2579784\",\"property\":\"P86\",\"direction\":\"outgoing\"}",
+        "classifier_output": "{\"labels\":[\"safe_in_scope\"],\"intent\":\"factual\"}",
+        "category": "safe_in_scope",
+        "labels": [
+          "safe_in_scope"
+        ],
+        "intent": "factual",
+        "query_plan": {
+          "operation": "lookup",
+          "entity": "Q2579784",
+          "property": "P86",
+          "direction": "outgoing"
+        },
+        "route": "knowledge_graph",
+        "answer": "The factual answer is: Steven Price",
+        "llm_calls": 2,
+        "latency_ms": 4245.77
+      }
+    },
+    {
+      "id": "Q7",
+      "question": "What are the distribution platforms of 'Sergeant York'?",
+      "response": {
+        "query": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX atai: <http://ddis.ch/atai/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nSELECT DISTINCT ?answer WHERE { wd:Q939424 wdt:P750 ?answer . }",
+        "answers": [
+          "Netflix",
+          "Warner Bros."
+        ],
+        "values": [
+          "http://www.wikidata.org/entity/Q126399",
+          "http://www.wikidata.org/entity/Q907311"
+        ],
+        "candidates": [
+          {
+            "id": "Q939424",
+            "label": "Sergeant York",
+            "outgoing": [
+              "P1040",
+              "P136",
+              "P1411",
+              "P161",
+              "P162",
+              "P166",
+              "P2554",
+              "P272",
+              "P2758",
+              "P31",
+              "P344",
+              "P345",
+              "P361",
+              "P364",
+              "P437",
+              "P462",
+              "P495",
+              "P57",
+              "P577",
+              "P58",
+              "P750",
+              "P840",
+              "P86",
+              "tag"
+            ],
+            "incoming": [],
+            "match_score": 124,
+            "matched_name": "sergeant york",
+            "is_film": true,
+            "release_dates": [
+              "1941-01-01"
+            ]
+          }
+        ],
+        "planner_output": "{\"operation\":\"lookup\",\"entity\":\"Q939424\",\"property\":\"P750\",\"direction\":\"outgoing\"}",
+        "classifier_output": "{\"labels\":[\"safe_in_scope\"],\"intent\":\"factual\"}",
+        "category": "safe_in_scope",
+        "labels": [
+          "safe_in_scope"
+        ],
+        "intent": "factual",
+        "query_plan": {
+          "operation": "lookup",
+          "entity": "Q939424",
+          "property": "P750",
+          "direction": "outgoing"
+        },
+        "route": "knowledge_graph",
+        "answer": "The factual answer is: Netflix and Warner Bros.",
+        "llm_calls": 2,
+        "latency_ms": 3113.2
+      }
+    },
+    {
+      "id": "Q8",
+      "question": "Who is the composer of Irishman?",
+      "response": {
+        "query": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX atai: <http://ddis.ch/atai/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nSELECT DISTINCT ?answer WHERE { wd:Q29057443 wdt:P86 ?answer . }",
+        "answers": [
+          "Robbie Robertson"
+        ],
+        "values": [
+          "http://www.wikidata.org/entity/Q117249"
+        ],
+        "candidates": [
+          {
+            "id": "Q29057443",
+            "label": "The Irishman",
+            "outgoing": [
+              "P1040",
+              "P136",
+              "P1411",
+              "P144",
+              "P161",
+              "P162",
+              "P1657",
+              "P166",
+              "P180",
+              "P2142",
+              "P2363",
+              "P264",
+              "P2684",
+              "P2756",
+              "P31",
+              "P3216",
+              "P3306",
+              "P344",
+              "P345",
+              "P364",
+              "P406",
+              "P437",
+              "P495",
+              "P5021",
+              "P57",
+              "P577",
+              "P58",
+              "P5970",
+              "P750",
+              "P840",
+              "P86"
+            ],
+            "incoming": [
+              "P4969",
+              "P800"
+            ],
+            "match_score": 10,
+            "matched_name": "irishman",
+            "is_film": true,
+            "release_dates": [
+              "2019-09-27"
+            ]
+          }
+        ],
+        "planner_output": "{\"operation\":\"lookup\",\"entity\":\"Q29057443\",\"property\":\"P86\",\"direction\":\"outgoing\"}",
+        "classifier_output": "{\"labels\":[\"safe_in_scope\"],\"intent\":\"factual\"}",
+        "category": "safe_in_scope",
+        "labels": [
+          "safe_in_scope"
+        ],
+        "intent": "factual",
+        "query_plan": {
+          "operation": "lookup",
+          "entity": "Q29057443",
+          "property": "P86",
+          "direction": "outgoing"
+        },
+        "route": "knowledge_graph",
+        "answer": "The factual answer is: Robbie Robertson",
+        "llm_calls": 2,
+        "latency_ms": 3260.57
+      }
+    },
+    {
+      "id": "Q10",
+      "question": "How many user tags does the movie 'Pulp Fiction' have?",
+      "response": {
+        "query": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX atai: <http://ddis.ch/atai/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nSELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { wd:Q104123 atai:tag ?answer . }",
+        "answers": [
+          "25"
+        ],
+        "values": [
+          "25"
+        ],
+        "candidates": [
+          {
+            "id": "Q104123",
+            "label": "Pulp Fiction",
+            "outgoing": [
+              "P1040",
+              "P10664",
+              "P136",
+              "P1411",
+              "P1431",
+              "P156",
+              "P161",
+              "P162",
+              "P1657",
+              "P166",
+              "P195",
+              "P1981",
+              "P2061",
+              "P2142",
+              "P2283",
+              "P2515",
+              "P2554",
+              "P2629",
+              "P2637",
+              "P2684",
+              "P272",
+              "P2747",
+              "P2756",
+              "P2758",
+              "P31",
+              "P3306",
+              "P344",
+              "P345",
+              "P361",
+              "P364",
+              "P406",
+              "P437",
+              "P462",
+              "P495",
+              "P5021",
+              "P57",
+              "P577",
+              "P58",
+              "P5970",
+              "P674",
+              "P750",
+              "P840",
+              "P915",
+              "P921",
+              "P942",
+              "tag"
+            ],
+            "incoming": [
+              "P138",
+              "P1441",
+              "P155",
+              "P800",
+              "P941"
+            ],
+            "match_score": 124,
+            "matched_name": "pulp fiction",
+            "is_film": true,
+            "release_dates": [
+              "1994-01-01"
+            ]
+          },
+          {
+            "id": "Q3744528",
+            "label": "Fiction",
+            "outgoing": [
+              "P136",
+              "P1552",
+              "P31",
+              "P361",
+              "P577"
+            ],
+            "incoming": [],
+            "match_score": 14,
+            "matched_name": "fiction",
+            "is_film": false,
+            "release_dates": [
+              "2008-11-05"
+            ]
+          },
+          {
+            "id": "Q8253972",
+            "label": "fiction",
+            "outgoing": [
+              "P1889",
+              "P279",
+              "P460"
+            ],
+            "incoming": [
+              "P101",
+              "P921"
+            ],
+            "match_score": 14,
+            "matched_name": "fiction",
+            "is_film": false,
+            "release_dates": []
+          }
+        ],
+        "planner_output": "{\"operation\":\"count\",\"entity\":\"Q104123\",\"property\":\"tag\",\"direction\":\"outgoing\"}",
+        "classifier_output": "{\"labels\":[\"safe_in_scope\"],\"intent\":\"factual\"}",
+        "category": "safe_in_scope",
+        "labels": [
+          "safe_in_scope"
+        ],
+        "intent": "factual",
+        "query_plan": {
+          "operation": "count",
+          "entity": "Q104123",
+          "property": "tag",
+          "direction": "outgoing"
+        },
+        "route": "knowledge_graph",
+        "answer": "The factual answer is: 25",
+        "llm_calls": 2,
+        "latency_ms": 3317.9
+      }
+    },
+    {
+      "id": "Q12",
+      "question": "What are the remakes of 'Yojimbo'?",
+      "response": {
+        "query": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX atai: <http://ddis.ch/atai/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nSELECT DISTINCT ?answer WHERE { wd:Q20475 wdt:P4969 ?answer . }",
+        "answers": [
+          "A Fistful of Dollars",
+          "Django",
+          "Last Man Standing"
+        ],
+        "values": [
+          "http://www.wikidata.org/entity/Q1425639",
+          "http://www.wikidata.org/entity/Q241811",
+          "http://www.wikidata.org/entity/Q76479"
+        ],
+        "candidates": [
+          {
+            "id": "Q20475",
+            "label": "Yojimbo",
+            "outgoing": [
+              "P1040",
+              "P136",
+              "P1411",
+              "P144",
+              "P156",
+              "P161",
+              "P162",
+              "P1981",
+              "P2061",
+              "P2363",
+              "P2554",
+              "P2684",
+              "P272",
+              "P2758",
+              "P31",
+              "P344",
+              "P345",
+              "P364",
+              "P437",
+              "P462",
+              "P495",
+              "P4969",
+              "P5021",
+              "P5150",
+              "P57",
+              "P577",
+              "P58",
+              "P5970",
+              "P750",
+              "P840",
+              "P86",
+              "P915",
+              "tag"
+            ],
+            "incoming": [
+              "P144",
+              "P155",
+              "P2860",
+              "P800"
+            ],
+            "match_score": 114,
+            "matched_name": "yojimbo",
+            "is_film": true,
+            "release_dates": [
+              "1961-01-01"
+            ]
+          }
+        ],
+        "planner_output": "{\"operation\":\"lookup\",\"entity\":\"Q20475\",\"property\":\"P4969\",\"direction\":\"incoming\"}",
+        "classifier_output": "{\"labels\":[\"safe_in_scope\"],\"intent\":\"factual\"}",
+        "category": "safe_in_scope",
+        "labels": [
+          "safe_in_scope"
+        ],
+        "intent": "factual",
+        "query_plan": {
+          "operation": "lookup",
+          "entity": "Q20475",
+          "property": "P4969",
+          "direction": "incoming"
+        },
+        "route": "knowledge_graph",
+        "answer": "The factual answer is: A Fistful of Dollars and Django and Last Man Standing",
+        "llm_calls": 2,
+        "latency_ms": 3147.32
+      }
+    },
+    {
+      "id": "Q15",
+      "question": "Which movies did not have a user rating below 9.9?",
+      "response": {
+        "query": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX atai: <http://ddis.ch/atai/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nSELECT DISTINCT ?answer WHERE { ?answer atai:rating ?rating . FILTER(?rating >= 9.9) }",
+        "answers": [
+          "Acidulous Midtime Shed",
+          "Yarest Aprepitant Grind"
+        ],
+        "values": [
+          "http://www.wikidata.org/entity/Q10850238456619979",
+          "http://www.wikidata.org/entity/Q98197272278084276"
+        ],
+        "candidates": [],
+        "planner_output": "{\"operation\":\"filter\",\"property\":\"rating\",\"comparison\":\"gte\",\"value\":9.9}",
+        "classifier_output": "{\"labels\":[\"safe_in_scope\"],\"intent\":\"factual\"}",
+        "category": "safe_in_scope",
+        "labels": [
+          "safe_in_scope"
+        ],
+        "intent": "factual",
+        "query_plan": {
+          "operation": "filter",
+          "property": "rating",
+          "comparison": "gte",
+          "value": 9.9
+        },
+        "route": "knowledge_graph",
+        "answer": "The factual answer is: Acidulous Midtime Shed and Yarest Aprepitant Grind",
+        "llm_calls": 2,
+        "latency_ms": 2500.63
+      }
+    }
+  ]
+}

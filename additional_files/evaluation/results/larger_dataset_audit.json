@@ -1,0 +1,4824 @@
+[
+  {
+    "id": "D2658",
+    "title": "Another Thin Man",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1271867"
+    ],
+    "expected_terms": [
+      "revenge"
+    ],
+    "matches": {
+      "revenge": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "revenge",
+          "raw_value": "revenge"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D0198",
+    "title": "Autumn Sonata",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q322572"
+    ],
+    "expected_terms": [
+      "Höstsonaten"
+    ],
+    "matches": {
+      "Höstsonaten": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Höstsonaten",
+          "raw_value": "http://www.wikidata.org/entity/Q43234031"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Höstsonaten",
+          "raw_value": "http://www.wikidata.org/entity/Q43234031"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0362",
+    "title": "2:37",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q221992"
+    ],
+    "expected_terms": [
+      "Australia"
+    ],
+    "matches": {
+      "Australia": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P495",
+          "property_label": "country of origin",
+          "value": "Australia",
+          "raw_value": "http://www.wikidata.org/entity/Q408"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Australia",
+          "raw_value": "http://www.wikidata.org/entity/Q408"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0548",
+    "title": "First Blood",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q244963",
+      "http://www.wikidata.org/entity/Q1419287",
+      "http://www.wikidata.org/entity/Q1419294",
+      "http://www.wikidata.org/entity/Q111700939"
+    ],
+    "expected_terms": [
+      "Sly Marbo"
+    ],
+    "matches": {
+      "Sly Marbo": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Sly Marbo",
+          "raw_value": "http://www.wikidata.org/entity/Q52153976"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Sly Marbo",
+          "raw_value": "http://www.wikidata.org/entity/Q52153976"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0963",
+    "title": "Minority Report",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q19904394",
+      "http://www.wikidata.org/entity/Q244604"
+    ],
+    "expected_terms": [
+      "Minority Report"
+    ],
+    "matches": {
+      "Minority Report": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Minority Report",
+          "raw_value": "http://www.wikidata.org/entity/Q244604"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Minority Report",
+          "raw_value": "http://www.wikidata.org/entity/Q1811417"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Minority Report",
+          "raw_value": "Minority Report"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Minority Report",
+          "raw_value": "http://www.wikidata.org/entity/Q1811417"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Minority Report",
+          "raw_value": "http://www.wikidata.org/entity/Q244604"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P406",
+          "property_label": "soundtrack release",
+          "value": "Minority Report – Original Motion Picture Score",
+          "raw_value": "http://www.wikidata.org/entity/Q3315574"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Minority Report: Everybody Runs",
+          "raw_value": "http://www.wikidata.org/entity/Q3315577"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Minority Report",
+          "raw_value": "http://www.wikidata.org/entity/Q19904394"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Minority Report",
+          "raw_value": "http://www.wikidata.org/entity/Q1811417"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Minority Report",
+          "raw_value": "Minority Report"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Minority Report",
+          "raw_value": "http://www.wikidata.org/entity/Q19904394"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P1269",
+          "property_label": "facet of",
+          "value": "technologies in Minority Report",
+          "raw_value": "http://www.wikidata.org/entity/Q7692543"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Minority Report",
+          "raw_value": "http://www.wikidata.org/entity/Q1811417"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Minority Report: Everybody Runs",
+          "raw_value": "http://www.wikidata.org/entity/Q3315577"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P361",
+          "property_label": "part of",
+          "value": "themes in Minority Report",
+          "raw_value": "http://www.wikidata.org/entity/Q2894957"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0032",
+    "title": "...And Justice for All",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q426517"
+    ],
+    "expected_terms": [
+      "Netflix"
+    ],
+    "matches": {
+      "Netflix": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P750",
+          "property_label": "distributed by",
+          "value": "Netflix",
+          "raw_value": "http://www.wikidata.org/entity/Q907311"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2530",
+    "title": "Angel-A",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q531362"
+    ],
+    "expected_terms": [
+      "magical_realism"
+    ],
+    "matches": {
+      "magical_realism": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "magical_realism",
+          "raw_value": "magical_realism"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D1332",
+    "title": "Airport 1975",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q392924"
+    ],
+    "expected_terms": [
+      "Salt Lake City"
+    ],
+    "matches": {
+      "Salt Lake City": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Salt Lake City",
+          "raw_value": "http://www.wikidata.org/entity/Q23337"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1663",
+    "title": "Against the Law",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1443274"
+    ],
+    "expected_terms": [
+      "crime"
+    ],
+    "matches": {
+      "crime": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "crime",
+          "raw_value": "crime"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P136",
+          "property_label": "genre",
+          "value": "crime film",
+          "raw_value": "http://www.wikidata.org/entity/Q959790"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D1141",
+    "title": "A Nightmare on Elm Street 2: Freddy's Revenge",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1145824"
+    ],
+    "expected_terms": [
+      "New Line Cinema's House of Horror"
+    ],
+    "matches": {
+      "New Line Cinema's House of Horror": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "New Line Cinema's House of Horror",
+          "raw_value": "http://www.wikidata.org/entity/Q7009848"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2745",
+    "title": "Anatomy of a Fall",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q117037697"
+    ],
+    "expected_terms": [
+      "Les Films de Pierre"
+    ],
+    "matches": {
+      "Les Films de Pierre": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Les Films de Pierre",
+          "raw_value": "http://www.wikidata.org/entity/Q15242433"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0048",
+    "title": "10 to Midnight",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2351514"
+    ],
+    "expected_terms": [
+      "Santa Monica"
+    ],
+    "matches": {
+      "Santa Monica": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Santa Monica",
+          "raw_value": "http://www.wikidata.org/entity/Q47164"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0103",
+    "title": "100 Bloody Acres",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q15040679"
+    ],
+    "expected_terms": [
+      "Australia"
+    ],
+    "matches": {
+      "Australia": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Australia",
+          "raw_value": "http://www.wikidata.org/entity/Q408"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P495",
+          "property_label": "country of origin",
+          "value": "Australia",
+          "raw_value": "http://www.wikidata.org/entity/Q408"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0464",
+    "title": "40 Days and 40 Nights",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q232219"
+    ],
+    "expected_terms": [
+      "Working Title Films"
+    ],
+    "matches": {
+      "Working Title Films": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Working Title Films",
+          "raw_value": "http://www.wikidata.org/entity/Q2060840"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0881",
+    "title": "A Friend of the Deceased",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q12144422"
+    ],
+    "expected_terms": [
+      "Dovzhenko Film Studios"
+    ],
+    "matches": {
+      "Dovzhenko Film Studios": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Dovzhenko Film Studios",
+          "raw_value": "http://www.wikidata.org/entity/Q577589"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1117",
+    "title": "Platoon",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q190643",
+      "http://www.wikidata.org/entity/Q3392005",
+      "http://www.wikidata.org/entity/Q135645659",
+      "http://www.wikidata.org/entity/Q106090294",
+      "http://www.wikidata.org/entity/Q7202442"
+    ],
+    "expected_terms": [
+      "Platoon"
+    ],
+    "matches": {
+      "Platoon": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q3392005"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q106090294"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q7202442"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Platoon",
+          "raw_value": "Platoon"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P406",
+          "property_label": "soundtrack release",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q135645659"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q7202442"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q3392005"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q106090294"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q190643"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Platoon",
+          "raw_value": "Platoon"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q190643"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Platoon",
+          "raw_value": "Platoon"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P406",
+          "property_label": "soundtrack release",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q190643"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q190643"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Platoon",
+          "raw_value": "Platoon"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q190643"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q190643"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Platoon",
+          "raw_value": "Platoon"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Platoon",
+          "raw_value": "http://www.wikidata.org/entity/Q190643"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0563",
+    "title": "45 Years",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q18642424"
+    ],
+    "expected_terms": [
+      "Curzon Artificial Eye"
+    ],
+    "matches": {
+      "Curzon Artificial Eye": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P750",
+          "property_label": "distributed by",
+          "value": "Curzon Artificial Eye",
+          "raw_value": "http://www.wikidata.org/entity/Q4801022"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0702",
+    "title": "A Christmas Tale (2021)",
+    "exact_label_entities": [],
+    "expected_terms": [
+      "SF Studios"
+    ],
+    "matches": {
+      "SF Studios": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1267",
+    "title": "Against the Law",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1443274"
+    ],
+    "expected_terms": [
+      "Los Angeles"
+    ],
+    "matches": {
+      "Los Angeles": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Los Angeles",
+          "raw_value": "http://www.wikidata.org/entity/Q65"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2370",
+    "title": "An Awfully Big Adventure",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2549305",
+      "http://www.wikidata.org/entity/Q4003583"
+    ],
+    "expected_terms": [
+      "comedy"
+    ],
+    "matches": {
+      "comedy": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P136",
+          "property_label": "genre",
+          "value": "comedy drama",
+          "raw_value": "http://www.wikidata.org/entity/Q859369"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "comedy",
+          "raw_value": "comedy"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D0547",
+    "title": "5 Fingers",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1193261"
+    ],
+    "expected_terms": [
+      "James B. Clark"
+    ],
+    "matches": {
+      "James B. Clark": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "James B. Clark",
+          "raw_value": "http://www.wikidata.org/entity/Q3276795"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1389",
+    "title": "A Simple Life",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q167432"
+    ],
+    "expected_terms": [
+      "Kwang Cho-Luang"
+    ],
+    "matches": {
+      "Kwang Cho-Luang": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Kwang Cho-Luang",
+          "raw_value": "http://www.wikidata.org/entity/Q15895583"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2785",
+    "title": "Beastly",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q813057",
+      "http://www.wikidata.org/entity/Q952392"
+    ],
+    "expected_terms": [
+      "Montreal"
+    ],
+    "matches": {
+      "Montreal": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Montreal",
+          "raw_value": "http://www.wikidata.org/entity/Q340"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0011",
+    "title": "'38 – Vienna Before the Fall",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q228659"
+    ],
+    "expected_terms": [
+      "Bert Grund"
+    ],
+    "matches": {
+      "Bert Grund": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P86",
+          "property_label": "composer",
+          "value": "Bert Grund",
+          "raw_value": "http://www.wikidata.org/entity/Q827358"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0992",
+    "title": "Arthur",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q627438",
+      "http://www.wikidata.org/entity/Q27180048",
+      "http://www.wikidata.org/entity/Q113119508",
+      "http://www.wikidata.org/entity/Q128701440",
+      "http://www.wikidata.org/entity/Q60429786"
+    ],
+    "expected_terms": [
+      "6.9"
+    ],
+    "matches": {
+      "6.9": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "6.9",
+          "raw_value": "6.9"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2925",
+    "title": "Benny & Joon",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q793074"
+    ],
+    "expected_terms": [
+      "Metaline Falls"
+    ],
+    "matches": {
+      "Metaline Falls": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Metaline Falls",
+          "raw_value": "http://www.wikidata.org/entity/Q1507975"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2843",
+    "title": "Amnesia",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q11072",
+      "http://www.wikidata.org/entity/Q5672882"
+    ],
+    "expected_terms": [
+      "Chile"
+    ],
+    "matches": {
+      "Chile": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Chile",
+          "raw_value": "http://www.wikidata.org/entity/Q298"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P495",
+          "property_label": "country of origin",
+          "value": "Chile",
+          "raw_value": "http://www.wikidata.org/entity/Q298"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2074",
+    "title": "Albert Nobbs",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q426631"
+    ],
+    "expected_terms": [
+      "Amblin Entertainment"
+    ],
+    "matches": {
+      "Amblin Entertainment": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Amblin Entertainment",
+          "raw_value": "http://www.wikidata.org/entity/Q457893"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0023",
+    "title": "10 Items or Less",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q169089"
+    ],
+    "expected_terms": [
+      "6.6"
+    ],
+    "matches": {
+      "6.6": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "6.6",
+          "raw_value": "6.6"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0318",
+    "title": "27 Missing Kisses",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2604872"
+    ],
+    "expected_terms": [
+      "Moco Films"
+    ],
+    "matches": {
+      "Moco Films": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Moco Films",
+          "raw_value": "http://www.wikidata.org/entity/Q98215498"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2351",
+    "title": "Critters 2: The Main Course",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q739849"
+    ],
+    "expected_terms": [
+      "5.5"
+    ],
+    "matches": {
+      "5.5": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "5.5",
+          "raw_value": "5.5"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2059",
+    "title": "Cimarron (1931)",
+    "exact_label_entities": [],
+    "expected_terms": [
+      "5.9"
+    ],
+    "matches": {
+      "5.9": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2991",
+    "title": "Asylum",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q26377",
+      "http://www.wikidata.org/entity/Q543931"
+    ],
+    "expected_terms": [
+      "cult"
+    ],
+    "matches": {
+      "cult": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "cult",
+          "raw_value": "cult"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D1971",
+    "title": "All Is Lost",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2837490"
+    ],
+    "expected_terms": [
+      "flashback"
+    ],
+    "matches": {
+      "flashback": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "flashback",
+          "raw_value": "flashback"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D2114",
+    "title": "April",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q118",
+      "http://www.wikidata.org/entity/Q2858977"
+    ],
+    "expected_terms": [
+      "Bari"
+    ],
+    "matches": {
+      "Bari": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Bari",
+          "raw_value": "http://www.wikidata.org/entity/Q3519"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0951",
+    "title": "Metropolis",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1474926",
+      "http://www.wikidata.org/entity/Q151599",
+      "http://www.wikidata.org/entity/Q3307458"
+    ],
+    "expected_terms": [
+      "The Mediator Between Head and Hands Must Be the Heart"
+    ],
+    "matches": {
+      "The Mediator Between Head and Hands Must Be the Heart": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Mediator Between Head and Hands Must Be the Heart",
+          "raw_value": "http://www.wikidata.org/entity/Q15303608"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Mediator Between Head and Hands Must Be the Heart",
+          "raw_value": "http://www.wikidata.org/entity/Q15303608"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2839",
+    "title": "Aria",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q654154"
+    ],
+    "expected_terms": [
+      "romantic"
+    ],
+    "matches": {
+      "romantic": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "romantic",
+          "raw_value": "romantic"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D0824",
+    "title": "A Murder of Crows Vol. 2",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q5183375922751730"
+    ],
+    "expected_terms": [
+      "New Orleans"
+    ],
+    "matches": {
+      "New Orleans": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "New Orleans",
+          "raw_value": "http://www.wikidata.org/entity/Q34404"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0293",
+    "title": "29th Street",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q578700"
+    ],
+    "expected_terms": [
+      "North Carolina"
+    ],
+    "matches": {
+      "North Carolina": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "North Carolina",
+          "raw_value": "http://www.wikidata.org/entity/Q1454"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1491",
+    "title": "A Song to Remember",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2558515"
+    ],
+    "expected_terms": [
+      "Poland"
+    ],
+    "matches": {
+      "Poland": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Poland",
+          "raw_value": "http://www.wikidata.org/entity/Q36"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2940",
+    "title": "An Imaginary Tale",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q7884117"
+    ],
+    "expected_terms": [
+      "Montreal"
+    ],
+    "matches": {
+      "Montreal": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Montreal",
+          "raw_value": "http://www.wikidata.org/entity/Q340"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Montreal",
+          "raw_value": "http://www.wikidata.org/entity/Q340"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1710",
+    "title": "The Living Daylights",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q3365838",
+      "http://www.wikidata.org/entity/Q272064",
+      "http://www.wikidata.org/entity/Q7747840"
+    ],
+    "expected_terms": [
+      "The Living Daylights"
+    ],
+    "matches": {
+      "The Living Daylights": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "The Living Daylights",
+          "raw_value": "The Living Daylights"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P942",
+          "property_label": "theme music",
+          "value": "The Living Daylights",
+          "raw_value": "http://www.wikidata.org/entity/Q272064"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "The Living Daylights",
+          "raw_value": "The Living Daylights"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Octopussy and The Living Daylights",
+          "raw_value": "http://www.wikidata.org/entity/Q1544697"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P942",
+          "property_label": "theme music",
+          "value": "The Living Daylights",
+          "raw_value": "http://www.wikidata.org/entity/Q3365838"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Living Daylights",
+          "raw_value": "http://www.wikidata.org/entity/Q7747840"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Living Daylights",
+          "raw_value": "http://www.wikidata.org/entity/Q7747840"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Octopussy and The Living Daylights",
+          "raw_value": "http://www.wikidata.org/entity/Q1544697"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Living Daylights",
+          "raw_value": "http://www.wikidata.org/entity/Q272064"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "The Living Daylights",
+          "raw_value": "The Living Daylights"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Living Daylights",
+          "raw_value": "http://www.wikidata.org/entity/Q272064"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2234",
+    "title": "American Ninja 2: The Confrontation",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q464328"
+    ],
+    "expected_terms": [
+      "flashback"
+    ],
+    "matches": {
+      "flashback": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "flashback",
+          "raw_value": "flashback"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D1766",
+    "title": "Adam & Paul",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q4680027"
+    ],
+    "expected_terms": [
+      "Speers Film"
+    ],
+    "matches": {
+      "Speers Film": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Speers Film",
+          "raw_value": "http://www.wikidata.org/entity/Q107920207"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2997",
+    "title": "At Close Range",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q759474"
+    ],
+    "expected_terms": [
+      "murder"
+    ],
+    "matches": {
+      "murder": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "murder",
+          "raw_value": "murder"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D0651",
+    "title": "99.9",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q109478833"
+    ],
+    "expected_terms": [
+      "Pablo Blanco"
+    ],
+    "matches": {
+      "Pablo Blanco": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Pablo Blanco",
+          "raw_value": "http://www.wikidata.org/entity/Q42713313"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1697",
+    "title": "A Woman Like Eve",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q523260"
+    ],
+    "expected_terms": [
+      "Ine Schenkkan"
+    ],
+    "matches": {
+      "Ine Schenkkan": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Ine Schenkkan",
+          "raw_value": "http://www.wikidata.org/entity/Q2499949"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0367",
+    "title": "3 Days in Quiberon",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q47406390"
+    ],
+    "expected_terms": [
+      "Quiberon"
+    ],
+    "matches": {
+      "Quiberon": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "3 Days in Quiberon",
+          "raw_value": "3 Days in Quiberon"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Saint-Pierre-Quiberon",
+          "raw_value": "http://www.wikidata.org/entity/Q127952"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Quiberon",
+          "raw_value": "http://www.wikidata.org/entity/Q128783"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2321",
+    "title": "Alexander's Ragtime Band",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1619977"
+    ],
+    "expected_terms": [
+      "San Francisco"
+    ],
+    "matches": {
+      "San Francisco": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "San Francisco",
+          "raw_value": "http://www.wikidata.org/entity/Q62"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1154",
+    "title": "Battleship Potemkin",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q152350"
+    ],
+    "expected_terms": [
+      "8.0"
+    ],
+    "matches": {
+      "8.0": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0717",
+    "title": "A Cat in the Brain",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q4003829"
+    ],
+    "expected_terms": [
+      "Rome"
+    ],
+    "matches": {
+      "Rome": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Rome",
+          "raw_value": "http://www.wikidata.org/entity/Q220"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2865",
+    "title": "Amy (2015)",
+    "exact_label_entities": [],
+    "expected_terms": [
+      "London"
+    ],
+    "matches": {
+      "London": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1607",
+    "title": "Broadcast News",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1539062"
+    ],
+    "expected_terms": [
+      "7.2"
+    ],
+    "matches": {
+      "7.2": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "7.2",
+          "raw_value": "7.2"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1783",
+    "title": "Alatriste",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1421902"
+    ],
+    "expected_terms": [
+      "revenge"
+    ],
+    "matches": {
+      "revenge": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "revenge",
+          "raw_value": "revenge"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D0857",
+    "title": "A Fistful of Dollars",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q76479",
+      "http://www.wikidata.org/entity/Q127691740"
+    ],
+    "expected_terms": [
+      "Constantin Film"
+    ],
+    "matches": {
+      "Constantin Film": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Constantin Film",
+          "raw_value": "http://www.wikidata.org/entity/Q564960"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1852",
+    "title": "Alice Adams",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1619523"
+    ],
+    "expected_terms": [
+      "melodrama"
+    ],
+    "matches": {
+      "melodrama": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "melodrama",
+          "raw_value": "melodrama"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D0949",
+    "title": "A Tale of Two Sisters",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q255260"
+    ],
+    "expected_terms": [
+      "South Korea"
+    ],
+    "matches": {
+      "South Korea": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P495",
+          "property_label": "country of origin",
+          "value": "South Korea",
+          "raw_value": "http://www.wikidata.org/entity/Q884"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "South Korea",
+          "raw_value": "http://www.wikidata.org/entity/Q884"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "South Korea",
+          "raw_value": "http://www.wikidata.org/entity/Q884"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1299",
+    "title": "A Simple Life",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q167432"
+    ],
+    "expected_terms": [
+      "Sil-Metropole Organisation"
+    ],
+    "matches": {
+      "Sil-Metropole Organisation": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Sil-Metropole Organisation",
+          "raw_value": "http://www.wikidata.org/entity/Q7514003"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0237",
+    "title": "17 Girls",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q200091"
+    ],
+    "expected_terms": [
+      "Guy Lecorne"
+    ],
+    "matches": {
+      "Guy Lecorne": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Guy Lecorne",
+          "raw_value": "http://www.wikidata.org/entity/Q16183718"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0867",
+    "title": "Antwone Fisher",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1566025",
+      "http://www.wikidata.org/entity/Q610339"
+    ],
+    "expected_terms": [
+      "7.3"
+    ],
+    "matches": {
+      "7.3": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "7.3",
+          "raw_value": "7.3"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0131",
+    "title": "Aliens",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q27037928",
+      "http://www.wikidata.org/entity/Q104814",
+      "http://www.wikidata.org/entity/Q4726520",
+      "http://www.wikidata.org/entity/Q20707439",
+      "http://www.wikidata.org/entity/Q27021433"
+    ],
+    "expected_terms": [
+      "Aliens"
+    ],
+    "matches": {
+      "Aliens": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Aliens",
+          "raw_value": "Aliens"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q104814"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Aliens",
+          "raw_value": "Aliens"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q20707439"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q27021433"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q20707439"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q27021433"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q27037928"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Aliens: The Computer Game",
+          "raw_value": "http://www.wikidata.org/entity/Q2262487"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P9899",
+          "property_label": "music created for",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q4726520"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Aliens",
+          "raw_value": "Aliens"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://schema.org/description",
+          "property_label": "node description",
+          "value": "score to the James Cameron film Aliens",
+          "raw_value": "score to the James Cameron film Aliens"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P9899",
+          "property_label": "music created for",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q104814"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q104814"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Aliens",
+          "raw_value": "Aliens"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q104814"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q104814"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Aliens",
+          "raw_value": "Aliens"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Aliens",
+          "raw_value": "http://www.wikidata.org/entity/Q104814"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1848",
+    "title": "A Sunday in the Country 2",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q7139193300942295"
+    ],
+    "expected_terms": [
+      "Netflix"
+    ],
+    "matches": {
+      "Netflix": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P750",
+          "property_label": "distributed by",
+          "value": "Netflix",
+          "raw_value": "http://www.wikidata.org/entity/Q907311"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2896",
+    "title": "Annabelle",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q104771487",
+      "http://www.wikidata.org/entity/Q15733440"
+    ],
+    "expected_terms": [
+      "New Line Cinema"
+    ],
+    "matches": {
+      "New Line Cinema": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "New Line Cinema",
+          "raw_value": "http://www.wikidata.org/entity/Q79202"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2271",
+    "title": "Crackerjack",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q12110058"
+    ],
+    "expected_terms": [
+      "6.8"
+    ],
+    "matches": {
+      "6.8": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "6.8",
+          "raw_value": "6.8"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2546",
+    "title": "All Things Fair",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1675604"
+    ],
+    "expected_terms": [
+      "Sweden"
+    ],
+    "matches": {
+      "Sweden": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Sweden",
+          "raw_value": "http://www.wikidata.org/entity/Q34"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P495",
+          "property_label": "country of origin",
+          "value": "Sweden",
+          "raw_value": "http://www.wikidata.org/entity/Q34"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0226",
+    "title": "200 Cigarettes",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q40071"
+    ],
+    "expected_terms": [
+      "romantic"
+    ],
+    "matches": {
+      "romantic": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "romantic",
+          "raw_value": "romantic"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D2714",
+    "title": "Demons 2",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1269678"
+    ],
+    "expected_terms": [
+      "6.0"
+    ],
+    "matches": {
+      "6.0": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0575",
+    "title": "301",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q488075"
+    ],
+    "expected_terms": [
+      "Bang Eun-jin"
+    ],
+    "matches": {
+      "Bang Eun-jin": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P161",
+          "property_label": "cast member",
+          "value": "Bang Eun-jin",
+          "raw_value": "http://www.wikidata.org/entity/Q492532"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0795",
+    "title": "A Cage of Nightingales",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2421650"
+    ],
+    "expected_terms": [
+      "René Cloërec"
+    ],
+    "matches": {
+      "René Cloërec": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P86",
+          "property_label": "composer",
+          "value": "René Cloërec",
+          "raw_value": "http://www.wikidata.org/entity/Q3426019"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1477",
+    "title": "A Soldier's Daughter Never Cries",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2299961"
+    ],
+    "expected_terms": [
+      "Paris"
+    ],
+    "matches": {
+      "Paris": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Paris",
+          "raw_value": "http://www.wikidata.org/entity/Q90"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Paris",
+          "raw_value": "http://www.wikidata.org/entity/Q90"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2571",
+    "title": "All the Beauty and the Bloodshed",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q113445202"
+    ],
+    "expected_terms": [
+      "Brian A. Kates"
+    ],
+    "matches": {
+      "Brian A. Kates": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Brian A. Kates",
+          "raw_value": "http://www.wikidata.org/entity/Q40568703"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1752",
+    "title": "A Simple Story",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1306717"
+    ],
+    "expected_terms": [
+      "Horst Wendlandt"
+    ],
+    "matches": {
+      "Horst Wendlandt": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P162",
+          "property_label": "producer",
+          "value": "Horst Wendlandt",
+          "raw_value": "http://www.wikidata.org/entity/Q87426"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0447",
+    "title": "8½",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q12018"
+    ],
+    "expected_terms": [
+      "Italy"
+    ],
+    "matches": {
+      "Italy": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Italy",
+          "raw_value": "http://www.wikidata.org/entity/Q38"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P495",
+          "property_label": "country of origin",
+          "value": "Italy",
+          "raw_value": "http://www.wikidata.org/entity/Q38"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1933",
+    "title": "Alien: Covenant",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q30069330",
+      "http://www.wikidata.org/entity/Q20430699",
+      "http://www.wikidata.org/entity/Q54870898"
+    ],
+    "expected_terms": [
+      "violence"
+    ],
+    "matches": {
+      "violence": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "violence",
+          "raw_value": "violence"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D1183",
+    "title": "Bedknobs and Broomsticks",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q945138",
+      "http://www.wikidata.org/entity/Q55639290"
+    ],
+    "expected_terms": [
+      "7.1"
+    ],
+    "matches": {
+      "7.1": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "7.1",
+          "raw_value": "7.1"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0943",
+    "title": "A French Woman",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q3549478"
+    ],
+    "expected_terms": [
+      "Geneviève Winding"
+    ],
+    "matches": {
+      "Geneviève Winding": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Geneviève Winding",
+          "raw_value": "http://www.wikidata.org/entity/Q3100701"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2190",
+    "title": "Alien 3",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q108543",
+      "http://www.wikidata.org/entity/Q27067559",
+      "http://www.wikidata.org/entity/Q2836804"
+    ],
+    "expected_terms": [
+      "20th Century Studios"
+    ],
+    "matches": {
+      "20th Century Studios": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "20th Century Studios",
+          "raw_value": "http://www.wikidata.org/entity/Q434841"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0083",
+    "title": "A Star Is Born (1976)",
+    "exact_label_entities": [],
+    "expected_terms": [
+      "A Star Is Born"
+    ],
+    "matches": {
+      "A Star Is Born": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1642",
+    "title": "A Queen Is Crowned",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2604678"
+    ],
+    "expected_terms": [
+      "Castleton Knight"
+    ],
+    "matches": {
+      "Castleton Knight": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P162",
+          "property_label": "producer",
+          "value": "Castleton Knight",
+          "raw_value": "http://www.wikidata.org/entity/Q5050637"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0180",
+    "title": "Animal Kingdom",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1144983",
+      "http://www.wikidata.org/entity/Q22266766"
+    ],
+    "expected_terms": [
+      "Animal Kingdom"
+    ],
+    "matches": {
+      "Animal Kingdom": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Animal Kingdom",
+          "raw_value": "http://www.wikidata.org/entity/Q22266766"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Animal Kingdom",
+          "raw_value": "Animal Kingdom"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Animal Kingdom",
+          "raw_value": "http://www.wikidata.org/entity/Q22266766"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P941",
+          "property_label": "inspired by",
+          "value": "Animal Kingdom",
+          "raw_value": "http://www.wikidata.org/entity/Q22266766"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Animal Kingdom",
+          "raw_value": "http://www.wikidata.org/entity/Q1144983"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P941",
+          "property_label": "inspired by",
+          "value": "Animal Kingdom",
+          "raw_value": "http://www.wikidata.org/entity/Q1144983"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Animal Kingdom",
+          "raw_value": "Animal Kingdom"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Animal Kingdom",
+          "raw_value": "http://www.wikidata.org/entity/Q1144983"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0339",
+    "title": "A Short Film About Love",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q80660"
+    ],
+    "expected_terms": [
+      "8.2"
+    ],
+    "matches": {
+      "8.2": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "8.2",
+          "raw_value": "8.2"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1536",
+    "title": "Break Up",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q903604"
+    ],
+    "expected_terms": [
+      "5.1"
+    ],
+    "matches": {
+      "5.1": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "5.1",
+          "raw_value": "5.1"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1866",
+    "title": "Affliction",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1193825"
+    ],
+    "expected_terms": [
+      "Largo Entertainment"
+    ],
+    "matches": {
+      "Largo Entertainment": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Largo Entertainment",
+          "raw_value": "http://www.wikidata.org/entity/Q17346576"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2450",
+    "title": "Baby: Secret of the Lost Legend",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q797881"
+    ],
+    "expected_terms": [
+      "California"
+    ],
+    "matches": {
+      "California": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "California",
+          "raw_value": "http://www.wikidata.org/entity/Q99"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0100",
+    "title": "11'09\"01 September 11",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q603857"
+    ],
+    "expected_terms": [
+      "drama"
+    ],
+    "matches": {
+      "drama": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "drama",
+          "raw_value": "drama"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P136",
+          "property_label": "genre",
+          "value": "drama film",
+          "raw_value": "http://www.wikidata.org/entity/Q130232"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D0858",
+    "title": "A Perfect Murder",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q282069"
+    ],
+    "expected_terms": [
+      "New Jersey"
+    ],
+    "matches": {
+      "New Jersey": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "New Jersey",
+          "raw_value": "http://www.wikidata.org/entity/Q1408"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0267",
+    "title": "1945",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q5240",
+      "http://www.wikidata.org/entity/Q28954020"
+    ],
+    "expected_terms": [
+      "Béla Barsi"
+    ],
+    "matches": {
+      "Béla Barsi": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Béla Barsi",
+          "raw_value": "http://www.wikidata.org/entity/Q45924064"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2456",
+    "title": "Babylon",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q5684",
+      "http://www.wikidata.org/entity/Q107119206"
+    ],
+    "expected_terms": [
+      "California"
+    ],
+    "matches": {
+      "California": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "California",
+          "raw_value": "http://www.wikidata.org/entity/Q99"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1943",
+    "title": "Ach du lieber Harry",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q870973"
+    ],
+    "expected_terms": [
+      "Margot von Schlieffen"
+    ],
+    "matches": {
+      "Margot von Schlieffen": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Margot von Schlieffen",
+          "raw_value": "http://www.wikidata.org/entity/Q17388563"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0839",
+    "title": "A Nightmare on Elm Street (1984)",
+    "exact_label_entities": [],
+    "expected_terms": [
+      "Los Angeles"
+    ],
+    "matches": {
+      "Los Angeles": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1274",
+    "title": "A Policewoman on the Porno Squad",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q3823615"
+    ],
+    "expected_terms": [
+      "Raimondo Crociani"
+    ],
+    "matches": {
+      "Raimondo Crociani": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Raimondo Crociani",
+          "raw_value": "http://www.wikidata.org/entity/Q3929577"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0056",
+    "title": "A Guy Named Joe",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1723295"
+    ],
+    "expected_terms": [
+      "Always"
+    ],
+    "matches": {
+      "Always": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Always",
+          "raw_value": "http://www.wikidata.org/entity/Q449743"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Always",
+          "raw_value": "http://www.wikidata.org/entity/Q449743"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1958",
+    "title": "Total Recall (1990)",
+    "exact_label_entities": [],
+    "expected_terms": [
+      "Total Recall"
+    ],
+    "matches": {
+      "Total Recall": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2077",
+    "title": "World War Z",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q56218638",
+      "http://www.wikidata.org/entity/Q28196",
+      "http://www.wikidata.org/entity/Q16267661",
+      "http://www.wikidata.org/entity/Q28172"
+    ],
+    "expected_terms": [
+      "World War Z"
+    ],
+    "matches": {
+      "World War Z": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "World War Z",
+          "raw_value": "World War Z"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q16267661"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q28196"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q28196"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "World War Z 2",
+          "raw_value": "http://www.wikidata.org/entity/Q5456281873249262"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q16267661"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q56218638"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "World War Z",
+          "raw_value": "World War Z"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P156",
+          "property_label": "followed by",
+          "value": "World War Z 2",
+          "raw_value": "http://www.wikidata.org/entity/Q5456281873249262"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q28172"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q16267661"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P155",
+          "property_label": "follows",
+          "value": "World War Z 2",
+          "raw_value": "http://www.wikidata.org/entity/Q5456281873249262"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q56218638"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q28172"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q28196"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q56218638"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "World War Z",
+          "raw_value": "World War Z"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q56218638"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q28196"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "World War Z",
+          "raw_value": "World War Z"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "World War Z 2",
+          "raw_value": "http://www.wikidata.org/entity/Q5456281873249262"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "World War Z",
+          "raw_value": "http://www.wikidata.org/entity/Q28196"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1147",
+    "title": "A Royal Affair",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q589953"
+    ],
+    "expected_terms": [
+      "insanity"
+    ],
+    "matches": {
+      "insanity": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "insanity",
+          "raw_value": "insanity"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D1411",
+    "title": "About Schmidt",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q179460",
+      "http://www.wikidata.org/entity/Q21486054"
+    ],
+    "expected_terms": [
+      "flashback"
+    ],
+    "matches": {
+      "flashback": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "flashback",
+          "raw_value": "flashback"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D2356",
+    "title": "Author! Author!",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q646972",
+      "http://www.wikidata.org/entity/Q2872379"
+    ],
+    "expected_terms": [
+      "New York City"
+    ],
+    "matches": {
+      "New York City": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "New York City",
+          "raw_value": "http://www.wikidata.org/entity/Q60"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "New York City",
+          "raw_value": "http://www.wikidata.org/entity/Q60"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1466",
+    "title": "A Night in Heaven",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1615593"
+    ],
+    "expected_terms": [
+      "20th Century Studios"
+    ],
+    "matches": {
+      "20th Century Studios": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P750",
+          "property_label": "distributed by",
+          "value": "20th Century Studios",
+          "raw_value": "http://www.wikidata.org/entity/Q434841"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1413",
+    "title": "A Swedish Love Story",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q735047"
+    ],
+    "expected_terms": [
+      "Europafilm"
+    ],
+    "matches": {
+      "Europafilm": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Europafilm",
+          "raw_value": "http://www.wikidata.org/entity/Q5412078"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2212",
+    "title": "Around the World in 80 Days (1956)",
+    "exact_label_entities": [],
+    "expected_terms": [
+      "Newport Beach"
+    ],
+    "matches": {
+      "Newport Beach": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0101",
+    "title": "50 First Dates",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q241482"
+    ],
+    "expected_terms": [
+      "6.8"
+    ],
+    "matches": {
+      "6.8": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "6.8",
+          "raw_value": "6.8"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1664",
+    "title": "Bruce Almighty",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q207816"
+    ],
+    "expected_terms": [
+      "6.8"
+    ],
+    "matches": {
+      "6.8": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "6.8",
+          "raw_value": "6.8"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1823",
+    "title": "Captivity",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q28100974",
+      "http://www.wikidata.org/entity/Q1035180"
+    ],
+    "expected_terms": [
+      "4.7"
+    ],
+    "matches": {
+      "4.7": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "4.7",
+          "raw_value": "4.7"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0784",
+    "title": "A City of Sadness",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q133461"
+    ],
+    "expected_terms": [
+      "Taiwan"
+    ],
+    "matches": {
+      "Taiwan": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P364",
+          "property_label": "original language of film or TV show",
+          "value": "Taiwanese Hokkien",
+          "raw_value": "http://www.wikidata.org/entity/Q36778"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Taiwan",
+          "raw_value": "http://www.wikidata.org/entity/Q865"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P364",
+          "property_label": "original language of film or TV show",
+          "value": "Standard Taiwanese Mandarin",
+          "raw_value": "http://www.wikidata.org/entity/Q262828"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P179",
+          "property_label": "part of the series",
+          "value": "Taiwan Trilogy",
+          "raw_value": "http://www.wikidata.org/entity/Q96105927"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P495",
+          "property_label": "country of origin",
+          "value": "Taiwan",
+          "raw_value": "http://www.wikidata.org/entity/Q865"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P527",
+          "property_label": "has part(s)",
+          "value": "Taiwan Trilogy",
+          "raw_value": "http://www.wikidata.org/entity/Q96105927"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0397",
+    "title": "Conan the Barbarian (1982)",
+    "exact_label_entities": [],
+    "expected_terms": [
+      "Conan the Barbarian"
+    ],
+    "matches": {
+      "Conan the Barbarian": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2501",
+    "title": "American History X",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q208572"
+    ],
+    "expected_terms": [
+      "New Line Cinema"
+    ],
+    "matches": {
+      "New Line Cinema": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P750",
+          "property_label": "distributed by",
+          "value": "New Line Cinema",
+          "raw_value": "http://www.wikidata.org/entity/Q79202"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "New Line Cinema",
+          "raw_value": "http://www.wikidata.org/entity/Q79202"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1054",
+    "title": "Atoll K",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q757548"
+    ],
+    "expected_terms": [
+      "5.7"
+    ],
+    "matches": {
+      "5.7": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "5.7",
+          "raw_value": "5.7"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1182",
+    "title": "A Simple Twist of Fate",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q471401"
+    ],
+    "expected_terms": [
+      "romantic"
+    ],
+    "matches": {
+      "romantic": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "romantic",
+          "raw_value": "romantic"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D2946",
+    "title": "An Impudent Girl",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1171154"
+    ],
+    "expected_terms": [
+      "Yvelines"
+    ],
+    "matches": {
+      "Yvelines": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Yvelines",
+          "raw_value": "http://www.wikidata.org/entity/Q12820"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1949",
+    "title": "A Turtle's Tale: Sammy's Adventures",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q785058"
+    ],
+    "expected_terms": [
+      "StudioCanal"
+    ],
+    "matches": {
+      "StudioCanal": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "StudioCanal",
+          "raw_value": "http://www.wikidata.org/entity/Q2450848"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P750",
+          "property_label": "distributed by",
+          "value": "StudioCanal",
+          "raw_value": "http://www.wikidata.org/entity/Q2450848"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1461",
+    "title": "Aliens",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q27037928",
+      "http://www.wikidata.org/entity/Q104814",
+      "http://www.wikidata.org/entity/Q4726520",
+      "http://www.wikidata.org/entity/Q20707439",
+      "http://www.wikidata.org/entity/Q27021433"
+    ],
+    "expected_terms": [
+      "Pinewood Studios"
+    ],
+    "matches": {
+      "Pinewood Studios": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Pinewood Studios",
+          "raw_value": "http://www.wikidata.org/entity/Q661896"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2769",
+    "title": "Dipterous Amaryllis Shear",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q87939960267371438"
+    ],
+    "expected_terms": [
+      "5.011766595896256"
+    ],
+    "matches": {
+      "5.011766595896256": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "5.011766595896256",
+          "raw_value": "5.011766595896256"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1934",
+    "title": "Changing Times",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1062044"
+    ],
+    "expected_terms": [
+      "6.1"
+    ],
+    "matches": {
+      "6.1": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "6.1",
+          "raw_value": "6.1"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1479",
+    "title": "A Stolen Life",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q747245"
+    ],
+    "expected_terms": [
+      "Rudi Fehr"
+    ],
+    "matches": {
+      "Rudi Fehr": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Rudi Fehr",
+          "raw_value": "http://www.wikidata.org/entity/Q111743"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0117",
+    "title": "Alien Nation",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2346766",
+      "http://www.wikidata.org/entity/Q1400206"
+    ],
+    "expected_terms": [
+      "Alien Nation"
+    ],
+    "matches": {
+      "Alien Nation": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Alien Nation",
+          "raw_value": "Alien Nation"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Alien Nation",
+          "raw_value": "http://www.wikidata.org/entity/Q1400206"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Alien Nation",
+          "raw_value": "http://www.wikidata.org/entity/Q1400206"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Alien Nation",
+          "raw_value": "http://www.wikidata.org/entity/Q2346766"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Alien Nation",
+          "raw_value": "Alien Nation"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Alien Nation",
+          "raw_value": "http://www.wikidata.org/entity/Q2346766"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2161",
+    "title": "Abendland",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q4666737"
+    ],
+    "expected_terms": [
+      "Nikolaus Geyrhalter"
+    ],
+    "matches": {
+      "Nikolaus Geyrhalter": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P162",
+          "property_label": "producer",
+          "value": "Nikolaus Geyrhalter",
+          "raw_value": "http://www.wikidata.org/entity/Q90354"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P57",
+          "property_label": "director",
+          "value": "Nikolaus Geyrhalter",
+          "raw_value": "http://www.wikidata.org/entity/Q90354"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://schema.org/description",
+          "property_label": "node description",
+          "value": "2011 film by Nikolaus Geyrhalter",
+          "raw_value": "2011 film by Nikolaus Geyrhalter"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P58",
+          "property_label": "screenwriter",
+          "value": "Nikolaus Geyrhalter",
+          "raw_value": "http://www.wikidata.org/entity/Q90354"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P344",
+          "property_label": "director of photography",
+          "value": "Nikolaus Geyrhalter",
+          "raw_value": "http://www.wikidata.org/entity/Q90354"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1845",
+    "title": "Carnosaur 3: Primal Species",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q5044161"
+    ],
+    "expected_terms": [
+      "3.2"
+    ],
+    "matches": {
+      "3.2": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "3.2",
+          "raw_value": "3.2"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1587",
+    "title": "Brigadoon",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q636534",
+      "http://www.wikidata.org/entity/Q611332"
+    ],
+    "expected_terms": [
+      "6.8"
+    ],
+    "matches": {
+      "6.8": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/rating",
+          "property_label": null,
+          "value": "6.8",
+          "raw_value": "6.8"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2141",
+    "title": "Amazing Grace and Chuck",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q3280896"
+    ],
+    "expected_terms": [
+      "sport"
+    ],
+    "matches": {
+      "sport": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "sport",
+          "raw_value": "sport"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D1523",
+    "title": "Acting on Impulse",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q4676872"
+    ],
+    "expected_terms": [
+      "thriller"
+    ],
+    "matches": {
+      "thriller": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P136",
+          "property_label": "genre",
+          "value": "erotic thriller",
+          "raw_value": "http://www.wikidata.org/entity/Q2439025"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "thriller",
+          "raw_value": "thriller"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D0420",
+    "title": "8 Heads in a Duffel Bag",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2478733"
+    ],
+    "expected_terms": [
+      "California"
+    ],
+    "matches": {
+      "California": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "California",
+          "raw_value": "http://www.wikidata.org/entity/Q99"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2897",
+    "title": "Ben-Hur",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q180098"
+    ],
+    "expected_terms": [
+      "Rome"
+    ],
+    "matches": {
+      "Rome": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Rome",
+          "raw_value": "http://www.wikidata.org/entity/Q220"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2677",
+    "title": "Aloma of the South Seas",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1814810"
+    ],
+    "expected_terms": [
+      "Arthur P. Schmidt"
+    ],
+    "matches": {
+      "Arthur P. Schmidt": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Arthur P. Schmidt",
+          "raw_value": "http://www.wikidata.org/entity/Q340007"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1509",
+    "title": "The Addams Family",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q3817916",
+      "http://www.wikidata.org/entity/Q1210947",
+      "http://www.wikidata.org/entity/Q1989599"
+    ],
+    "expected_terms": [
+      "The Addams Family"
+    ],
+    "matches": {
+      "The Addams Family": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "The Addams Family",
+          "raw_value": "The Addams Family"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P527",
+          "property_label": "has part(s)",
+          "value": "The Addams Family Mansion",
+          "raw_value": "http://www.wikidata.org/entity/Q63495686"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Addams Family",
+          "raw_value": "http://www.wikidata.org/entity/Q1210947"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Addams Family",
+          "raw_value": "http://www.wikidata.org/entity/Q1210947"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "The Addams Family",
+          "raw_value": "The Addams Family"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Addams Family",
+          "raw_value": "http://www.wikidata.org/entity/Q1989599"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Addams Family",
+          "raw_value": "http://www.wikidata.org/entity/Q3817916"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Addams Family",
+          "raw_value": "http://www.wikidata.org/entity/Q3817916"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P1441",
+          "property_label": "present in work",
+          "value": "The Addams Family Mansion",
+          "raw_value": "http://www.wikidata.org/entity/Q63495686"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Addams Family",
+          "raw_value": "http://www.wikidata.org/entity/Q1989599"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Addams Family",
+          "raw_value": "http://www.wikidata.org/entity/Q1210947"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "The Addams Family",
+          "raw_value": "The Addams Family"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Addams Family",
+          "raw_value": "http://www.wikidata.org/entity/Q1210947"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0977",
+    "title": "Monster (2023)",
+    "exact_label_entities": [],
+    "expected_terms": [
+      "Kaibutsu"
+    ],
+    "matches": {
+      "Kaibutsu": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1473",
+    "title": "Terminator 2: Judgment Day",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q3511972",
+      "http://www.wikidata.org/entity/Q170564",
+      "http://www.wikidata.org/entity/Q3518453",
+      "http://www.wikidata.org/entity/Q97447238",
+      "http://www.wikidata.org/entity/Q20652711"
+    ],
+    "expected_terms": [
+      "Terminator 2: Judgment Day"
+    ],
+    "matches": {
+      "Terminator 2: Judgment Day": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q170564"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "Terminator 2: Judgment Day"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P921",
+          "property_label": "main subject",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q3518453"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q170564"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "Terminator 2: Judgment Day"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P406",
+          "property_label": "soundtrack release",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q20652711"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q3511972"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q3518453"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q3511972"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q3518453"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q97447238"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Terminator 2: Judgment Day - Chess Wars",
+          "raw_value": "http://www.wikidata.org/entity/Q10693359"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q170564"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "Terminator 2: Judgment Day"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P921",
+          "property_label": "main subject",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q3511972"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P921",
+          "property_label": "main subject",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q97447238"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q170564"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q170564"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "Terminator 2: Judgment Day"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P921",
+          "property_label": "main subject",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q3518453"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "Terminator 2: Judgment Day"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P406",
+          "property_label": "soundtrack release",
+          "value": "Terminator 2: Judgment Day",
+          "raw_value": "http://www.wikidata.org/entity/Q170564"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0308",
+    "title": "3 Godfathers",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q528296"
+    ],
+    "expected_terms": [
+      "allegory"
+    ],
+    "matches": {
+      "allegory": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "allegory",
+          "raw_value": "allegory"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D0134",
+    "title": "127 Hours",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q174371"
+    ],
+    "expected_terms": [
+      "Pathé"
+    ],
+    "matches": {
+      "Pathé": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Pathé",
+          "raw_value": "http://www.wikidata.org/entity/Q1544011"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2640",
+    "title": "An American Werewolf in London",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q467290"
+    ],
+    "expected_terms": [
+      "PolyGram Filmed Entertainment"
+    ],
+    "matches": {
+      "PolyGram Filmed Entertainment": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "PolyGram Filmed Entertainment",
+          "raw_value": "http://www.wikidata.org/entity/Q1983457"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1490",
+    "title": "A Turtle's Tale: Sammy's Adventures",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q785058"
+    ],
+    "expected_terms": [
+      "StudioCanal"
+    ],
+    "matches": {
+      "StudioCanal": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "StudioCanal",
+          "raw_value": "http://www.wikidata.org/entity/Q2450848"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P750",
+          "property_label": "distributed by",
+          "value": "StudioCanal",
+          "raw_value": "http://www.wikidata.org/entity/Q2450848"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1869",
+    "title": "ACAB – All Cops Are Bastards",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2056404"
+    ],
+    "expected_terms": [
+      "Patrizio Marone"
+    ],
+    "matches": {
+      "Patrizio Marone": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1040",
+          "property_label": "film editor",
+          "value": "Patrizio Marone",
+          "raw_value": "http://www.wikidata.org/entity/Q3897854"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1625",
+    "title": "The Fifth Element",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2066662",
+      "http://www.wikidata.org/entity/Q106506"
+    ],
+    "expected_terms": [
+      "The Fifth Element"
+    ],
+    "matches": {
+      "The Fifth Element": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "The Fifth Element",
+          "raw_value": "The Fifth Element"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Fifth Element",
+          "raw_value": "http://www.wikidata.org/entity/Q106506"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Fifth Element",
+          "raw_value": "http://www.wikidata.org/entity/Q106506"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Fifth Element",
+          "raw_value": "http://www.wikidata.org/entity/Q2066662"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "The Fifth Element",
+          "raw_value": "The Fifth Element"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Fifth Element",
+          "raw_value": "http://www.wikidata.org/entity/Q2066662"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1918",
+    "title": "Anguish",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2260885"
+    ],
+    "expected_terms": [
+      "Barcelona"
+    ],
+    "matches": {
+      "Barcelona": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Barcelona",
+          "raw_value": "http://www.wikidata.org/entity/Q1492"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2856",
+    "title": "Donnie Darko",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q54834690",
+      "http://www.wikidata.org/entity/Q426828"
+    ],
+    "expected_terms": [
+      "8.0"
+    ],
+    "matches": {
+      "8.0": []
+    },
+    "all_terms_adjacent": false,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2301",
+    "title": "Accumulator 1",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2428688"
+    ],
+    "expected_terms": [
+      "Ondřej Soukup"
+    ],
+    "matches": {
+      "Ondřej Soukup": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P86",
+          "property_label": "composer",
+          "value": "Ondřej Soukup",
+          "raw_value": "http://www.wikidata.org/entity/Q2023844"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1963",
+    "title": "Total Recall 2",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q3614819140778910"
+    ],
+    "expected_terms": [
+      "Total Recall"
+    ],
+    "matches": {
+      "Total Recall": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Total Recall",
+          "raw_value": "http://www.wikidata.org/entity/Q634810"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P179",
+          "property_label": "part of the series",
+          "value": "Total Recall Series",
+          "raw_value": "Total Recall Series"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Total Recall 2",
+          "raw_value": "Total Recall 2"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P155",
+          "property_label": "follows",
+          "value": "Total Recall",
+          "raw_value": "http://www.wikidata.org/entity/Q222018"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P156",
+          "property_label": "followed by",
+          "value": "Total Recall",
+          "raw_value": "http://www.wikidata.org/entity/Q222018"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2826",
+    "title": "Animal House",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q960125"
+    ],
+    "expected_terms": [
+      "Universal Pictures"
+    ],
+    "matches": {
+      "Universal Pictures": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P750",
+          "property_label": "distributed by",
+          "value": "Universal Pictures",
+          "raw_value": "http://www.wikidata.org/entity/Q168383"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Universal Pictures",
+          "raw_value": "http://www.wikidata.org/entity/Q168383"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1809",
+    "title": "Alexander",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q162277",
+      "http://www.wikidata.org/entity/Q2068074",
+      "http://www.wikidata.org/entity/Q29212809"
+    ],
+    "expected_terms": [
+      "melodrama"
+    ],
+    "matches": {
+      "melodrama": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://ddis.ch/atai/tag",
+          "property_label": null,
+          "value": "melodrama",
+          "raw_value": "melodrama"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": true
+  },
+  {
+    "id": "D2680",
+    "title": "An Ideal Husband",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q1027247",
+      "http://www.wikidata.org/entity/Q1143075"
+    ],
+    "expected_terms": [
+      "Fragile Films"
+    ],
+    "matches": {
+      "Fragile Films": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Fragile Films",
+          "raw_value": "http://www.wikidata.org/entity/Q96215903"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1658",
+    "title": "Above Suspicion",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q579608",
+      "http://www.wikidata.org/entity/Q42184810"
+    ],
+    "expected_terms": [
+      "Metro-Goldwyn-Mayer"
+    ],
+    "matches": {
+      "Metro-Goldwyn-Mayer": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P750",
+          "property_label": "distributed by",
+          "value": "Metro-Goldwyn-Mayer",
+          "raw_value": "http://www.wikidata.org/entity/Q179200"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Metro-Goldwyn-Mayer",
+          "raw_value": "http://www.wikidata.org/entity/Q179200"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1674",
+    "title": "A Twelve-Year Night",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q56319427"
+    ],
+    "expected_terms": [
+      "Uruguay"
+    ],
+    "matches": {
+      "Uruguay": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P495",
+          "property_label": "country of origin",
+          "value": "Uruguay",
+          "raw_value": "http://www.wikidata.org/entity/Q77"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Uruguay",
+          "raw_value": "http://www.wikidata.org/entity/Q77"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2965",
+    "title": "Better Days Ahead Reloaded",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q9663834249611389"
+    ],
+    "expected_terms": [
+      "Rio de Janeiro"
+    ],
+    "matches": {
+      "Rio de Janeiro": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Rio de Janeiro",
+          "raw_value": "http://www.wikidata.org/entity/Q8678"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Rio de Janeiro",
+          "raw_value": "http://www.wikidata.org/entity/Q8678"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0578",
+    "title": "A Dry White Season",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q3549751",
+      "http://www.wikidata.org/entity/Q636356"
+    ],
+    "expected_terms": [
+      "Zimbabwe"
+    ],
+    "matches": {
+      "Zimbabwe": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Zimbabwe",
+          "raw_value": "http://www.wikidata.org/entity/Q954"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0968",
+    "title": "A Dream of Passion",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q4656591"
+    ],
+    "expected_terms": [
+      "Giorgos Arvanitis"
+    ],
+    "matches": {
+      "Giorgos Arvanitis": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P344",
+          "property_label": "director of photography",
+          "value": "Giorgos Arvanitis",
+          "raw_value": "http://www.wikidata.org/entity/Q1525590"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P162",
+          "property_label": "producer",
+          "value": "Giorgos Arvanitis",
+          "raw_value": "http://www.wikidata.org/entity/Q1525590"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2384",
+    "title": "Along the Navajo Trail",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q10292632"
+    ],
+    "expected_terms": [
+      "Republic Pictures"
+    ],
+    "matches": {
+      "Republic Pictures": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P750",
+          "property_label": "distributed by",
+          "value": "Republic Pictures",
+          "raw_value": "http://www.wikidata.org/entity/Q774682"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P272",
+          "property_label": "production company",
+          "value": "Republic Pictures",
+          "raw_value": "http://www.wikidata.org/entity/Q774682"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D0833",
+    "title": "Kull the Conqueror",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q112229006",
+      "http://www.wikidata.org/entity/Q1780108",
+      "http://www.wikidata.org/entity/Q112040475"
+    ],
+    "expected_terms": [
+      "Kull the Conqueror"
+    ],
+    "matches": {
+      "Kull the Conqueror": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Kull the Conqueror",
+          "raw_value": "Kull the Conqueror"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q1780108"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112040475"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P629",
+          "property_label": "edition or translation of",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112040475"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://schema.org/description",
+          "property_label": "node description",
+          "value": "Tor Books publisher edition of Kull the Conqueror",
+          "raw_value": "Tor Books publisher edition of Kull the Conqueror"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P747",
+          "property_label": "has edition or translation",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112040475"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q1780108"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112040475"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Kull the Conqueror",
+          "raw_value": "Kull the Conqueror"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112229006"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112040475"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112040475"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112229006"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112040475"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112040475"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P747",
+          "property_label": "has edition or translation",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112229006"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "Kull the Conqueror",
+          "raw_value": "Kull the Conqueror"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q1780108"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q1780108"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112229006"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112229006"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P629",
+          "property_label": "edition or translation of",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q112229006"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q1780108"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P1889",
+          "property_label": "different from",
+          "value": "Kull the Conqueror",
+          "raw_value": "http://www.wikidata.org/entity/Q1780108"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2477",
+    "title": "Alive",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q2403065",
+      "http://www.wikidata.org/entity/Q332798"
+    ],
+    "expected_terms": [
+      "Andes"
+    ],
+    "matches": {
+      "Andes": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "Alive: The Story of the Andes Survivors",
+          "raw_value": "http://www.wikidata.org/entity/Q736604"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P921",
+          "property_label": "main subject",
+          "value": "1972 Andes flight disaster",
+          "raw_value": "http://www.wikidata.org/entity/Q737967"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P840",
+          "property_label": "narrative location",
+          "value": "Andes",
+          "raw_value": "http://www.wikidata.org/entity/Q5456"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2315",
+    "title": "Au poste!",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q28129369"
+    ],
+    "expected_terms": [
+      "Espace Niemeyer"
+    ],
+    "matches": {
+      "Espace Niemeyer": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P915",
+          "property_label": "filming location",
+          "value": "Espace Niemeyer",
+          "raw_value": "http://www.wikidata.org/entity/Q57529581"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D1775",
+    "title": "The Mummy Returns",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q51556086",
+      "http://www.wikidata.org/entity/Q320461"
+    ],
+    "expected_terms": [
+      "The Mummy Returns"
+    ],
+    "matches": {
+      "The Mummy Returns": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "The Mummy Returns",
+          "raw_value": "The Mummy Returns"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Mummy Returns",
+          "raw_value": "http://www.wikidata.org/entity/Q320461"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Mummy Returns",
+          "raw_value": "http://www.wikidata.org/entity/Q320461"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P4969",
+          "property_label": "derivative work",
+          "value": "The Mummy Returns",
+          "raw_value": "http://www.wikidata.org/entity/Q51556086"
+        },
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+          "property_label": "node label",
+          "value": "The Mummy Returns",
+          "raw_value": "The Mummy Returns"
+        },
+        {
+          "direction": "incoming",
+          "predicate": "http://www.wikidata.org/prop/direct/P144",
+          "property_label": "based on",
+          "value": "The Mummy Returns",
+          "raw_value": "http://www.wikidata.org/entity/Q51556086"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  },
+  {
+    "id": "D2259",
+    "title": "Accused",
+    "exact_label_entities": [
+      "http://www.wikidata.org/entity/Q4766080"
+    ],
+    "expected_terms": [
+      "Sebastian Blenkov"
+    ],
+    "matches": {
+      "Sebastian Blenkov": [
+        {
+          "direction": "outgoing",
+          "predicate": "http://www.wikidata.org/prop/direct/P344",
+          "property_label": "director of photography",
+          "value": "Sebastian Blenkov",
+          "raw_value": "http://www.wikidata.org/entity/Q16865049"
+        }
+      ]
+    },
+    "all_terms_adjacent": true,
+    "question_expects_count": false
+  }
+]

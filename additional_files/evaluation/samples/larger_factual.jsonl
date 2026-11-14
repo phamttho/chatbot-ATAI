@@ -1,0 +1,150 @@
+{"id": "D2658", "input": "How many user tags does 'Another Thin Man' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["revenge"]}
+{"id": "D0198", "input": "What are the remakes of 'Autumn Sonata'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Höstsonaten"]}
+{"id": "D0362", "input": "Where does the story of '2:37' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Australia"]}
+{"id": "D0548", "input": "What are the remakes of 'First Blood'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Sly Marbo"]}
+{"id": "D0963", "input": "What are the remakes of 'Minority Report'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Minority Report"]}
+{"id": "D0032", "input": "What are the distribution platforms of '...And Justice for All'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Netflix"]}
+{"id": "D2530", "input": "How many user tags does 'Angel-A' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["magical_realism"]}
+{"id": "D1332", "input": "Where was 'Airport 1975' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Salt Lake City"]}
+{"id": "D1663", "input": "How many user tags does 'Against the Law' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["crime"]}
+{"id": "D1141", "input": "What production company made 'A Nightmare on Elm Street 2: Freddy's Revenge'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["New Line Cinema's House of Horror"]}
+{"id": "D2745", "input": "What production company made 'Anatomy of a Fall'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Les Films de Pierre"]}
+{"id": "D0048", "input": "Where was '10 to Midnight' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Santa Monica"]}
+{"id": "D0103", "input": "Where does the story of '100 Bloody Acres' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Australia"]}
+{"id": "D0464", "input": "What production company made '40 Days and 40 Nights'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Working Title Films"]}
+{"id": "D0881", "input": "What production company made 'A Friend of the Deceased'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Dovzhenko Film Studios"]}
+{"id": "D1117", "input": "What are the remakes of 'Platoon'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Platoon"]}
+{"id": "D0563", "input": "What are the distribution platforms of '45 Years'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Curzon Artificial Eye"]}
+{"id": "D0702", "input": "What production company made 'A Christmas Tale (2021)'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["SF Studios"]}
+{"id": "D1267", "input": "Where was 'Against the Law' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Los Angeles"]}
+{"id": "D2370", "input": "How many user tags does 'An Awfully Big Adventure' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["comedy"]}
+{"id": "D0547", "input": "Who edited '5 Fingers'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["James B. Clark"]}
+{"id": "D1389", "input": "Who edited 'A Simple Life'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Kwang Cho-Luang"]}
+{"id": "D2785", "input": "Where was 'Beastly' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Montreal"]}
+{"id": "D0011", "input": "Who composed the music for ''38 – Vienna Before the Fall'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Bert Grund"]}
+{"id": "D0992", "input": "What is the user rating of 'Arthur'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["6.9"]}
+{"id": "D2925", "input": "Where was 'Benny & Joon' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Metaline Falls"]}
+{"id": "D2843", "input": "Where does the story of 'Amnesia' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Chile"]}
+{"id": "D2074", "input": "What production company made 'Albert Nobbs'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Amblin Entertainment"]}
+{"id": "D0023", "input": "What is the user rating of '10 Items or Less'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["6.6"]}
+{"id": "D0318", "input": "What production company made '27 Missing Kisses'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Moco Films"]}
+{"id": "D2351", "input": "What is the user rating of 'Critters 2: The Main Course'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["5.5"]}
+{"id": "D2059", "input": "What is the user rating of 'Cimarron (1931)'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["5.9"]}
+{"id": "D2991", "input": "How many user tags does 'Asylum' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["cult"]}
+{"id": "D1971", "input": "How many user tags does 'All Is Lost' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["flashback"]}
+{"id": "D2114", "input": "Where was 'April' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Bari"]}
+{"id": "D0951", "input": "What are the remakes of 'Metropolis'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["The Mediator Between Head and Hands Must Be the Heart"]}
+{"id": "D2839", "input": "How many user tags does 'Aria' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["romantic"]}
+{"id": "D0824", "input": "Where was 'A Murder of Crows Vol. 2' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["New Orleans"]}
+{"id": "D0293", "input": "Where was '29th Street' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["North Carolina"]}
+{"id": "D1491", "input": "Where does the story of 'A Song to Remember' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Poland"]}
+{"id": "D2940", "input": "Where does the story of 'An Imaginary Tale' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Montreal"]}
+{"id": "D1710", "input": "What are the remakes of 'The Living Daylights'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["The Living Daylights"]}
+{"id": "D2234", "input": "How many user tags does 'American Ninja 2: The Confrontation' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["flashback"]}
+{"id": "D1766", "input": "What production company made 'Adam & Paul'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Speers Film"]}
+{"id": "D2997", "input": "How many user tags does 'At Close Range' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["murder"]}
+{"id": "D0651", "input": "Who edited '99.9'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Pablo Blanco"]}
+{"id": "D1697", "input": "Who edited 'A Woman Like Eve'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Ine Schenkkan"]}
+{"id": "D0367", "input": "Where does the story of '3 Days in Quiberon' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Quiberon"]}
+{"id": "D2321", "input": "Where does the story of 'Alexander's Ragtime Band' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["San Francisco"]}
+{"id": "D1154", "input": "What is the user rating of 'Battleship Potemkin'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["8.0"]}
+{"id": "D0717", "input": "Where does the story of 'A Cat in the Brain' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Rome"]}
+{"id": "D2865", "input": "Where does the story of 'Amy (2015)' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["London"]}
+{"id": "D1607", "input": "What is the user rating of 'Broadcast News'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["7.2"]}
+{"id": "D1783", "input": "How many user tags does 'Alatriste' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["revenge"]}
+{"id": "D0857", "input": "What production company made 'A Fistful of Dollars'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Constantin Film"]}
+{"id": "D1852", "input": "How many user tags does 'Alice Adams' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["melodrama"]}
+{"id": "D0949", "input": "Where was 'A Tale of Two Sisters' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["South Korea"]}
+{"id": "D1299", "input": "What production company made 'A Simple Life'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Sil-Metropole Organisation"]}
+{"id": "D0237", "input": "Who edited '17 Girls'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Guy Lecorne"]}
+{"id": "D0867", "input": "What is the user rating of 'Antwone Fisher'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["7.3"]}
+{"id": "D0131", "input": "What are the remakes of 'Aliens'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Aliens"]}
+{"id": "D1848", "input": "What are the distribution platforms of 'A Sunday in the Country 2'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Netflix"]}
+{"id": "D2896", "input": "What production company made 'Annabelle'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["New Line Cinema"]}
+{"id": "D2271", "input": "What is the user rating of 'Crackerjack'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["6.8"]}
+{"id": "D2546", "input": "Where does the story of 'All Things Fair' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Sweden"]}
+{"id": "D0226", "input": "How many user tags does '200 Cigarettes' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["romantic"]}
+{"id": "D2714", "input": "What is the user rating of 'Demons 2'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["6.0"]}
+{"id": "D0575", "input": "Who starred in '301'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Bang Eun-jin"]}
+{"id": "D0795", "input": "Who composed the music for 'A Cage of Nightingales'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["René Cloërec"]}
+{"id": "D1477", "input": "Where does the story of 'A Soldier's Daughter Never Cries' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Paris"]}
+{"id": "D2571", "input": "Who edited 'All the Beauty and the Bloodshed'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Brian A. Kates"]}
+{"id": "D1752", "input": "Who produced 'A Simple Story'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Horst Wendlandt"]}
+{"id": "D0447", "input": "Where was '8½' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Italy"]}
+{"id": "D1933", "input": "How many user tags does 'Alien: Covenant' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["violence"]}
+{"id": "D1183", "input": "What is the user rating of 'Bedknobs and Broomsticks'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["7.1"]}
+{"id": "D0943", "input": "Who edited 'A French Woman'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Geneviève Winding"]}
+{"id": "D2190", "input": "What production company made 'Alien 3'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["20th Century Studios"]}
+{"id": "D0083", "input": "What are the remakes of 'A Star Is Born (1976)'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["A Star Is Born"]}
+{"id": "D1642", "input": "Who produced 'A Queen Is Crowned'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Castleton Knight"]}
+{"id": "D0180", "input": "What are the remakes of 'Animal Kingdom'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Animal Kingdom"]}
+{"id": "D0339", "input": "What is the user rating of 'A Short Film About Love'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["8.2"]}
+{"id": "D1536", "input": "What is the user rating of 'Break Up'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["5.1"]}
+{"id": "D1866", "input": "What production company made 'Affliction'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Largo Entertainment"]}
+{"id": "D2450", "input": "Where was 'Baby: Secret of the Lost Legend' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["California"]}
+{"id": "D0100", "input": "How many user tags does '11'09\"01 September 11' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["drama"]}
+{"id": "D0858", "input": "Where was 'A Perfect Murder' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["New Jersey"]}
+{"id": "D0267", "input": "Who edited '1945'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Béla Barsi"]}
+{"id": "D2456", "input": "Where was 'Babylon' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["California"]}
+{"id": "D1943", "input": "Who edited 'Ach du lieber Harry'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Margot von Schlieffen"]}
+{"id": "D0839", "input": "Where was 'A Nightmare on Elm Street (1984)' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Los Angeles"]}
+{"id": "D1274", "input": "Who edited 'A Policewoman on the Porno Squad'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Raimondo Crociani"]}
+{"id": "D0056", "input": "What are the remakes of 'A Guy Named Joe'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Always"]}
+{"id": "D1958", "input": "What are the remakes of 'Total Recall (1990)'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Total Recall"]}
+{"id": "D2077", "input": "What are the remakes of 'World War Z'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["World War Z"]}
+{"id": "D1147", "input": "How many user tags does 'A Royal Affair' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["insanity"]}
+{"id": "D1411", "input": "How many user tags does 'About Schmidt' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["flashback"]}
+{"id": "D2356", "input": "Where was 'Author! Author!' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["New York City"]}
+{"id": "D1466", "input": "What are the distribution platforms of 'A Night in Heaven'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["20th Century Studios"]}
+{"id": "D1413", "input": "What production company made 'A Swedish Love Story'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Europafilm"]}
+{"id": "D2212", "input": "Where was 'Around the World in 80 Days (1956)' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Newport Beach"]}
+{"id": "D0101", "input": "What is the user rating of '50 First Dates'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["6.8"]}
+{"id": "D1664", "input": "What is the user rating of 'Bruce Almighty'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["6.8"]}
+{"id": "D1823", "input": "What is the user rating of 'Captivity'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["4.7"]}
+{"id": "D0784", "input": "Where does the story of 'A City of Sadness' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Taiwan"]}
+{"id": "D0397", "input": "What are the remakes of 'Conan the Barbarian (1982)'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Conan the Barbarian"]}
+{"id": "D2501", "input": "What production company made 'American History X'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["New Line Cinema"]}
+{"id": "D1054", "input": "What is the user rating of 'Atoll K'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["5.7"]}
+{"id": "D1182", "input": "How many user tags does 'A Simple Twist of Fate' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["romantic"]}
+{"id": "D2946", "input": "Where does the story of 'An Impudent Girl' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Yvelines"]}
+{"id": "D1949", "input": "What are the distribution platforms of 'A Turtle's Tale: Sammy's Adventures'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["StudioCanal"]}
+{"id": "D1461", "input": "Where was 'Aliens' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Pinewood Studios"]}
+{"id": "D2769", "input": "What is the user rating of 'Dipterous Amaryllis Shear'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["5.011766595896256"]}
+{"id": "D1934", "input": "What is the user rating of 'Changing Times'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["6.1"]}
+{"id": "D1479", "input": "Who edited 'A Stolen Life'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Rudi Fehr"]}
+{"id": "D0117", "input": "What are the remakes of 'Alien Nation'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Alien Nation"]}
+{"id": "D2161", "input": "Who was the cinematographer of 'Abendland'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Nikolaus Geyrhalter"]}
+{"id": "D1845", "input": "What is the user rating of 'Carnosaur 3: Primal Species'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["3.2"]}
+{"id": "D1587", "input": "What is the user rating of 'Brigadoon'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["6.8"]}
+{"id": "D2141", "input": "How many user tags does 'Amazing Grace and Chuck' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["sport"]}
+{"id": "D1523", "input": "How many user tags does 'Acting on Impulse' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["thriller"]}
+{"id": "D0420", "input": "Where was '8 Heads in a Duffel Bag' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["California"]}
+{"id": "D2897", "input": "Where was 'Ben-Hur' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Rome"]}
+{"id": "D2677", "input": "Who edited 'Aloma of the South Seas'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Arthur P. Schmidt"]}
+{"id": "D1509", "input": "What are the remakes of 'The Addams Family'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["The Addams Family"]}
+{"id": "D0977", "input": "What are the remakes of 'Monster (2023)'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Kaibutsu"]}
+{"id": "D1473", "input": "What are the remakes of 'Terminator 2: Judgment Day'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Terminator 2: Judgment Day"]}
+{"id": "D0308", "input": "How many user tags does '3 Godfathers' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["allegory"]}
+{"id": "D0134", "input": "What production company made '127 Hours'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Pathé"]}
+{"id": "D2640", "input": "What production company made 'An American Werewolf in London'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["PolyGram Filmed Entertainment"]}
+{"id": "D1490", "input": "What production company made 'A Turtle's Tale: Sammy's Adventures'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["StudioCanal"]}
+{"id": "D1869", "input": "Who edited 'ACAB – All Cops Are Bastards'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Patrizio Marone"]}
+{"id": "D1625", "input": "What are the remakes of 'The Fifth Element'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["The Fifth Element"]}
+{"id": "D1918", "input": "Where was 'Anguish' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Barcelona"]}
+{"id": "D2856", "input": "What is the user rating of 'Donnie Darko'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["8.0"]}
+{"id": "D2301", "input": "Who composed the music for 'Accumulator 1'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Ondřej Soukup"]}
+{"id": "D1963", "input": "What are the remakes of 'Total Recall 2'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Total Recall"]}
+{"id": "D2826", "input": "What production company made 'Animal House'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Universal Pictures"]}
+{"id": "D1809", "input": "How many user tags does 'Alexander' have?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["melodrama"]}
+{"id": "D2680", "input": "What production company made 'An Ideal Husband'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Fragile Films"]}
+{"id": "D1658", "input": "What production company made 'Above Suspicion'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Metro-Goldwyn-Mayer"]}
+{"id": "D1674", "input": "Where does the story of 'A Twelve-Year Night' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Uruguay"]}
+{"id": "D2965", "input": "Where was 'Better Days Ahead Reloaded' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Rio de Janeiro"]}
+{"id": "D0578", "input": "Where was 'A Dry White Season' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Zimbabwe"]}
+{"id": "D0968", "input": "Who was the cinematographer of 'A Dream of Passion'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Giorgos Arvanitis"]}
+{"id": "D2384", "input": "What production company made 'Along the Navajo Trail'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Republic Pictures"]}
+{"id": "D0833", "input": "What are the remakes of 'Kull the Conqueror'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Kull the Conqueror"]}
+{"id": "D2477", "input": "Where does the story of 'Alive' take place?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Andes"]}
+{"id": "D2315", "input": "Where was 'Au poste!' filmed?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Espace Niemeyer"]}
+{"id": "D1775", "input": "What are the remakes of 'The Mummy Returns'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["The Mummy Returns"]}
+{"id": "D2259", "input": "Who was the cinematographer of 'Accused'?", "expected_category": "safe_in_scope", "expected_route": "knowledge_graph", "expected_answer_terms": ["Sebastian Blenkov"]}

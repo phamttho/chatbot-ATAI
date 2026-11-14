@@ -1,0 +1,175 @@
+{
+  "timestamp": "2026-11-06T18:51:13.151836+00:00",
+  "server": {
+    "status": "ready",
+    "engine": "llm",
+    "model": "Qwen/Qwen3.5-4B",
+    "device": "cuda",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "version": "capabilities-v2",
+    "source_hashes": {
+      "movie_agent.py": "97f889b29491e69d7267b702c2e799088bbdf3e48a4ad2fada2ed96792be0592",
+      "graph_store.py": "6f05320b445f7c59a30648689adce4b7d80ed8cbfb7d17d4df889448ff6f0c02",
+      "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+    }
+  },
+  "suite": "corrected_3k",
+  "suite_sha256": "c51a48bdf19fca400c3fb017a6d6db31353d21813986127034fd0b078fc93c9b",
+  "graph_sha256": "11073431030bde60d971f0e5b2c1f9c1e7f7ca2a91519bfe1bb7229cdc6b5c6a",
+  "source_hashes": {
+    "factual_qa.py": "64f4fe0f6a755a86fa35b0434b62ad0ba6b9676b3630ac1f021ccab11bb584e6",
+    "movie_agent.py": "97f889b29491e69d7267b702c2e799088bbdf3e48a4ad2fada2ed96792be0592",
+    "llm_client.py": "a624c94c3adc556fa0eb158e2caf7704254132444af756ae6a919da8eef1fc1a",
+    "knowledge_graph.py": "898140ab18cadf743e1f1a2af95c5cc0bbc3a6e3bdb0a8f99f120f7086e822d5",
+    "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18",
+    "graph_store.py": "6f05320b445f7c59a30648689adce4b7d80ed8cbfb7d17d4df889448ff6f0c02",
+    "main.py": "9b4b46e8d56d23c5c7c26a27d60b5ecf12dd123290144ff9ff88d07f48c58c0c",
+    "stage3_agent.py": "49c0643e95e09d65d8e137bbc3643be33c23b2a98bfb7255db27490c5e01eeb2",
+    "local_api.py": "f5cabde326265873f9fe59c4798263e460b33e41ed018b423e500a0efcdaf78e",
+    "guardrails.py": "b93dac44d34acd2619e480b9721331d77f6a2bf1d22d0e6a9afc17313060a1b0",
+    "speakeasy_client.py": "b413ef41fb4eea1b3c9f96cd1ba76d6b3909338116a4816e9f58114d30e44f1a"
+  },
+  "n": 3000,
+  "passed": 2968,
+  "pass_rate": 0.9893333333333333,
+  "classification_accuracy": 1.0,
+  "errors": 9,
+  "routes": {
+    "unsupported_query": 4,
+    "knowledge_graph": 2983,
+    "clarification": 4,
+    "error": 9
+  },
+  "latency_ms": {
+    "mean": 3557.6301633333333,
+    "median": 3520.64,
+    "p95": 4108.76,
+    "max": 10031.69
+  },
+  "groups": {
+    "cast": {
+      "n": 20,
+      "passed": 20,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "cinematographer": {
+      "n": 62,
+      "passed": 61,
+      "pass_rate": 0.9838709677419355,
+      "classification_accuracy": 1.0
+    },
+    "composer": {
+      "n": 57,
+      "passed": 55,
+      "pass_rate": 0.9649122807017544,
+      "classification_accuracy": 1.0
+    },
+    "count_tags": {
+      "n": 473,
+      "passed": 472,
+      "pass_rate": 0.9978858350951374,
+      "classification_accuracy": 1.0
+    },
+    "derivative_work": {
+      "n": 321,
+      "passed": 305,
+      "pass_rate": 0.9501557632398754,
+      "classification_accuracy": 1.0
+    },
+    "director": {
+      "n": 5,
+      "passed": 4,
+      "pass_rate": 0.8,
+      "classification_accuracy": 1.0
+    },
+    "distributor": {
+      "n": 114,
+      "passed": 114,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "editor": {
+      "n": 223,
+      "passed": 223,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "filming_location": {
+      "n": 478,
+      "passed": 473,
+      "pass_rate": 0.9895397489539749,
+      "classification_accuracy": 1.0
+    },
+    "narrative_location": {
+      "n": 247,
+      "passed": 247,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "original_language": {
+      "n": 6,
+      "passed": 6,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "producer": {
+      "n": 50,
+      "passed": 50,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "production_company": {
+      "n": 438,
+      "passed": 435,
+      "pass_rate": 0.9931506849315068,
+      "classification_accuracy": 1.0
+    },
+    "screenwriter": {
+      "n": 27,
+      "passed": 26,
+      "pass_rate": 0.9629629629629629,
+      "classification_accuracy": 1.0
+    },
+    "user_rating": {
+      "n": 479,
+      "passed": 477,
+      "pass_rate": 0.9958246346555324,
+      "classification_accuracy": 1.0
+    }
+  },
+  "exact_graph_answer_rate": 0.9913333333333333,
+  "text_all_reference_answers_rate": 0.9923333333333333,
+  "query_visible_rate": 0.9943333333333333,
+  "multi_answer_cases": 503,
+  "multi_answer_pass_rate": 0.9860834990059643,
+  "directions": {
+    "count": {
+      "n": 473,
+      "passed": 472
+    },
+    "outgoing": {
+      "n": 2527,
+      "passed": 2496
+    }
+  },
+  "total_request_seconds": 10672.89049,
+  "wall_seconds": 9652.363862839993,
+  "exact_rdf_values_rate": 0.9893333333333333,
+  "error_types": {
+    "ValueError": 9
+  },
+  "source_and_fixtures_unchanged": true,
+  "imported_prefix_count": 290,
+  "imported_prefix_from": "/home/ariel/thoprojects/atai/atai-for-spark/additional_files/evaluation/corrected_3k/results_20261106",
+  "correction_subsets": {
+    "retained_subjects": {
+      "n": 2899,
+      "passed": 2870
+    },
+    "replaced_records": {
+      "n": 101,
+      "passed": 98
+    }
+  }
+}

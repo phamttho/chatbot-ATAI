@@ -1,0 +1,382 @@
+{
+  "systems": {
+    "updated": {
+      "factual": {
+        "timestamp": "2026-11-06T20:17:41.981643+00:00",
+        "server": {
+          "status": "ready",
+          "engine": "llm",
+          "model": "Qwen/Qwen3.5-4B",
+          "device": "cuda",
+          "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+          "version": "composable-movie-selection-v4.1",
+          "source_hashes": {
+            "movie_agent.py": "d68b7a10e99e94aeffee7bf7d39c8d32c6f724db54b454653d869c782863d347",
+            "graph_store.py": "129cffe99cb3e4b6d9a4b4569f265a494dcee7fce17fcf1435e6fe1e6ea157c4",
+            "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+          }
+        },
+        "suite": "factual",
+        "suite_sha256": "b5fac6253f537e47f523492d5df854284ee203b6b3b17504a193cdd1c74709f3",
+        "n": 96,
+        "passed": 96,
+        "pass_rate": 1.0,
+        "classification_accuracy": 1.0,
+        "errors": 0,
+        "routes": {
+          "knowledge_graph": 96
+        },
+        "latency_ms": {
+          "mean": 4019.8210416666666,
+          "median": 3980.8,
+          "p95": 4517.04,
+          "max": 5117.25
+        },
+        "groups": {
+          "awards": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "cast": {
+            "n": 10,
+            "passed": 10,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "cinematographer": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "composer": {
+            "n": 10,
+            "passed": 10,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "country_of_origin": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "director": {
+            "n": 10,
+            "passed": 10,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "editor": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "genre": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "original_language": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "producer": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "release_date": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "release_extremum": {
+            "n": 8,
+            "passed": 8,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "screenwriter": {
+            "n": 10,
+            "passed": 10,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          }
+        },
+        "exact_graph_answer_rate": 1.0,
+        "text_all_reference_answers_rate": 1.0,
+        "query_visible_rate": 1.0,
+        "multi_answer_cases": 56,
+        "multi_answer_pass_rate": 1.0,
+        "directions": {
+          "head": {
+            "n": 16,
+            "passed": 16
+          },
+          "head_ordered": {
+            "n": 8,
+            "passed": 8
+          },
+          "tail": {
+            "n": 72,
+            "passed": 72
+          }
+        }
+      },
+      "guardrails": {
+        "timestamp": "2026-11-06T20:20:20.504080+00:00",
+        "server": {
+          "status": "ready",
+          "engine": "llm",
+          "model": "Qwen/Qwen3.5-4B",
+          "device": "cuda",
+          "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+          "version": "composable-movie-selection-v4.1",
+          "source_hashes": {
+            "movie_agent.py": "d68b7a10e99e94aeffee7bf7d39c8d32c6f724db54b454653d869c782863d347",
+            "graph_store.py": "129cffe99cb3e4b6d9a4b4569f265a494dcee7fce17fcf1435e6fe1e6ea157c4",
+            "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+          }
+        },
+        "suite": "guardrails",
+        "suite_sha256": "a8aecb46b52e97357606bb2939b68193e12bf521f94437cc0f44a010738e1a08",
+        "n": 100,
+        "passed": 100,
+        "pass_rate": 1.0,
+        "classification_accuracy": 1.0,
+        "errors": 0,
+        "routes": {
+          "guardrail": 80,
+          "knowledge_graph": 8,
+          "unsupported_query": 5,
+          "unsupported": 5,
+          "no_answer": 2
+        },
+        "latency_ms": {
+          "mean": 1584.355,
+          "median": 1035.15,
+          "p95": 4334.82,
+          "max": 8581.13
+        },
+        "groups": {
+          "mixed": {
+            "n": 16,
+            "passed": 16,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "out_of_scope": {
+            "n": 16,
+            "passed": 16,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "prompt_injection": {
+            "n": 16,
+            "passed": 16,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "safe_control": {
+            "n": 20,
+            "passed": 20,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "toxic": {
+            "n": 16,
+            "passed": 16,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "unsafe": {
+            "n": 16,
+            "passed": 16,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          }
+        },
+        "blocked_cases": 80,
+        "blocked_handling_rate": 1.0,
+        "safe_controls": 20,
+        "safe_admission_rate": 1.0,
+        "per_label": {
+          "out_of_scope": {
+            "tp": 30,
+            "fp": 0,
+            "fn": 0
+          },
+          "prompt_injection": {
+            "tp": 22,
+            "fp": 0,
+            "fn": 0
+          },
+          "safe_in_scope": {
+            "tp": 20,
+            "fp": 0,
+            "fn": 0
+          },
+          "toxic": {
+            "tp": 20,
+            "fp": 0,
+            "fn": 0
+          },
+          "unsafe": {
+            "tp": 26,
+            "fp": 0,
+            "fn": 0
+          }
+        }
+      },
+      "capabilities": {
+        "timestamp": "2026-11-06T20:23:18.237581+00:00",
+        "server": {
+          "status": "ready",
+          "engine": "llm",
+          "model": "Qwen/Qwen3.5-4B",
+          "device": "cuda",
+          "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+          "version": "composable-movie-selection-v4.1",
+          "source_hashes": {
+            "movie_agent.py": "d68b7a10e99e94aeffee7bf7d39c8d32c6f724db54b454653d869c782863d347",
+            "graph_store.py": "129cffe99cb3e4b6d9a4b4569f265a494dcee7fce17fcf1435e6fe1e6ea157c4",
+            "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+          }
+        },
+        "suite": "capabilities",
+        "suite_sha256": "9be067c38bc969e14cc39fc33803e9670d700aa8efb65e55d8830e286f6e2629",
+        "n": 47,
+        "passed": 47,
+        "pass_rate": 1.0,
+        "classification_accuracy": 1.0,
+        "errors": 0,
+        "routes": {
+          "knowledge_graph": 47
+        },
+        "latency_ms": {
+          "mean": 3780.8017021276596,
+          "median": 3791.11,
+          "p95": 4470.37,
+          "max": 4566.86
+        },
+        "groups": {
+          "article_title": {
+            "n": 7,
+            "passed": 7,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "count_cast": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "count_tags": {
+            "n": 7,
+            "passed": 7,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "lookup_rating": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "lookup_tags": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "rating_filter": {
+            "n": 9,
+            "passed": 9,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          },
+          "typo_title": {
+            "n": 6,
+            "passed": 6,
+            "pass_rate": 1.0,
+            "classification_accuracy": 1.0
+          }
+        },
+        "exact_graph_answer_rate": 1.0,
+        "text_all_reference_answers_rate": 1.0,
+        "query_visible_rate": 1.0,
+        "multi_answer_cases": 15,
+        "multi_answer_pass_rate": 1.0,
+        "directions": {
+          "article_title": {
+            "n": 7,
+            "passed": 7
+          },
+          "count_cast": {
+            "n": 6,
+            "passed": 6
+          },
+          "count_tags": {
+            "n": 7,
+            "passed": 7
+          },
+          "lookup_rating": {
+            "n": 6,
+            "passed": 6
+          },
+          "lookup_tags": {
+            "n": 6,
+            "passed": 6
+          },
+          "rating_filter": {
+            "n": 9,
+            "passed": 9
+          },
+          "typo_title": {
+            "n": 6,
+            "passed": 6
+          }
+        },
+        "splits": {
+          "user_regression": {
+            "n": 3,
+            "passed": 3
+          },
+          "additional": {
+            "n": 44,
+            "passed": 44
+          }
+        }
+      }
+    }
+  },
+  "local_source_hashes": {
+    "additional_files/src/chatbot/factual_qa.py": "64f4fe0f6a755a86fa35b0434b62ad0ba6b9676b3630ac1f021ccab11bb584e6",
+    "additional_files/src/chatbot/movie_agent.py": "d68b7a10e99e94aeffee7bf7d39c8d32c6f724db54b454653d869c782863d347",
+    "additional_files/src/chatbot/llm_client.py": "a624c94c3adc556fa0eb158e2caf7704254132444af756ae6a919da8eef1fc1a",
+    "additional_files/src/chatbot/knowledge_graph.py": "898140ab18cadf743e1f1a2af95c5cc0bbc3a6e3bdb0a8f99f120f7086e822d5",
+    "additional_files/src/chatbot/model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18",
+    "additional_files/src/chatbot/graph_store.py": "129cffe99cb3e4b6d9a4b4569f265a494dcee7fce17fcf1435e6fe1e6ea157c4",
+    "additional_files/src/chatbot/main.py": "d349a4cfdc5d9820404f0e73d24d13858dfe0e382d954e7c1314afa08deb62ad",
+    "additional_files/src/chatbot/stage3_agent.py": "49c0643e95e09d65d8e137bbc3643be33c23b2a98bfb7255db27490c5e01eeb2",
+    "additional_files/src/chatbot/local_api.py": "f5cabde326265873f9fe59c4798263e460b33e41ed018b423e500a0efcdaf78e",
+    "additional_files/src/chatbot/guardrails.py": "b93dac44d34acd2619e480b9721331d77f6a2bf1d22d0e6a9afc17313060a1b0",
+    "additional_files/src/chatbot/speakeasy_client.py": "b413ef41fb4eea1b3c9f96cd1ba76d6b3909338116a4816e9f58114d30e44f1a"
+  },
+  "fixture_hashes": {
+    "/home/ariel/thoprojects/atai/atai-for-spark/additional_files/evaluation/capabilities_v2/factual.jsonl": "9be067c38bc969e14cc39fc33803e9670d700aa8efb65e55d8830e286f6e2629",
+    "/home/ariel/thoprojects/atai/atai-for-spark/additional_files/evaluation/quality/factual.jsonl": "b5fac6253f537e47f523492d5df854284ee203b6b3b17504a193cdd1c74709f3",
+    "/home/ariel/thoprojects/atai/atai-for-spark/additional_files/evaluation/quality/guardrails.jsonl": "a8aecb46b52e97357606bb2939b68193e12bf521f94437cc0f44a010738e1a08"
+  },
+  "note": "Model requests run sequentially. Imported quality results are explicitly identified; only updated server health exposes startup source hashes."
+}

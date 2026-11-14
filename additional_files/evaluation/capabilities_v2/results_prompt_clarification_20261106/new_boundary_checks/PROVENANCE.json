@@ -1,0 +1,4 @@
+{
+  "fixture_sha256": "b387543dd34029783b95568c04aad9b331291c07eaf26d850c0b03bb86e98650",
+  "note": "Twelve manually authored additional development checks frozen before first inference. No independent human review. No subsequent prompt tuning. Report separately from original 243-case regression suite."
+}
