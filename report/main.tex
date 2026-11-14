@@ -1,7 +1,6 @@
 \documentclass{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{textcomp}
@@ -39,7 +38,7 @@ the active recommendation context.
 \begin{itemize}
 \setlength{\itemsep}{0pt}
 \item \textbf{Language understanding.} We use local
-\texttt{Qwen/Qwen3.5-4B}~\cite{qwen35} through vLLM~\cite{vllm}, with greedy
+\texttt{Qwen/Qwen3.5-4B} through vLLM, with greedy
 decoding and thinking output disabled. One prompt classifies the current turn
 and identifies its action; a focused extraction prompt captures preference
 changes. Python validates the returned fields before updating memory.
@@ -49,7 +48,7 @@ pending question, recent history, and suggested-film IDs. Shared graph features
 help formulate a relevant clarification, but are not treated as confirmed
 preferences. Readiness is interpreted in the context of the pending question.
 
-\item \textbf{Graph retrieval.} PyOxigraph~\cite{pyoxigraph} loads the supplied
+\item \textbf{Graph retrieval.} PyOxigraph loads the supplied
 RDF graph. Labels, aliases, and conservative fuzzy matching resolve film names.
 Factual filters enforce genre, people, country, language, release years, awards,
 and ratings. A weighted score favors shared features, especially costume design
@@ -89,7 +88,7 @@ questions use the inherited query handler.
 \end{tikzpicture}
 \end{center}
 
-One saved live conversation~\cite{live} starts with: ``I enjoyed The Handmaiden
+One saved live conversation starts with: ``I enjoyed The Handmaiden
 and Decision to Leave. What else do you recommend?'' The router identifies a safe
 recommendation request and extracts both liked titles. Graph lookup finds their
 shared director, Park Chan-wook. Instead of assuming that this is the user's
@@ -127,15 +126,11 @@ tests use controlled model responses, so naturalness still needs human review.
 \section{Additional Features}
 The local API supports isolated sessions, explicit resets, and reproducible
 evaluation without contacting Speakeasy. An earlier live run passed 64/64 checks
-across 21 turns~\cite{live}; a broader conversation suite passed 13/15 cases
-(161/174 checks)~\cite{suite}. The remaining cases involved combined constraints
+across 21 turns; a broader conversation suite passed 13/15 cases
+(161/174 checks). The remaining cases involved combined constraints
 and dropping unsupported filters. These are development results from earlier
 revisions, not an official Evaluation IV score or validation of the latest
 wording. Generated reasons are evidence-constrained, but are not independently
 checked for factual entailment.
 
-% The course permits references beyond the two-page main-report limit.
-\clearpage
-\bibliographystyle{abbrv}
-\bibliography{references}
 \end{document}
