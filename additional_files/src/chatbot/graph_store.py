@@ -294,7 +294,7 @@ class GraphStore:
         if set(plan) - {'operation', 'filters', 'result'}:
             raise ValueError('Unknown movie-selection fields')
         result = plan.get('result', 'list')
-        if not isinstance(result, str) or result not in {'list', 'count', 'earliest', 'latest', 'highest_rating', 'lowest_rating'}:
+        if not isinstance(result, str) or result not in {'list', 'count', 'earliest', 'latest'}:
             raise ValueError('Unknown movie-selection result')
         filters = plan.get('filters', [])
         if not isinstance(filters, list) or len(filters) > 4:
@@ -307,9 +307,7 @@ class GraphStore:
             body += ('?answer wdt:P577 ?release_date . '
                      'BIND(xsd:dateTime(CONCAT(SUBSTR(STR(?release_date),1,10),"T00:00:00")) AS ?day) '
                      'FILTER(BOUND(?day)) ')
-        has_rating = result in {'highest_rating', 'lowest_rating'}
-        if has_rating:
-            body += '?answer atai:rating ?rating . '
+        has_rating = False
         operators = {'gt': '>', 'gte': '>=', 'lt': '<', 'lte': '<=', 'eq': '=', 'ne': '!='}
         for index, constraint in enumerate(filters):
             if not isinstance(constraint, dict):
@@ -355,13 +353,6 @@ class GraphStore:
             query = (f'SELECT DISTINCT ?answer WHERE {{ {body}'
                      f'{{ SELECT ({aggregate}(?day) AS ?extreme) WHERE {{ {body}}} }} '
                      'FILTER(?day = ?extreme) }')
-        elif result in {'highest_rating', 'lowest_rating'}:
-            aggregate = 'MAX' if result == 'highest_rating' else 'MIN'
-            # Apply relation/date filters first, then return every movie tied
-            # at the requested rating extreme.
-            query = (f'SELECT DISTINCT ?answer WHERE {{ {body}'
-                     f'{{ SELECT ({aggregate}(?rating) AS ?extreme_rating) WHERE {{ {body}}} }} '
-                     'FILTER(?rating = ?extreme_rating) }')
         else:
             query = f'SELECT DISTINCT ?answer WHERE {{ {body}}}'
         self._approved_selections[query] = result

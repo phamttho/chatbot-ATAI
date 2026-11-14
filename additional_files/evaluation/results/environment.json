@@ -1,0 +1,19 @@
+{
+  "torch": "2.12.0",
+  "transformers": "5.12.1",
+  "huggingface_hub": "1.20.1",
+  "rdflib": "7.6.0",
+  "pyoxigraph": "0.5.13",
+  "fastapi": "0.162.0",
+  "uvicorn": "0.54.0",
+  "requests": "2.34.2",
+  "tokenizers": "0.22.2",
+  "hardware": "NVIDIA GB10",
+  "cuda": "13.0",
+  "graph_sha256": "11073431030bde60d971f0e5b2c1f9c1e7f7ca2a91519bfe1bb7229cdc6b5c6a",
+  "snapshots": {
+    "Qwen2.5-1.5B-Instruct": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "Qwen3.5-0.8B": "2fc06364715b967f1860aea9cf38778875588b17",
+    "Qwen3.5-4B": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "seed": 20261107,
+  "graph_sha256": "11073431030bde60d971f0e5b2c1f9c1e7f7ca2a91519bfe1bb7229cdc6b5c6a",
+  "factual_cases": 96,
+  "relation_counts": {
+    "screenwriter": 10,
+    "composer": 10,
+    "cinematographer": 6,
+    "cast": 10,
+    "release_date": 6,
+    "original_language": 6,
+    "producer": 6,
+    "release_extremum": 8,
+    "genre": 6,
+    "awards": 6,
+    "editor": 6,
+    "director": 10,
+    "country_of_origin": 6
+  },
+  "direction_counts": {
+    "tail": 72,
+    "head_ordered": 8,
+    "head": 16
+  },
+  "multi_answer_cases": 56,
+  "excluded_prompt_example_titles": [
+    "Inception",
+    "Interstellar",
+    "Manchester by the Sea",
+    "The Father",
+    "The Handmaiden",
+    "There Will Be Blood"
+  ],
+  "expected_answer_source": "Supplied graph, independently checked by RDFLib SPARQL before model evaluation; never model memory.",
+  "selection": "Fixed seed, two familiar/four random movie titles per relation when available, plus multi-value coverage; no agent outputs used for selection.",
+  "factual_sha256": "b5fac6253f537e47f523492d5df854284ee203b6b3b17504a193cdd1c74709f3",
+  "guardrails_sha256": "a8aecb46b52e97357606bb2939b68193e12bf521f94437cc0f44a010738e1a08",
+  "guardrail_group_counts": {
+    "out_of_scope": 16,
+    "toxic": 16,
+    "unsafe": 16,
+    "prompt_injection": 16,
+    "mixed": 16,
+    "safe_control": 20
+  },
+  "independent_reference_engine": "RDFLib",
+  "source_hashes": {
+    "movie_agent.py": "166a37ccf6a1e7907e797c52255424e80f8a57dac52ac6813b29a622476017de",
+    "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18",
+    "graph_store.py": "7dcb968eab0e0c319bb3a3f5334eb57490ae8898f2af63cfc5ac9c58440f9436",
+    "stage3_agent.py": "49c0643e95e09d65d8e137bbc3643be33c23b2a98bfb7255db27490c5e01eeb2",
+    "guardrails.py": "b93dac44d34acd2619e480b9721331d77f6a2bf1d22d0e6a9afc17313060a1b0",
+    "factual_qa.py": "64f4fe0f6a755a86fa35b0434b62ad0ba6b9676b3630ac1f021ccab11bb584e6",
+    "llm_client.py": "a624c94c3adc556fa0eb158e2caf7704254132444af756ae6a919da8eef1fc1a"
+  }
+}

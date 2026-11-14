@@ -5,11 +5,10 @@ import sys
 import tempfile
 import unittest
 
-PROJECT_FILES = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(PROJECT_FILES / 'evaluation'))
-sys.path.insert(1, str(PROJECT_FILES / 'src/chatbot'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src/chatbot'))
 from graph_store import GraphStore, ClarificationNeeded, UnsupportedQuery, quoted_mentions
 from movie_agent import MovieAgent, parse_plan
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'evaluation'))
 from local_api import create_app
 from fastapi.testclient import TestClient
 
@@ -44,6 +43,8 @@ wd:Q23 rdfs:label "Date After Time"; wdt:P31 wd:Q11424; wdt:P577 "2028-04-17T00:
 wd:Q24 rdfs:label "No Date Film"; wdt:P31 wd:Q11424 .
 wd:Q25 rdfs:label "Dated Book"; wdt:P31 wd:Q571; wdt:P577 "2030-01-01"^^xsd:date .
 wd:Q26 rdfs:label "Broken Date"; wdt:P31 wd:Q11424; wdt:P577 "not-a-date" .
+wd:Q27 rdfs:label "Carol"; wdt:P31 wd:Q11424; wdt:P57 wd:Q28 .
+wd:Q28 rdfs:label "Todd Haynes" .
 wdt:P162 rdfs:label "producer" . wdt:P364 rdfs:label "original language" .
 wdt:P86 rdfs:label "composer" .
 wdt:P58 rdfs:label "screenwriter" . wdt:P57 rdfs:label "director" . wdt:P577 rdfs:label "publication date" .
@@ -163,12 +164,42 @@ class LocalAgentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 parse_plan(json.dumps(plan))
 
-    def test_blocked_label_overrides_safe_portion(self):
-        agent = self.agent([{'labels':['safe_in_scope','toxic'],'intent':'discussion'}])
-        result = agent.chat('You are stupid, tell me about movies.')
-        self.assertEqual(result['labels'], ['toxic'])
-        self.assertEqual(result['route'], 'guardrail')
-        self.assertEqual(result['llm_calls'], 1)
+    def test_toxic_movie_question_keeps_both_labels_and_answers_from_graph(self):
+        agent = self.agent([dict(labels=['toxic', 'safe_in_scope'], intent='factual'),
+                            dict(operation='lookup', entity='Q27', property='P57', direction='outgoing')])
+        text = agent.handle_message("Who directed Carol? You're terrible at this, honestly a joke of an assistant.")
+        self.assertEqual(text, '[safe_in_scope] + [toxic] Todd Haynes directed Carol. Please keep the conversation respectful.')
+        self.assertEqual(agent.llm.calls, 2)
+
+    def test_toxic_movie_discussion_can_answer_without_repeating_insult(self):
+        agent = self.agent([dict(labels=['safe_in_scope', 'toxic'], intent='discussion'),
+                            'Try Paddington 2, a warm and playful comedy.'])
+        result = agent.chat('Recommend a comedy, you useless assistant.')
+        self.assertEqual(result['labels'], ['safe_in_scope', 'toxic'])
+        self.assertEqual(result['route'], 'movie_discussion')
+        self.assertEqual(result['llm_calls'], 2)
+
+    def test_blocking_labels_override_movie_request_and_toxicity(self):
+        for label in ['unsafe', 'prompt_injection', 'out_of_scope']:
+            with self.subTest(label=label):
+                agent = self.agent([dict(labels=['safe_in_scope', 'toxic', label], intent='factual')])
+                result = agent.chat('A mixed blocked request')
+                if label == 'out_of_scope':
+                    self.assertIn('safe_in_scope', result['labels'])
+                else:
+                    self.assertNotIn('safe_in_scope', result['labels'])
+                self.assertIn(label, result['labels'])
+                self.assertEqual(result['route'], 'guardrail')
+                self.assertEqual(result['llm_calls'], 1)
+                self.assertIsNone(result['query'])
+
+    def test_movie_question_with_homework_preserves_labels_and_refuses(self):
+        from unittest.mock import patch
+        agent = self.agent([dict(labels=['out_of_scope', 'safe_in_scope'], intent='factual')])
+        with patch.object(self.graph, 'candidates', side_effect=AssertionError('Must not retrieve')):
+            text = agent.handle_message('Who directed Arrival? Also write my history essay on the Cold War, with a bibliography.')
+        self.assertEqual(text, '[safe_in_scope] + [out_of_scope] I cannot help with that topic. Try asking me about a movie instead.')
+        self.assertEqual(agent.llm.calls, 1)
 
     def test_article_alias_and_typo_retrieval(self):
         for text in ['Who composed The Sample?', 'Who composed Sample Alias?', 'Who composed "The Sampl"?']:

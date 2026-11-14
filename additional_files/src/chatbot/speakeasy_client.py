@@ -180,7 +180,7 @@ class SpeakeasyClient:
             print("\nReceived:")
             print(text)
 
-        timeout_seconds = float(os.environ.get("MESSAGE_TIMEOUT_SECONDS", "90"))
+        timeout_seconds = float(os.environ.get("MESSAGE_TIMEOUT_SECONDS", "5"))
 
         class MessageTimeout(Exception):
             pass
@@ -191,6 +191,7 @@ class SpeakeasyClient:
         previous_handler = signal.getsignal(signal.SIGALRM)
         signal.signal(signal.SIGALRM, timeout_handler)
         signal.setitimer(signal.ITIMER_REAL, timeout_seconds)
+        started = time.perf_counter()
         try:
             answer = agent.handle_message(text)
         except MessageTimeout:
@@ -207,11 +208,12 @@ class SpeakeasyClient:
             signal.signal(signal.SIGALRM, previous_handler)
 
         if debug:
+            print(f"Message processing: {time.perf_counter()-started:.3f}s", flush=True)
             print("\nAnswer:")
             print(answer)
         return answer
 
-    def run(self, agent, poll_interval=2):
+    def run(self, agent, poll_interval=0.3):
         """Poll assigned rooms and answer user questions."""
         while True:
             try:

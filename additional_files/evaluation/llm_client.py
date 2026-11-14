@@ -23,7 +23,7 @@ class LocalLLM:
         )
 
         if not configured_model:
-            model_root = Path(__file__).resolve().parents[2] / "models"
+            model_root = Path(__file__).resolve().parents[1] / "models"
             candidates = []
 
             if model_root.exists():

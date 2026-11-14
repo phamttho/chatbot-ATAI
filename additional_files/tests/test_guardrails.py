@@ -4,10 +4,10 @@ from pathlib import Path
 from unittest.mock import patch
 
 
-PROJECT_FILES = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(PROJECT_FILES / "evaluation"))
-sys.path.insert(1, str(PROJECT_FILES / "src" / "chatbot"))
+CHATBOT_DIR = Path(__file__).resolve().parents[1] / "src" / "chatbot"
+sys.path.insert(0, str(CHATBOT_DIR))
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'evaluation'))
 from guardrails import (  # noqa: E402
     OUT_OF_SCOPE,
     PROMPT_INJECTION,

@@ -1,6 +1,7 @@
 """Local HTTP transport shared by the legacy baseline and the LLM-first agent."""
 import argparse
 import os
+import sys
 import threading
 import time
 from pathlib import Path
@@ -9,6 +10,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / 'additional_files/src/chatbot'))
 
 
 class ChatRequest(BaseModel):

@@ -1,5 +1,6 @@
 """Small local Transformers runtime, with no remote inference dependency."""
 import os
+import time
 import torch
 from transformers import AutoConfig, AutoTokenizer, AutoModelForCausalLM, AutoModelForImageTextToText
 
@@ -13,15 +14,13 @@ class ModelRuntime:
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         config = AutoConfig.from_pretrained(model_name)
         model_class = AutoModelForImageTextToText if config.model_type == 'qwen3_5' else AutoModelForCausalLM
-        if device == 'cuda':
-            dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
-        else:
-            dtype = torch.float32
+        dtype = torch.bfloat16 if device == 'cuda' and torch.cuda.is_bf16_supported() else torch.float32
         self.model = model_class.from_pretrained(model_name, dtype=dtype, attn_implementation='sdpa').to(device).eval()
         self.revision = getattr(config, '_commit_hash', None)
         self.calls = 0
 
     def generate(self, system, message, max_new_tokens=256):
+        started = time.perf_counter()
         self.calls += 1
         prompt = self.tokenizer.apply_chat_template([
             {'role':'system', 'content':system}, {'role':'user', 'content':message}
@@ -30,4 +29,10 @@ class ModelRuntime:
         with torch.inference_mode():
             output = self.model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False,
                                          pad_token_id=self.tokenizer.eos_token_id, use_cache=True)
-        return self.tokenizer.decode(output[0, inputs.input_ids.shape[1]:], skip_special_tokens=True).strip()
+        answer = self.tokenizer.decode(output[0, inputs.input_ids.shape[1]:], skip_special_tokens=True).strip()
+        if os.environ.get('DEBUG_LOGGING', '').lower() in {'1', 'true', 'yes'}:
+            print(f"Model call {self.calls}: {time.perf_counter()-started:.3f}s, "
+                  f"input_tokens={inputs.input_ids.shape[1]}, "
+                  f"output_tokens={output.shape[1]-inputs.input_ids.shape[1]}, "
+                  f"device={self.device}", flush=True)
+        return answer

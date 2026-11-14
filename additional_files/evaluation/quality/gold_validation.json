@@ -1,0 +1,486 @@
+{
+  "triples": 2413825,
+  "verified_cases": [
+    {
+      "id": "QF008",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF017",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF010",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF053",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF041",
+      "reference_verified": true,
+      "answer_count": 12
+    },
+    {
+      "id": "QF029",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF061",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF045",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF089",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF046",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF072",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF034",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF093",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF056",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF074",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF021",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF001",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF090",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF051",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF037",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF094",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF069",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF027",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF066",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF067",
+      "reference_verified": true,
+      "answer_count": 7
+    },
+    {
+      "id": "QF040",
+      "reference_verified": true,
+      "answer_count": 10
+    },
+    {
+      "id": "QF052",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF087",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF084",
+      "reference_verified": true,
+      "answer_count": 6
+    },
+    {
+      "id": "QF030",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF038",
+      "reference_verified": true,
+      "answer_count": 12
+    },
+    {
+      "id": "QF016",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF057",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF096",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF082",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF005",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF073",
+      "reference_verified": true,
+      "answer_count": 4
+    },
+    {
+      "id": "QF019",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF028",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF033",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF075",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF080",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF020",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF059",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF060",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF054",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF065",
+      "reference_verified": true,
+      "answer_count": 4
+    },
+    {
+      "id": "QF083",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF015",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF002",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF085",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF043",
+      "reference_verified": true,
+      "answer_count": 4
+    },
+    {
+      "id": "QF004",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF011",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF050",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF013",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF035",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF088",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF022",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF048",
+      "reference_verified": true,
+      "answer_count": 4
+    },
+    {
+      "id": "QF070",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF044",
+      "reference_verified": true,
+      "answer_count": 4
+    },
+    {
+      "id": "QF077",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF071",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF049",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF031",
+      "reference_verified": true,
+      "answer_count": 5
+    },
+    {
+      "id": "QF086",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF079",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF092",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF009",
+      "reference_verified": true,
+      "answer_count": 3
+    },
+    {
+      "id": "QF025",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF042",
+      "reference_verified": true,
+      "answer_count": 10
+    },
+    {
+      "id": "QF012",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF078",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF023",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF024",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF055",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF064",
+      "reference_verified": true,
+      "answer_count": 5
+    },
+    {
+      "id": "QF018",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF014",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF062",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF068",
+      "reference_verified": true,
+      "answer_count": 4
+    },
+    {
+      "id": "QF081",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF032",
+      "reference_verified": true,
+      "answer_count": 8
+    },
+    {
+      "id": "QF003",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF036",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF006",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF058",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF047",
+      "reference_verified": true,
+      "answer_count": 4
+    },
+    {
+      "id": "QF007",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF063",
+      "reference_verified": true,
+      "answer_count": 2
+    },
+    {
+      "id": "QF026",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF039",
+      "reference_verified": true,
+      "answer_count": 8
+    },
+    {
+      "id": "QF095",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF091",
+      "reference_verified": true,
+      "answer_count": 1
+    },
+    {
+      "id": "QF076",
+      "reference_verified": true,
+      "answer_count": 2
+    }
+  ],
+  "guardrails_schema_valid": true
+}
