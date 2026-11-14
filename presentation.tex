@@ -28,71 +28,52 @@
 }
 \begin{document}
 
-% Slide 1: Framework and routing overview
+% Slide 1: Report-based system overview
 \begin{frame}[plain]
 \begin{tikzpicture}[remember picture,overlay]
   \fill[paper] (current page.south west) rectangle (current page.north east);
-  \slidetitle{Stage 4: factual answers}
-  \node[anchor=west,text=muted,font=\sffamily\bfseries\fontsize{10}{12}\selectfont]
-    at ([xshift=16mm,yshift=67mm]current page.south west) {Factual route};
-  \tikzset{flow/.style={draw=teal!55,fill=white,rounded corners=2mm,minimum width=20mm,minimum height=12mm,align=center,text=ink,font=\sffamily\bfseries\fontsize{9}{11}\selectfont},
-           arrow/.style={-{Stealth[length=2mm]},draw=teal,line width=1.15pt}}
-  \node[flow] (message) at ([xshift=18mm,yshift=55mm]current page.south west) {Message};
-  \node[flow] (classify) at ([xshift=44mm,yshift=55mm]current page.south west) {Classify};
-  \node[flow] (retrieve) at ([xshift=70mm,yshift=55mm]current page.south west) {Candidates};
-  \node[flow] (plan) at ([xshift=96mm,yshift=55mm]current page.south west) {JSON plan};
-  \node[flow] (validate) at ([xshift=122mm,yshift=55mm]current page.south west) {Validate};
-  \node[flow] (graph) at ([xshift=148mm,yshift=55mm]current page.south west) {PyOxigraph};
-  \draw[arrow] (message) -- (classify);
-  \draw[arrow] (classify) -- (retrieve);
-  \draw[arrow] (retrieve) -- (plan);
-  \draw[arrow] (plan) -- (validate);
-  \draw[arrow] (validate) -- (graph);
-
-  \node[draw=gold!80!ink,fill=gold!12,rounded corners=2mm,minimum width=47mm,minimum height=13mm,
-        align=center,text=ink,font=\sffamily\bfseries\fontsize{10}{12}\selectfont]
-    (discussion) at ([xshift=65mm,yshift=31mm]current page.south west) {Discussion / recommendations};
-  \node[draw=gold!80!ink,fill=white,rounded corners=2mm,minimum width=37mm,minimum height=13mm,
-        align=center,text=ink,font=\sffamily\bfseries\fontsize{10}{12}\selectfont]
-    (response) at ([xshift=127mm,yshift=31mm]current page.south west) {Qwen response};
-  \draw[-{Stealth[length=2mm]},draw=gold,line width=1.15pt] (classify.south) -- ++(0,-7mm) -| (discussion.west);
-  \draw[-{Stealth[length=2mm]},draw=gold,line width=1.15pt] (discussion) -- (response);
-
+  \node[anchor=north west,text=ink,font=\sffamily\bfseries\fontsize{19}{23}\selectfont]
+    at ([xshift=16mm,yshift=-12mm]current page.north west) {Stage 4: preference-led recommendations};
+  \draw[teal,line width=1.4pt] ([xshift=16mm,yshift=-21mm]current page.north west) -- ++(13mm,0);
+  \tikzset{flow/.style={draw=teal!55,fill=white,rounded corners=2mm,minimum width=31mm,minimum height=16mm,align=center,text=ink,font=\sffamily\bfseries\fontsize{10}{12}\selectfont},
+           arrow/.style={-{Stealth[length=2.2mm]},draw=teal,line width=1.2pt}}
+  \node[flow] (interpret) at ([xshift=27mm,yshift=53mm]current page.south west) {Classify +\\extract};
+  \node[flow] (profile) at ([xshift=63mm,yshift=53mm]current page.south west) {Update\\profile};
+  \node[flow] (rank) at ([xshift=99mm,yshift=53mm]current page.south west) {Filter +\\score graph};
+  \node[flow] (answer) at ([xshift=135mm,yshift=53mm]current page.south west) {Clarify or\\recommend};
+  \draw[arrow] (interpret) -- (profile);
+  \draw[arrow] (profile) -- (rank);
+  \draw[arrow] (rank) -- (answer);
+  \node[anchor=west,text=gold!80!ink,font=\sffamily\bfseries\fontsize{10}{12}\selectfont]
+    at ([xshift=28mm,yshift=30mm]current page.south west) {Only retrieved film IDs become recommendations};
   \node[anchor=west,text=teal,font=\sffamily\bfseries\fontsize{11}{13}\selectfont]
-    at ([xshift=16mm,yshift=11mm]current page.south west) {Stack: Qwen3.5-4B  \textbullet  Python  \textbullet  PyOxigraph  \textbullet  FastAPI  \textbullet  Speakeasy};
-
+    at ([xshift=16mm,yshift=11mm]current page.south west) {Qwen3.5-4B  \textbullet  vLLM  \textbullet  Python  \textbullet  PyOxigraph};
 \end{tikzpicture}
 \end{frame}
 
-% Slide 2: Key runtime functions
+% Slide 2: User-facing functionality
 \begin{frame}[plain]
 \begin{tikzpicture}[remember picture,overlay]
   \fill[paper] (current page.south west) rectangle (current page.north east);
-  \slidetitle{Function flow}
-  \draw[linegray,line width=1.2pt] ([xshift=22mm,yshift=17mm]current page.south west) -- ([xshift=22mm,yshift=69mm]current page.south west);
-  \foreach \y in {68,62,56,50,44,38,32,26,20} {
-    \fill[teal] ([xshift=22mm,yshift=\y mm]current page.south west) circle (1.8mm);
+  \slidetitle{What users can do}
+  \draw[linegray,line width=1.2pt] ([xshift=23mm,yshift=12mm]current page.south west) -- ([xshift=23mm,yshift=61mm]current page.south west);
+  \foreach \y/\c in {60/teal,50/gold,40/teal,30/teal,20/gold} {
+    \fill[\c] ([xshift=23mm,yshift=\y mm]current page.south west) circle (3mm);
   }
-  \def\funcstyle{\sffamily\bfseries\fontsize{11}{13}\selectfont}
-  \def\descstyle{\sffamily\fontsize{11}{13}\selectfont}
-  \node[anchor=west,text=teal,font=\funcstyle] at ([xshift=32mm,yshift=68mm]current page.south west) {\texttt{main()}};
-  \node[anchor=west,text=ink,font=\descstyle] at ([xshift=78mm,yshift=68mm]current page.south west) {graph / model};
-  \node[anchor=west,text=teal,font=\funcstyle] at ([xshift=32mm,yshift=62mm]current page.south west) {\texttt{run()}};
-  \node[anchor=west,text=ink,font=\descstyle] at ([xshift=78mm,yshift=62mm]current page.south west) {polls};
-  \node[anchor=west,text=teal,font=\funcstyle] at ([xshift=32mm,yshift=56mm]current page.south west) {\texttt{process\_message()}};
-  \node[anchor=west,text=ink,font=\descstyle] at ([xshift=78mm,yshift=56mm]current page.south west) {filters};
-  \node[anchor=west,text=teal,font=\funcstyle] at ([xshift=32mm,yshift=50mm]current page.south west) {\texttt{handle\_message()}};
-  \node[anchor=west,text=ink,font=\descstyle] at ([xshift=78mm,yshift=50mm]current page.south west) {labels};
-  \node[anchor=west,text=teal,font=\funcstyle] at ([xshift=32mm,yshift=44mm]current page.south west) {\texttt{chat()}};
-  \node[anchor=west,text=ink,font=\descstyle] at ([xshift=78mm,yshift=44mm]current page.south west) {routes};
-  \node[anchor=west,text=teal,font=\funcstyle] at ([xshift=32mm,yshift=38mm]current page.south west) {\texttt{generate()}};
-  \node[anchor=west,text=ink,font=\descstyle] at ([xshift=78mm,yshift=38mm]current page.south west) {Qwen};
-  \node[anchor=west,text=teal,font=\funcstyle] at ([xshift=32mm,yshift=32mm]current page.south west) {\texttt{candidates()}};
-  \node[anchor=west,text=ink,font=\descstyle] at ([xshift=78mm,yshift=32mm]current page.south west) {entity IDs};
-  \node[anchor=west,text=teal,font=\funcstyle] at ([xshift=32mm,yshift=26mm]current page.south west) {\texttt{compile\_plan()}};
-  \node[anchor=west,text=ink,font=\descstyle] at ([xshift=78mm,yshift=26mm]current page.south west) {validates};
-  \node[anchor=west,text=teal,font=\funcstyle] at ([xshift=32mm,yshift=20mm]current page.south west) {\texttt{execute()}};
-  \node[anchor=west,text=ink,font=\descstyle] at ([xshift=78mm,yshift=20mm]current page.south west) {query};
+  \foreach \y in {55,45,35,25} {
+    \draw[-{Stealth[length=1.5mm]},draw=teal!70,line width=.8pt]
+      ([xshift=23mm,yshift=\y mm]current page.south west) -- ([xshift=23mm,yshift=\y-2mm]current page.south west);
+  }
+  \node[anchor=west,text=teal,font=\sffamily\bfseries\fontsize{14}{17}\selectfont]
+    at ([xshift=36mm,yshift=60mm]current page.south west) {Share likes, dislikes, or mood};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{14}{17}\selectfont]
+    at ([xshift=36mm,yshift=50mm]current page.south west) {Keep preferences per room};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{14}{17}\selectfont]
+    at ([xshift=36mm,yshift=40mm]current page.south west) {Clarify ambiguous requests first};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{14}{17}\selectfont]
+    at ([xshift=36mm,yshift=30mm]current page.south west) {Get ranked, graph-backed films};
+  \node[anchor=west,text=gold!80!ink,font=\sffamily\bfseries\fontsize{14}{17}\selectfont]
+    at ([xshift=36mm,yshift=20mm]current page.south west) {Skip repeats; reset new searches};
 \end{tikzpicture}
 \end{frame}
 
@@ -102,40 +83,39 @@
   \fill[paper] (current page.south west) rectangle (current page.north east);
   \slidetitle{Setup}
   \node[anchor=west,text=muted,font=\sffamily\bfseries\fontsize{11}{13}\selectfont]
-    at ([xshift=18mm,yshift=67mm]current page.south west) {CUDA PyTorch first};
-  \foreach \y in {55,45,35,24} {
+    at ([xshift=18mm,yshift=58mm]current page.south west) {CUDA PyTorch first};
+  \foreach \y in {48,39,30,20} {
     \fill[teal] ([xshift=22mm,yshift=\y mm]current page.south west) circle (2.5mm);
   }
   \node[anchor=west,text=ink,font=\sffamily\fontsize{13}{16}\selectfont]
-    at ([xshift=34mm,yshift=55mm]current page.south west) {\texttt{python -m venv .venv}};
+    at ([xshift=34mm,yshift=48mm]current page.south west) {\texttt{python -m venv .venv}};
   \node[anchor=west,text=ink,font=\sffamily\fontsize{13}{16}\selectfont]
-    at ([xshift=34mm,yshift=45mm]current page.south west) {\texttt{source .venv/bin/activate}};
+    at ([xshift=34mm,yshift=39mm]current page.south west) {\texttt{source .venv/bin/activate}};
   \node[anchor=west,text=ink,font=\sffamily\fontsize{11}{13}\selectfont]
-    at ([xshift=34mm,yshift=35mm]current page.south west) {\texttt{pip install --no-build-isolation -r requirements.txt}};
+    at ([xshift=34mm,yshift=30mm]current page.south west) {\texttt{pip install -\allowbreak-no-build-isolation -r requirements.txt}};
   \node[anchor=west,text=ink,font=\sffamily\fontsize{13}{16}\selectfont]
-    at ([xshift=34mm,yshift=24mm]current page.south west) {\texttt{python main.py}};
+    at ([xshift=34mm,yshift=20mm]current page.south west) {\texttt{python main.py}};
   \node[anchor=west,text=muted,font=\sffamily\fontsize{10}{12}\selectfont]
-    at ([xshift=34mm,yshift=15mm]current page.south west) {Launcher credentials: root \texttt{main.py}  \textbullet  Local API: \texttt{python local.py}};
+    at ([xshift=34mm,yshift=11mm]current page.south west) {Launcher credentials: root \texttt{main.py}  \textbullet  Local API: \texttt{python local.py}};
 
 \end{tikzpicture}
 \end{frame}
 
-% Slide 4: Stage 3 to Stage 4 comparison
+% Slide 4: Stage 3 improvements and reported results
 \begin{frame}[plain]
 \begin{tikzpicture}[remember picture,overlay]
   \fill[paper] (current page.south west) rectangle (current page.north east);
-  \slidetitle{Stage 3  $\rightarrow$  Stage 4}
-  \draw[linegray,line width=1.2pt] ([xshift=23mm,yshift=17mm]current page.south west) -- ([xshift=23mm,yshift=66mm]current page.south west);
-  \foreach \y/\c in {65/teal,56/teal,47/gold,38/gold,29/teal,20/teal} {
+  \slidetitle{Stage 3  $\rightarrow$  4}
+  \draw[linegray,line width=1.2pt] ([xshift=23mm,yshift=18mm]current page.south west) -- ([xshift=23mm,yshift=67mm]current page.south west);
+  \foreach \y/\c in {66/teal,57/teal,48/gold,39/gold,30/teal,21/teal} {
     \fill[\c] ([xshift=23mm,yshift=\y mm]current page.south west) circle (2.6mm);
   }
-  \node[anchor=west,text=ink,font=\sffamily\fontsize{16}{19}\selectfont] at ([xshift=36mm,yshift=65mm]current page.south west) {Rule parser  $\rightarrow$  Qwen JSON plans};
-  \node[anchor=west,text=ink,font=\sffamily\fontsize{16}{19}\selectfont] at ([xshift=36mm,yshift=56mm]current page.south west) {RDFLib  $\rightarrow$  PyOxigraph};
-  \node[anchor=west,text=ink,font=\sffamily\fontsize{16}{19}\selectfont] at ([xshift=36mm,yshift=47mm]current page.south west) {Fuzzy cutoff .78  $\rightarrow$  .86};
-  \node[anchor=west,text=ink,font=\sffamily\fontsize{16}{19}\selectfont] at ([xshift=36mm,yshift=38mm]current page.south west) {Qwen factual fallback  $\rightarrow$  graph no-answer};
-  \node[anchor=west,text=ink,font=\sffamily\fontsize{16}{19}\selectfont] at ([xshift=36mm,yshift=29mm]current page.south west) {Rating filters added};
-  \node[anchor=west,text=ink,font=\sffamily\fontsize{16}{19}\selectfont] at ([xshift=36mm,yshift=20mm]current page.south west) {Discussion route separated};
-
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{15}{18}\selectfont] at ([xshift=36mm,yshift=66mm]current page.south west) {Adds memory + clarify-first};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{15}{18}\selectfont] at ([xshift=36mm,yshift=57mm]current page.south west) {Resets searches; avoids repeats};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{15}{18}\selectfont] at ([xshift=36mm,yshift=48mm]current page.south west) {Conservative title typo matching};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{15}{18}\selectfont] at ([xshift=36mm,yshift=39mm]current page.south west) {118 tests; 64/64 earlier checks};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{15}{18}\selectfont] at ([xshift=36mm,yshift=30mm]current page.south west) {13/15 cases; 161/174 checks};
+  \node[anchor=west,text=muted,font=\sffamily\fontsize{11}{13}\selectfont] at ([xshift=36mm,yshift=21mm]current page.south west) {Prior runs; not official Evaluation IV score};
 \end{tikzpicture}
 \end{frame}
 \end{document}
