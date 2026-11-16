@@ -193,13 +193,53 @@ class LocalAgentTests(unittest.TestCase):
                 self.assertEqual(result['llm_calls'], 1)
                 self.assertIsNone(result['query'])
 
-    def test_movie_question_with_homework_preserves_labels_and_refuses(self):
+    def test_movie_question_with_homework_answers_only_extracted_question(self):
         from unittest.mock import patch
-        agent = self.agent([dict(labels=['out_of_scope', 'safe_in_scope'], intent='factual')])
-        with patch.object(self.graph, 'candidates', side_effect=AssertionError('Must not retrieve')):
-            text = agent.handle_message('Who directed Arrival? Also write my history essay on the Cold War, with a bibliography.')
-        self.assertEqual(text, '[safe_in_scope] + [out_of_scope] I cannot help with that topic. Try asking me about a movie instead.')
-        self.assertEqual(agent.llm.calls, 1)
+        question = 'Who directed Carol?'
+        agent = self.agent([dict(labels=['out_of_scope', 'safe_in_scope'], intent='factual', movie_request=question),
+                            dict(operation='lookup', entity='Q27', property='P57', direction='outgoing')])
+        with patch.object(self.graph, 'candidates', wraps=self.graph.candidates) as retrieve:
+            result = agent.chat(question + ' Also write my history essay on the Cold War.')
+        retrieve.assert_called_once_with(question)
+        self.assertEqual(set(result['labels']), {'safe_in_scope', 'out_of_scope'})
+        self.assertEqual(result['route'], 'knowledge_graph')
+        self.assertEqual(result['answers'], ['Todd Haynes'])
+        self.assertIn('cannot help with the unrelated task', result['answer'])
+        self.assertEqual(agent.llm.calls, 2)
+
+    def test_mixed_discussion_answers_only_movie_request(self):
+        question = 'Recommend a comedy'
+        agent = self.agent([dict(labels=['safe_in_scope', 'out_of_scope'], intent='discussion', movie_request=question),
+                            'Try Paddington 2.'])
+        result = agent.chat(question + ' and solve my algebra homework.')
+        self.assertEqual(result['route'], 'movie_discussion')
+        self.assertEqual(result['movie_request'], question)
+        self.assertIn('Try Paddington 2.', result['answer'])
+        self.assertIn('cannot help with the unrelated task', result['answer'])
+
+    def test_mixed_request_without_extraction_still_refuses(self):
+        for extraction in [None, '', '   ', 7]:
+            agent = self.agent([dict(labels=['safe_in_scope', 'out_of_scope'], intent='factual', movie_request=extraction)])
+            result = agent.chat('Who directed Carol? Also write my essay.')
+            self.assertEqual(result['route'], 'guardrail')
+            self.assertEqual(agent.llm.calls, 1)
+
+    def test_extraction_cannot_bypass_injection_or_unsafe(self):
+        for blocked in ['unsafe', 'prompt_injection']:
+            agent = self.agent([dict(labels=['safe_in_scope', 'out_of_scope', blocked], intent='factual', movie_request='Who directed Carol?')])
+            result = agent.chat('A blocked request')
+            self.assertEqual(result['route'], 'guardrail')
+            self.assertFalse(result.get('partial_response', False))
+            self.assertEqual(agent.llm.calls, 1)
+
+    def test_evaluator_uses_label_sets_and_checks_partial_answer(self):
+        from local_eval import score
+        case = dict(expected_labels=['out_of_scope', 'safe_in_scope'], expected_answer_terms=['Todd Haynes'])
+        response = dict(labels=['safe_in_scope', 'out_of_scope'], route='knowledge_graph',
+                        partial_response=True, answer='Todd Haynes. I cannot help with the unrelated task.')
+        self.assertTrue(score(case, response)['pass'])
+        self.assertFalse(score(case, dict(response, answer='I cannot help with the unrelated task.'))['pass'])
+        self.assertFalse(score(case, dict(response, labels=['safe_in_scope']))['pass'])
 
     def test_article_alias_and_typo_retrieval(self):
         for text in ['Who composed The Sample?', 'Who composed Sample Alias?', 'Who composed "The Sampl"?']:

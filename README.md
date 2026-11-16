@@ -90,16 +90,23 @@ calendar dates consistently across RDF date/dateTime values. Quoted titles and
 literal punctuation-bearing titles such as `&ME` survive stop-word filtering.
 Successful factual answers contain graph values directly, without “The factual
 answer is:”. Speakeasy replies display all applicable classification labels;
-unsafe, prompt-injection, and out-of-scope requests stop before factual planning
-and querying. A safe movie request with an insult retains both
+unsafe and prompt-injection requests stop before factual planning and querying.
+Out-of-scope requests alone also stop before planning. A safe movie request with an insult retains both
 `[safe_in_scope] + [toxic]` labels and answers the movie request, with a brief
 respectful-conversation reminder in Speakeasy replies; insults alone
 still receive the respectful-conversation response. See the
 [reported-question and Evaluation 3 checks](additional_files/evaluation/release_dates_v3/README.md).
-In v4.6, a separate safe movie question combined with an unrelated task retains
-both `[safe_in_scope] + [out_of_scope]` labels while refusing the combined request
-before planning or graph retrieval. Merely framing general research as film
-preparation still receives `[out_of_scope]` alone. All 72 automated tests passed.
+In v4.7, a separate safe movie question combined with an unrelated task retains
+both `[safe_in_scope] + [out_of_scope]` labels. The classifier extracts the movie
+question into `movie_request`; only that portion reaches movie planning or
+discussion, and the answer includes a refusal of the unrelated task. Missing or
+invalid extractions still receive a full refusal. Unsafe and prompt-injection
+labels always block the entire request. Merely framing general research as film
+preparation still receives `[out_of_scope]` alone. Injection-only examples are
+explicitly distinguished from injection plus an unrelated task.
+The focused runner compares label sets and saves the 28 reported questions to
+JSON without printing individual responses:
+`python additional_files/evaluation/mixed_scope_v4_7/run_cases.py`.
 The earlier release-date revision passed all 50 automated tests, all 20 focused live checks,
 and the complete 243-case regression run: 96/96 factual, 100/100 guardrail and
 47/47 capability cases. These are regression/development results. Restart an
@@ -230,8 +237,10 @@ prefixes to preserve experiments. See
 Safe recommendations and movie discussion are generated directly by Qwen, with
 one title and a brief reason when one movie is requested. The API identifies
 these as `movie_discussion` with `answer_source: language_model`; they are not
-presented as graph-verified factual answers. Unsafe, prompt-injection, and out-of-scope labels stop generation and
-return the existing conversation stoppers. Toxicity alongside a safe movie request
+presented as graph-verified factual answers. Unsafe and prompt-injection labels
+stop generation and return the existing conversation stoppers. An out-of-scope
+label also blocks the request unless a separate safe movie portion was extracted;
+in that case only the movie portion is answered, with a refusal of the unrelated task. Toxicity alongside a safe movie request
 is labelled while the movie request is answered. There is no embedding-based or
 personalized recommendation subsystem, arbitrary multi-hop reasoning, or conversational memory. Fuzzy
 matching is bounded and can still miss names; a structured plan can still select
