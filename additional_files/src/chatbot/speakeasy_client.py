@@ -169,7 +169,7 @@ class SpeakeasyClient:
         )
         return lowered.startswith(question_starts)
 
-    def process_message(self, agent, message):
+    def process_message(self, agent, message, room_id=None):
         text = self.get_message_text(message)
         if text is None:
             return None
@@ -193,7 +193,17 @@ class SpeakeasyClient:
         signal.setitimer(signal.ITIMER_REAL, timeout_seconds)
         started = time.perf_counter()
         try:
-            answer = agent.handle_message(text)
+            if hasattr(agent, 'sessions'):
+                author = (
+                    message.get('authorAlias')
+                    or message.get('author')
+                    or message.get('userAlias')
+                    or 'user'
+                ) if isinstance(message, dict) else 'user'
+                session_id = f"{room_id}:{author}" if room_id is not None else str(author)
+                answer = agent.handle_message(text, session_id=session_id)
+            else:
+                answer = agent.handle_message(text)
         except MessageTimeout:
             answer = (
                 "Sorry, that took too long to process. "
@@ -252,7 +262,7 @@ class SpeakeasyClient:
                             self.processed_messages.add(message_id)
                             continue
 
-                        answer = self.process_message(agent, message)
+                        answer = self.process_message(agent, message, room_id=room_id)
                         if answer is None:
                             self.processed_messages.add(message_id)
                             continue

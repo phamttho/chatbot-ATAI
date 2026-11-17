@@ -15,6 +15,8 @@ sys.path.insert(0, str(ROOT / 'additional_files/src/chatbot'))
 
 class ChatRequest(BaseModel):
     message: str = Field(min_length=1, max_length=4000)
+    session_id: str = Field(default='default', min_length=1, max_length=200)
+    reset: bool = False
 
 
 class LegacyAdapter:
@@ -69,7 +71,12 @@ def create_app(agent, engine):
             raise HTTPException(422, 'message must not be blank')
         started = time.perf_counter()
         with lock:
-            result = agent.chat(request.message)
+            if engine == 'llm':
+                if request.reset and hasattr(agent, 'reset_session'):
+                    agent.reset_session(request.session_id)
+                result = agent.chat(request.message, session_id=request.session_id)
+            else:
+                result = agent.chat(request.message)
         return dict(result, latency_ms=round((time.perf_counter()-started)*1000, 2))
     return app
 

@@ -102,7 +102,9 @@ class GraphStore:
                     if score > matches.get(uri, -1):
                         matches[uri], matched_names[uri] = score, span
         # Fuzzy matches only for quoted mentions or a bounded trailing name.
-        mentions = quoted or re.findall(r'\b(?:of|for|on|by)\s+(.+?)[?.!]*$', question, re.I)
+        mentions = quoted or re.findall(
+            r'\b(?:of|for|on|by|directed|written|wrote|composed|edited|produced|liked|loved|enjoyed)\s+(.+?)[?.!]*$',
+            question, re.I)
         for mention in mentions:
             key = normalize(mention)
             if len(key) >= 4 and key not in self.entities:
