@@ -1,0 +1,483 @@
+{
+  "completed": 3000,
+  "failed": 34,
+  "failure_reasons": {
+    "clarification_instead_of_answer": 4,
+    "entity_selection_rejected": 7,
+    "processing_error": 2,
+    "unsupported_instead_of_answer": 4,
+    "wrong_entity": 5,
+    "wrong_relation": 6,
+    "wrong_relation_direction": 6
+  },
+  "failures_by_relation": {
+    "director": 1,
+    "screenwriter": 1,
+    "composer": 2,
+    "derivative_work": 16,
+    "count_tags": 1,
+    "filming_location": 7,
+    "production_company": 3,
+    "cinematographer": 1,
+    "user_rating": 2
+  },
+  "cases": [
+    {
+      "id": "D0001",
+      "input": "Who directed the film \"&ME\"?",
+      "reason": "unsupported_instead_of_answer",
+      "relation": "director",
+      "route": "unsupported_query",
+      "error": null,
+      "expected": [
+        "Norbert ter Hall"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D0002",
+      "input": "Who wrote the screenplay for the film \"&ME\"?",
+      "reason": "unsupported_instead_of_answer",
+      "relation": "screenwriter",
+      "route": "unsupported_query",
+      "error": null,
+      "expected": [
+        "Norbert ter Hall",
+        "Oscar van den Boogaard"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D0003",
+      "input": "Who composed the music for the film \"&ME\"?",
+      "reason": "unsupported_instead_of_answer",
+      "relation": "composer",
+      "route": "unsupported_query",
+      "error": null,
+      "expected": [
+        "Jasper Boeke"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D0342",
+      "input": "What derivative works of the film \"Carrie\" released in 1976 are recorded in the graph?",
+      "reason": "wrong_relation_direction",
+      "relation": "derivative_work",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Scarrie! The Musical"
+      ],
+      "observed": [
+        "Carrie"
+      ]
+    },
+    {
+      "id": "D0352",
+      "input": "What derivative works of the film \"Cat People\" released in 1942 are recorded in the graph?",
+      "reason": "wrong_entity",
+      "relation": "derivative_work",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Cat People"
+      ],
+      "observed": [
+        "Cat People"
+      ]
+    },
+    {
+      "id": "D0369",
+      "input": "What derivative works of the film \"Charlie's Angels\" are recorded in the graph?",
+      "reason": "clarification_instead_of_answer",
+      "relation": "derivative_work",
+      "route": "clarification",
+      "error": null,
+      "expected": [
+        "Charlie's Angels"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D0383",
+      "input": "What derivative works of the film \"Clash of the Titans\" released in 1981 are recorded in the graph?",
+      "reason": "wrong_entity",
+      "relation": "derivative_work",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Clash of the Titans"
+      ],
+      "observed": [
+        "Clash of the Titans"
+      ]
+    },
+    {
+      "id": "D0714",
+      "input": "How many distinct user tags are recorded for the film \"A Farewell to Arms\" released in 1932?",
+      "reason": "entity_selection_rejected",
+      "relation": "count_tags",
+      "route": "error",
+      "error": "ValueError: Selected entity does not match the strongest retrieved name with this relation",
+      "expected": [
+        "1"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D0768",
+      "input": "What derivative works of the film \"Insomnia\" released in 1997 are recorded in the graph?",
+      "reason": "wrong_entity",
+      "relation": "derivative_work",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Insomnia"
+      ],
+      "observed": [
+        "Insomnia"
+      ]
+    },
+    {
+      "id": "D0774",
+      "input": "Where was the film \"A Man Called Ove\" filmed?",
+      "reason": "wrong_relation",
+      "relation": "filming_location",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Mallorca"
+      ],
+      "observed": [
+        "Spain"
+      ]
+    },
+    {
+      "id": "D0799",
+      "input": "What derivative works of the film \"Scarface\" released in 1983 are recorded in the graph?",
+      "reason": "wrong_relation_direction",
+      "relation": "derivative_work",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Scarface: The World Is Yours",
+        "Scarface: Money. Power. Respect."
+      ],
+      "observed": [
+        "Scarface"
+      ]
+    },
+    {
+      "id": "D0922",
+      "input": "What derivative works of the film \"Men in Black\" released in 1997 are recorded in the graph?",
+      "reason": "clarification_instead_of_answer",
+      "relation": "derivative_work",
+      "route": "clarification",
+      "error": null,
+      "expected": [
+        "Men In Black: The Roleplaying Game",
+        "Men in Black: The Series",
+        "Men in Black: The Game"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D0957",
+      "input": "What derivative works of the film \"Mighty Joe Young\" released in 1949 are recorded in the graph?",
+      "reason": "wrong_entity",
+      "relation": "derivative_work",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Mighty Joe Young"
+      ],
+      "observed": [
+        "Mighty Joe Young"
+      ]
+    },
+    {
+      "id": "D1087",
+      "input": "What derivative works of the film \"Pixels\" released in 2010 are recorded in the graph?",
+      "reason": "wrong_entity",
+      "relation": "derivative_work",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Pixels"
+      ],
+      "observed": [
+        "Pixels"
+      ]
+    },
+    {
+      "id": "D1095",
+      "input": "What derivative works of the film \"Pirates of the Caribbean: At World's End\" are recorded in the graph?",
+      "reason": "clarification_instead_of_answer",
+      "relation": "derivative_work",
+      "route": "clarification",
+      "error": null,
+      "expected": [
+        "Pirates of the Caribbean: At World's End"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D1436",
+      "input": "What production companies made the film \"A Tale of Two Cities\" released in 1917?",
+      "reason": "entity_selection_rejected",
+      "relation": "production_company",
+      "route": "error",
+      "error": "ValueError: Selected entity does not match the strongest retrieved name with this relation",
+      "expected": [
+        "Fox Film Corporation"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D1440",
+      "input": "What derivative works of the film \"Teenage Mutant Ninja Turtles\" released in 1990 are recorded in the graph?",
+      "reason": "wrong_relation_direction",
+      "relation": "derivative_work",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "The Final Lesson",
+        "The First Battle",
+        "Teenage Mutant Ninja Turtles: The Movie"
+      ],
+      "observed": [
+        "Teenage Mutant Ninja Turtles"
+      ]
+    },
+    {
+      "id": "D1522",
+      "input": "What derivative works of the film \"The Apartment\" released in 1996 are recorded in the graph?",
+      "reason": "entity_selection_rejected",
+      "relation": "derivative_work",
+      "route": "error",
+      "error": "ValueError: Selected entity does not match the strongest retrieved name with this relation",
+      "expected": [
+        "Wicker Park"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D1704",
+      "input": "What derivative works of the film \"The Little Shop of Horrors\" are recorded in the graph?",
+      "reason": "clarification_instead_of_answer",
+      "relation": "derivative_work",
+      "route": "clarification",
+      "error": null,
+      "expected": [
+        "Little Shop of Horrors"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D1742",
+      "input": "What derivative works of the film \"The Magnificent Seven\" released in 1960 are recorded in the graph?",
+      "reason": "wrong_relation_direction",
+      "relation": "derivative_work",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "The Magnificent Seven"
+      ],
+      "observed": [
+        "Seven Samurai"
+      ]
+    },
+    {
+      "id": "D1785",
+      "input": "What production companies made the film \"Adam's Rib\" released in 1990?",
+      "reason": "entity_selection_rejected",
+      "relation": "production_company",
+      "route": "error",
+      "error": "ValueError: Selected entity does not match the strongest retrieved name with this relation",
+      "expected": [
+        "Mosfilm"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D1958",
+      "input": "What derivative works of the film \"Total Recall\" released in 1990 are recorded in the graph?",
+      "reason": "wrong_relation_direction",
+      "relation": "derivative_work",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Total Recall"
+      ],
+      "observed": [
+        "We Can Remember It for You Wholesale"
+      ]
+    },
+    {
+      "id": "D2050",
+      "input": "What derivative works of the film \"Anastasia\" released in 1997 are recorded in the graph?",
+      "reason": "wrong_relation_direction",
+      "relation": "derivative_work",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Anastasia"
+      ],
+      "observed": [
+        "Anastasia"
+      ]
+    },
+    {
+      "id": "D2272",
+      "input": "What production companies made the film \"All Quiet on the Western Front\" released in 1930?",
+      "reason": "entity_selection_rejected",
+      "relation": "production_company",
+      "route": "error",
+      "error": "ValueError: Selected entity does not match the strongest retrieved name with this relation",
+      "expected": [
+        "Universal Pictures"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D2356",
+      "input": "Where was the film \"Author! Author!\" filmed?",
+      "reason": "wrong_relation",
+      "relation": "filming_location",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "New York City"
+      ],
+      "observed": [
+        "New York City"
+      ]
+    },
+    {
+      "id": "D2379",
+      "input": "Who was the cinematographer of the film \"Adam's Rib\" released in 1990?",
+      "reason": "entity_selection_rejected",
+      "relation": "cinematographer",
+      "route": "error",
+      "error": "ValueError: Selected entity does not match the strongest retrieved name with this relation",
+      "expected": [
+        "Pavel Lebeshev"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D2428",
+      "input": "Who composed the music for the film \"Adam's Rib\" released in 1990?",
+      "reason": "entity_selection_rejected",
+      "relation": "composer",
+      "route": "error",
+      "error": "ValueError: Selected entity does not match the strongest retrieved name with this relation",
+      "expected": [
+        "Vadym Khrapachov"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D2462",
+      "input": "Where was the film \"Babylon A.D.\" filmed?",
+      "reason": "wrong_relation",
+      "relation": "filming_location",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Prague",
+        "Czech Republic"
+      ],
+      "observed": [
+        "New York City"
+      ]
+    },
+    {
+      "id": "D2503",
+      "input": "Where was the film \"Bad Boys\" released in 1995 filmed?",
+      "reason": "wrong_relation",
+      "relation": "filming_location",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Florida",
+        "Miami"
+      ],
+      "observed": [
+        "Miami",
+        "Miami metropolitan area"
+      ]
+    },
+    {
+      "id": "D2510",
+      "input": "Where was the film \"Bad Boys\" released in 1983 filmed?",
+      "reason": "wrong_relation",
+      "relation": "filming_location",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Chicago"
+      ],
+      "observed": [
+        "Chicago"
+      ]
+    },
+    {
+      "id": "D2687",
+      "input": "Where was the film \"Batman\" released in 1966 filmed?",
+      "reason": "processing_error",
+      "relation": "filming_location",
+      "route": "error",
+      "error": "ValueError: Unknown query plan fields",
+      "expected": [
+        "California"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D2835",
+      "input": "What is the user rating of the film \"Don't Be a Menace to South Central While Drinking Your Juice in the Hood\"?",
+      "reason": "processing_error",
+      "relation": "user_rating",
+      "route": "error",
+      "error": "ValueError: Unknown query plan fields",
+      "expected": [
+        "6.6"
+      ],
+      "observed": []
+    },
+    {
+      "id": "D2970",
+      "input": "Where was the film \"Better Man\" filmed?",
+      "reason": "wrong_relation",
+      "relation": "filming_location",
+      "route": "knowledge_graph",
+      "error": null,
+      "expected": [
+        "Melbourne",
+        "Serbia",
+        "Docklands Studios Melbourne"
+      ],
+      "observed": [
+        "Concerts at Knebworth House",
+        "London",
+        "Manchester",
+        "Royal Albert Hall",
+        "Stoke-on-Trent"
+      ]
+    },
+    {
+      "id": "D2972",
+      "input": "What is the user rating of the film \"Earth\" released in 2007?",
+      "reason": "unsupported_instead_of_answer",
+      "relation": "user_rating",
+      "route": "unsupported_query",
+      "error": null,
+      "expected": [
+        "8"
+      ],
+      "observed": []
+    }
+  ]
+}

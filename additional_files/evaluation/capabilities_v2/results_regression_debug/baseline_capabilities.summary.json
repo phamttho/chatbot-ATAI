@@ -1,0 +1,116 @@
+{
+  "timestamp": "2026-11-06T10:50:24.712134+00:00",
+  "server": {
+    "status": "ready",
+    "engine": "legacy",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "device": "cuda"
+  },
+  "suite": "capabilities",
+  "suite_sha256": "9be067c38bc969e14cc39fc33803e9670d700aa8efb65e55d8830e286f6e2629",
+  "n": 47,
+  "passed": 12,
+  "pass_rate": 0.2553191489361702,
+  "classification_accuracy": 0.6170212765957447,
+  "errors": 0,
+  "routes": {
+    "knowledge_graph": 13,
+    "llm_fallback": 16,
+    "guardrail": 18
+  },
+  "latency_ms": {
+    "mean": 451.4210638297873,
+    "median": 115.28,
+    "p95": 1656.22,
+    "max": 1662.4
+  },
+  "groups": {
+    "article_title": {
+      "n": 7,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "classification_accuracy": 0.8571428571428571
+    },
+    "count_cast": {
+      "n": 6,
+      "passed": 6,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "count_tags": {
+      "n": 7,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "classification_accuracy": 0.14285714285714285
+    },
+    "lookup_rating": {
+      "n": 6,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "classification_accuracy": 0.16666666666666666
+    },
+    "lookup_tags": {
+      "n": 6,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "classification_accuracy": 0.0
+    },
+    "rating_filter": {
+      "n": 9,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "classification_accuracy": 1.0
+    },
+    "typo_title": {
+      "n": 6,
+      "passed": 6,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    }
+  },
+  "exact_graph_answer_rate": 0.2553191489361702,
+  "text_all_reference_answers_rate": 0.2765957446808511,
+  "query_visible_rate": 0.3829787234042553,
+  "multi_answer_cases": 15,
+  "multi_answer_pass_rate": 0.0,
+  "directions": {
+    "article_title": {
+      "n": 7,
+      "passed": 0
+    },
+    "count_cast": {
+      "n": 6,
+      "passed": 6
+    },
+    "count_tags": {
+      "n": 7,
+      "passed": 0
+    },
+    "lookup_rating": {
+      "n": 6,
+      "passed": 0
+    },
+    "lookup_tags": {
+      "n": 6,
+      "passed": 0
+    },
+    "rating_filter": {
+      "n": 9,
+      "passed": 0
+    },
+    "typo_title": {
+      "n": 6,
+      "passed": 6
+    }
+  },
+  "splits": {
+    "user_regression": {
+      "n": 3,
+      "passed": 0
+    },
+    "additional": {
+      "n": 44,
+      "passed": 12
+    }
+  }
+}

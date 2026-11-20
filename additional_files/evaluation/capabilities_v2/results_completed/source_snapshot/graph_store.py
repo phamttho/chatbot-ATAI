@@ -1,0 +1,263 @@
+"""Local graph, lexical candidate retrieval, and a bounded SPARQL query surface."""
+from collections import defaultdict
+from difflib import get_close_matches
+import re
+from decimal import Decimal, InvalidOperation
+from pathlib import Path
+import pyoxigraph as ox
+
+PREFIXES = {'wd':'http://www.wikidata.org/entity/', 'wdt':'http://www.wikidata.org/prop/direct/',
+            'atai':'http://ddis.ch/atai/', 'rdfs':'http://www.w3.org/2000/01/rdf-schema#', 'xsd':'http://www.w3.org/2001/XMLSchema#'}
+
+
+def normalize(text):
+    return ' '.join(re.findall(r"\w+", text.casefold()))
+
+
+class ClarificationNeeded(ValueError):
+    """More than one plausible graph entity has the requested relation."""
+
+
+class MissingFact(ValueError):
+    """A known entity has no recorded value for the requested property."""
+
+
+class UnsupportedQuery(ValueError):
+    """The requested operation is outside the supported graph query surface."""
+
+
+def title_key(text):
+    return re.sub(r'^(?:the|an|a) ', '', normalize(text))
+
+
+class GraphStore:
+    def __init__(self, path):
+        self.store = ox.Store()
+        path = Path(path)
+        fmt = ox.RdfFormat.N_TRIPLES if path.suffix == '.nt' else ox.RdfFormat.TURTLE
+        print(f'Loading graph: {path}', flush=True)
+        self.store.load(path=path, format=fmt)
+        self.labels = {}
+        self.entities = defaultdict(list)
+        self.properties = {'tag': 'user tags', 'rating': 'user rating (0 to 10)'}
+        self.aliases = defaultdict(set)
+        for row in self.store.query('SELECT ?s ?label WHERE { ?s rdfs:label ?label }', prefixes=PREFIXES):
+            uri, label = row['s'].value, row['label'].value
+            self.labels.setdefault(uri, label)
+            if uri.startswith(PREFIXES['wd']):
+                self.entities[normalize(label)].append(uri)
+                self.aliases[uri].add(label)
+            elif uri.startswith(PREFIXES['wdt']):
+                self.properties[uri.rsplit('/', 1)[-1]] = label
+        # Graph aliases and article-free titles are retrieval keys, not invented facts.
+        for predicate in ['http://www.w3.org/2004/02/skos/core#altLabel',
+                          'http://schema.org/alternateName', PREFIXES['wdt']+'P1476']:
+            for quad in self.store.quads_for_pattern(None, ox.NamedNode(predicate), None):
+                if quad.subject.value in self.labels and isinstance(quad.object, ox.Literal):
+                    self.aliases[quad.subject.value].add(quad.object.value)
+        for uri, names in self.aliases.items():
+            for name in names:
+                for key in {normalize(name), title_key(name)}:
+                    if key and uri not in self.entities[key]:
+                        self.entities[key].append(uri)
+        print(f'Loaded {len(self.store):,} triples, {len(self.entities):,} labels, {len(self.properties)} properties', flush=True)
+
+    def candidates(self, question):
+        words = normalize(question).split()
+        quoted = re.findall(r"""["“‘']([^"”’']{2,100})["”’']""", question)
+        quoted_keys = {normalize(name) for name in quoted}
+        matches = {}
+        stop = {'who','what','which','when','where','how','the','a','an','is','was',
+                'of','by','for','movie','film','me','i','you','and','in','on'}
+        for size in range(min(12, len(words)), 0, -1):
+            for i in range(len(words)-size+1):
+                span = ' '.join(words[i:i+size])
+                # Decimal thresholds are not references to movies named "9".
+                if span in stop or (span.isdecimal() and span not in quoted_keys):
+                    continue
+                for uri in self.entities.get(span, []):
+                    exact = 4 if normalize(self.labels[uri]) == span else (2 if any(normalize(a)==span for a in self.aliases[uri]) else 0)
+                    score = size * 10 + exact + (100 if span in quoted_keys else 0)
+                    matches[uri] = max(matches.get(uri, 0), score)
+        # Fuzzy matches only for quoted mentions or a bounded trailing name.
+        mentions = quoted or re.findall(r'\b(?:of|for|on|by)\s+(.+?)[?.!]*$', question, re.I)
+        for mention in mentions:
+            key = normalize(mention)
+            if len(key) >= 4 and key not in self.entities:
+                for match in get_close_matches(key, self.entities, n=2, cutoff=.86):
+                    for uri in self.entities[match]:
+                        matches[uri] = max(matches.get(uri, 0), len(match.split())*10-1)
+        output = []
+        for uri, score in sorted(matches.items(), key=lambda item: (-item[1], item[0]))[:12]:
+            outgoing, incoming, dates = set(), set(), []
+            node = ox.NamedNode(uri)
+            for quad in self.store.quads_for_pattern(node, None, None):
+                prop = self.property_key(quad.predicate.value)
+                if prop:
+                    outgoing.add(prop)
+                if prop == 'P577' and isinstance(quad.object, ox.Literal):
+                    dates.append(quad.object.value[:10])
+            for quad in self.store.quads_for_pattern(None, None, node):
+                prop = self.property_key(quad.predicate.value)
+                if prop:
+                    incoming.add(prop)
+            if {d[:4] for d in dates} & set(re.findall(r'\b(?:18|19|20)\d{2}\b', question)):
+                score += 5
+            output.append(dict(id=uri.rsplit('/',1)[-1], label=self.labels[uri],
+                               outgoing=sorted(outgoing), incoming=sorted(incoming),
+                               match_score=score, release_dates=sorted(set(dates))[:3]))
+        return sorted(output, key=lambda c: (-c['match_score'], -len(c['outgoing']), c['id']))[:6]
+
+    @staticmethod
+    def property_key(uri):
+        if uri.startswith(PREFIXES['wdt']):
+            return uri.rsplit('/', 1)[-1]
+        if uri in {PREFIXES['atai']+'tag', PREFIXES['atai']+'rating'}:
+            return uri.rsplit('/', 1)[-1]
+        return None
+
+    def compile_plan(self, plan, candidates):
+        """Turn a small validated data object into SPARQL; never execute model syntax."""
+        if not isinstance(plan, dict):
+            raise ValueError('Query plan must be an object')
+        allowed = {'operation','entity','property','direction','order','comparison','value'}
+        if set(plan)-allowed:
+            raise ValueError('Unknown query plan fields')
+        operation = plan.get('operation')
+        if operation == 'clarify':
+            raise ClarificationNeeded('Please provide the full film title and release year.')
+        if operation == 'unsupported':
+            raise UnsupportedQuery('That operation is not supported by this movie graph assistant.')
+        if operation not in {'lookup','count','filter'}:
+            raise ValueError('Unknown query operation')
+        prop = plan.get('property')
+        if not isinstance(prop, str) or prop not in self.properties:
+            raise UnsupportedQuery('The requested property is not available in the graph context.')
+        predicate = ('atai:' if prop in {'tag','rating'} else 'wdt:')+prop
+        if operation == 'filter':
+            if prop != 'rating' or any(plan.get(k) is not None for k in ['entity','direction','order']):
+                raise UnsupportedQuery('Numeric filtering currently supports recorded user ratings only.')
+            comparisons = {'gte':'>=', 'gt':'>', 'lte':'<=', 'lt':'<', 'eq':'=', 'ne':'!='}
+            comparison = plan.get('comparison')
+            if not isinstance(comparison,str) or comparison not in comparisons:
+                raise ValueError('Unknown numeric comparison')
+            value = plan.get('value')
+            if isinstance(value, bool) or not isinstance(value, (str,int,float)) or len(str(value))>24:
+                raise ValueError('Invalid numeric threshold')
+            try:
+                number = Decimal(str(value))
+            except InvalidOperation as exc:
+                raise ValueError('Invalid numeric threshold') from exc
+            if (not number.is_finite() or not 0 <= number <= 10
+                    or number.as_tuple().exponent < -18 or len(number.as_tuple().digits) > 20):
+                raise ValueError('User rating threshold must be between 0 and 10')
+            # Requiring the rating triple excludes movies with unknown ratings.
+            return f'SELECT DISTINCT ?answer WHERE {{ ?answer atai:rating ?rating . FILTER(?rating {comparisons[comparison]} {number:f}) }}'
+        if any(plan.get(k) is not None for k in ['comparison','value']):
+            raise ValueError('Comparisons require a filter operation')
+        entity = plan.get('entity')
+        if not isinstance(entity,str) or not re.fullmatch(r'Q\d+',entity):
+            raise ValueError('Expected a retrieved entity ID')
+        direction = plan.get('direction','outgoing')
+        if direction not in {'outgoing','incoming'}:
+            raise ValueError('Invalid relation direction')
+        selected = next((c for c in candidates if c['id']==entity), None)
+        if selected is None:
+            raise ValueError('Entity ID was not retrieved from the graph')
+        opposite = 'incoming' if direction=='outgoing' else 'outgoing'
+        if prop not in selected[direction] and prop in selected[opposite]:
+            # A relation present in only one direction has a unique graph-supported orientation.
+            direction = opposite
+        available = [c for c in candidates if prop in c[direction] or operation == 'count']
+        if not available:
+            raise MissingFact('The requested fact is not recorded for the retrieved entities.')
+        best_score = max(c.get('match_score',0) for c in available)
+        best = [c for c in available if c.get('match_score',0)==best_score]
+        if len(best)>1:
+            names = '; '.join(c['label']+(' ('+', '.join(c.get('release_dates',[]))+')' if c.get('release_dates') else '')+' ['+c['id']+']' for c in best)
+            raise ClarificationNeeded('Which film or person do you mean? '+names)
+        if entity != best[0]['id']:
+            raise ValueError('Selected entity does not match the strongest retrieved name with this relation')
+        order = plan.get('order')
+        if order not in {None,'earliest','latest'}:
+            raise ValueError('Invalid date order')
+        if operation == 'count' and order is not None:
+            raise ValueError('Count cannot use date ordering')
+        head, tail = ('?answer','wd:'+entity) if direction=='incoming' else ('wd:'+entity,'?answer')
+        if operation == 'count':
+            return f'SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE {{ {head} {predicate} {tail} . }}'
+        query = f'SELECT DISTINCT ?answer WHERE {{ {head} {predicate} {tail} .'
+        if order:
+            if direction != 'incoming':
+                raise ValueError('Date ordering requires an incoming movie lookup')
+            query += ' ?answer wdt:P577 ?date .'
+        query += ' }'
+        if order:
+            query += ' ORDER BY '+('ASC' if order=='earliest' else 'DESC')+'(?date) LIMIT 1'
+        return query
+
+    @staticmethod
+    def expand_query(query):
+        return '\n'.join(f'PREFIX {name}: <{uri}>' for name, uri in PREFIXES.items()) + '\n' + query
+
+    def execute(self, query, candidates):
+        """Accept only the documented one-edge SELECT grammar plus earliest/latest.
+
+        A small grammar prevents SERVICE/network access, updates, unbounded joins,
+        and arbitrary user/model SPARQL. Model still chooses entity, property,
+        direction and ordering; there is no natural-language rule interpreter.
+        """
+        filter_match = re.fullmatch(r'SELECT DISTINCT \?answer WHERE \{ \?answer atai:rating \?rating \. FILTER\(\?rating (>=|>|<=|<|=|!=) ([0-9]+(?:\.[0-9]+)?)\) \}', query)
+        if filter_match:
+            threshold = Decimal(filter_match[2])
+            if not 0 <= threshold <= 10:
+                raise ValueError('Rating threshold out of range')
+            return self._answers(self.store.query(query, prefixes=PREFIXES))
+        count_match = re.fullmatch(r'SELECT \(COUNT\(DISTINCT \?answer\) AS \?count\) WHERE \{ (wd:Q\d+|\?answer) (wdt:P\d+|atai:(?:tag|rating)) (wd:Q\d+|\?answer) \. \}', query)
+        if count_match:
+            head, predicate, tail = count_match.groups()
+            self._validate_edge(head, predicate.split(':')[1], tail, candidates, allow_missing=True)
+            row = next(iter(self.store.query(query, prefixes=PREFIXES)))
+            return [row['count'].value], [row['count'].value]
+        pattern = r'SELECT DISTINCT \?answer WHERE \{\s*(wd:Q\d+|\?answer)\s+(?:wdt:(P\d+)|atai:(tag|rating))\s+(wd:Q\d+|\?answer)\s*\.\s*(?:\?answer wdt:P577 \?date\s*\.\s*)?\}(?: ORDER BY (ASC|DESC)\(\?date\) LIMIT 1)?'
+        match = re.fullmatch(pattern, query.strip())
+        if not match:
+            raise ValueError('Query must use the supplied single-hop SELECT template')
+        head, wikidata_prop, custom_prop, tail, order = match.groups()
+        prop = wikidata_prop or custom_prop
+        self._validate_edge(head, prop, tail, candidates)
+        if ('?date' in query) != bool(order) or (order and head != '?answer'):
+            raise ValueError('Date ordering is only valid for inverse movie lookups')
+        results = self.store.query(query, prefixes=PREFIXES)
+        return self._answers(results)
+
+    def _validate_edge(self, head, prop, tail, candidates, allow_missing=False):
+        if (head == '?answer') == (tail == '?answer'):
+            raise ValueError('Exactly one end of the triple must be ?answer')
+        entity = tail if head == '?answer' else head
+        allowed = {c['id'] for c in candidates}
+        if entity[3:] not in allowed or prop not in self.properties:
+            raise ValueError('Entity or property is not grounded in the graph context')
+        selected = next(c for c in candidates if c['id'] == entity[3:])
+        direction = 'incoming' if head == '?answer' else 'outgoing'
+        if prop not in selected[direction] and not allow_missing:
+            raise ValueError(f'{prop} is unavailable in the {direction} edges of {entity}; select the matching candidate')
+
+    def _answers(self, results):
+        answers, values = [], []
+        for row in results:
+            node = row['answer']
+            if isinstance(node, ox.NamedNode):
+                label = self.labels.get(node.value)
+                if label is None:
+                    # Do not turn an opaque ID into a purported natural-language fact.
+                    raise ValueError(f'Missing graph label for {node.value}')
+                value = node.value
+            else:
+                value = node.value
+                label = value
+                if node.datatype.value in {PREFIXES['xsd']+'dateTime', PREFIXES['xsd']+'date'}:
+                    label = value.split('T')[0]
+            values.append(value)
+            answers.append(label)
+        return sorted(set(answers)), sorted(set(values))

@@ -1,0 +1,118 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\definecolor{paper}{HTML}{F7F5EF}
+\definecolor{ink}{HTML}{18313B}
+\definecolor{teal}{HTML}{2D7776}
+\definecolor{gold}{HTML}{D99637}
+\definecolor{muted}{HTML}{72838A}
+\definecolor{pale}{HTML}{E7EFEB}
+\definecolor{linegray}{HTML}{C9D2CE}
+\setbeamercolor{background canvas}{bg=paper}
+\setbeamercolor{normal text}{fg=ink,bg=paper}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
+\setbeamerfont{normal text}{family=\sffamily}
+\setbeamersize{text margin left=0pt,text margin right=0pt}
+\newcommand{\slidetitle}[1]{%
+  \node[anchor=north west,text=ink,font=\sffamily\bfseries\fontsize{23}{27}\selectfont]
+    at ([xshift=16mm,yshift=-12mm]current page.north west) {#1};
+  \draw[teal,line width=1.4pt] ([xshift=16mm,yshift=-21mm]current page.north west) -- ++(13mm,0);
+}
+\newcommand{\pagenum}[1]{%
+  \node[anchor=south east,text=muted,font=\sffamily\fontsize{8}{9}\selectfont]
+    at ([xshift=-9mm,yshift=5mm]current page.south east) {#1};
+}
+\begin{document}
+
+% Slide 1: Report-based system overview
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[paper] (current page.south west) rectangle (current page.north east);
+  \node[anchor=north west,text=ink,font=\sffamily\bfseries\fontsize{19}{23}\selectfont]
+    at ([xshift=16mm,yshift=-12mm]current page.north west) {Stage 4: preference-led recommendations};
+  \draw[teal,line width=1.4pt] ([xshift=16mm,yshift=-21mm]current page.north west) -- ++(13mm,0);
+  \tikzset{flow/.style={draw=teal!55,fill=white,rounded corners=2mm,minimum width=31mm,minimum height=16mm,align=center,text=ink,font=\sffamily\bfseries\fontsize{10}{12}\selectfont},
+           arrow/.style={-{Stealth[length=2.2mm]},draw=teal,line width=1.2pt}}
+  \node[flow] (interpret) at ([xshift=27mm,yshift=53mm]current page.south west) {Classify +\\extract};
+  \node[flow] (profile) at ([xshift=63mm,yshift=53mm]current page.south west) {Update\\profile};
+  \node[flow] (rank) at ([xshift=99mm,yshift=53mm]current page.south west) {Filter +\\score graph};
+  \node[flow] (answer) at ([xshift=135mm,yshift=53mm]current page.south west) {Clarify or\\recommend};
+  \draw[arrow] (interpret) -- (profile);
+  \draw[arrow] (profile) -- (rank);
+  \draw[arrow] (rank) -- (answer);
+  \node[anchor=west,text=gold!80!ink,font=\sffamily\bfseries\fontsize{10}{12}\selectfont]
+    at ([xshift=28mm,yshift=30mm]current page.south west) {Only retrieved film IDs become recommendations};
+  \node[anchor=west,text=teal,font=\sffamily\bfseries\fontsize{11}{13}\selectfont]
+    at ([xshift=16mm,yshift=11mm]current page.south west) {Qwen3.5-4B  \textbullet  vLLM  \textbullet  Python  \textbullet  PyOxigraph};
+\end{tikzpicture}
+\end{frame}
+
+% Slide 2: User-facing functionality
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[paper] (current page.south west) rectangle (current page.north east);
+  \slidetitle{What users can do}
+  \draw[linegray,line width=1.2pt] ([xshift=23mm,yshift=12mm]current page.south west) -- ([xshift=23mm,yshift=61mm]current page.south west);
+  \foreach \y/\c in {60/teal,50/gold,40/teal,30/teal,20/gold} {
+    \fill[\c] ([xshift=23mm,yshift=\y mm]current page.south west) circle (3mm);
+  }
+  \foreach \y in {55,45,35,25} {
+    \draw[-{Stealth[length=1.5mm]},draw=teal!70,line width=.8pt]
+      ([xshift=23mm,yshift=\y mm]current page.south west) -- ([xshift=23mm,yshift=\y-2mm]current page.south west);
+  }
+  \node[anchor=west,text=teal,font=\sffamily\bfseries\fontsize{14}{17}\selectfont]
+    at ([xshift=36mm,yshift=60mm]current page.south west) {Share likes, dislikes, or mood};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{14}{17}\selectfont]
+    at ([xshift=36mm,yshift=50mm]current page.south west) {Keep preferences per room};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{14}{17}\selectfont]
+    at ([xshift=36mm,yshift=40mm]current page.south west) {Clarify ambiguous requests first};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{14}{17}\selectfont]
+    at ([xshift=36mm,yshift=30mm]current page.south west) {Get ranked, graph-backed films};
+  \node[anchor=west,text=gold!80!ink,font=\sffamily\bfseries\fontsize{14}{17}\selectfont]
+    at ([xshift=36mm,yshift=20mm]current page.south west) {Skip repeats; reset new searches};
+\end{tikzpicture}
+\end{frame}
+
+% Slide 3: Report-based model, inference engine, and GPU flow
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[paper] (current page.south west) rectangle (current page.north east);
+  \slidetitle{How the stack works}
+  \tikzset{stack/.style={draw=teal!55,fill=white,rounded corners=2mm,minimum width=36mm,minimum height=19mm,align=center,text=ink,font=\sffamily\fontsize{10}{12}\selectfont},
+           arrow/.style={-{Stealth[length=2mm]},draw=teal,line width=1.1pt}}
+  \node[stack] (model) at ([xshift=39mm,yshift=57mm]current page.south west) {\textbf{Qwen3.5-4B}\\Language model};
+  \node[stack] (engine) at ([xshift=86mm,yshift=57mm]current page.south west) {\textbf{vLLM}\\Inference engine};
+  \node[stack] (gpu) at ([xshift=133mm,yshift=57mm]current page.south west) {\textbf{CUDA GPU}\\Accelerates inference};
+  \draw[arrow] (model) -- (engine);
+  \draw[arrow] (engine) -- (gpu);
+  \tikzset{subflow/.style={draw=linegray,fill=pale,rounded corners=2mm,minimum width=38mm,minimum height=13mm,align=center,text=ink,font=\sffamily\fontsize{9}{11}\selectfont}}
+  \node[subflow] (orchestrate) at ([xshift=37mm,yshift=28mm]current page.south west) {Python\\routes prompts};
+  \node[subflow] (retrieve) at ([xshift=82mm,yshift=28mm]current page.south west) {PyOxigraph\\retrieves graph films};
+  \node[subflow] (answer) at ([xshift=127mm,yshift=28mm]current page.south west) {Qwen\\grounds suggestions};
+  \draw[arrow] (orchestrate) -- (retrieve);
+  \draw[arrow] (retrieve) -- (answer);
+\end{tikzpicture}
+\end{frame}
+
+% Slide 4: Stage 3 improvements and reported results
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[paper] (current page.south west) rectangle (current page.north east);
+  \slidetitle{Stage 3  $\rightarrow$  4}
+  \draw[linegray,line width=1.2pt] ([xshift=23mm,yshift=18mm]current page.south west) -- ([xshift=23mm,yshift=67mm]current page.south west);
+  \foreach \y/\c in {66/teal,57/teal,48/gold,39/gold,30/teal,21/teal} {
+    \fill[\c] ([xshift=23mm,yshift=\y mm]current page.south west) circle (2.6mm);
+  }
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{15}{18}\selectfont] at ([xshift=36mm,yshift=66mm]current page.south west) {Adds memory + clarify-first};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{15}{18}\selectfont] at ([xshift=36mm,yshift=57mm]current page.south west) {Resets searches; avoids repeats};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{15}{18}\selectfont] at ([xshift=36mm,yshift=48mm]current page.south west) {Conservative title typo matching};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{15}{18}\selectfont] at ([xshift=36mm,yshift=39mm]current page.south west) {118 tests; 64/64 earlier checks};
+  \node[anchor=west,text=ink,font=\sffamily\fontsize{15}{18}\selectfont] at ([xshift=36mm,yshift=30mm]current page.south west) {13/15 cases; 161/174 checks};
+  \node[anchor=west,text=muted,font=\sffamily\fontsize{11}{13}\selectfont] at ([xshift=36mm,yshift=21mm]current page.south west) {Prior runs; not official Evaluation IV score};
+\end{tikzpicture}
+\end{frame}
+\end{document}

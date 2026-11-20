@@ -1,0 +1,18 @@
+{
+  "n": 6,
+  "passed": 6,
+  "failed": [],
+  "server": {
+    "status": "ready",
+    "engine": "llm",
+    "model": "Qwen/Qwen3.5-4B",
+    "device": "cuda",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "version": "llm-recommendations-v4.3",
+    "source_hashes": {
+      "movie_agent.py": "28f95081fb2ab6036bd04fbcca7df9d57e37a6a6b452ea4038017d8a1c056919",
+      "graph_store.py": "129cffe99cb3e4b6d9a4b4569f265a494dcee7fce17fcf1435e6fe1e6ea157c4",
+      "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+    }
+  }
+}

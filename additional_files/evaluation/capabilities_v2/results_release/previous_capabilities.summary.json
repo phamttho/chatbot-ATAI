@@ -1,0 +1,118 @@
+{
+  "timestamp": "2026-11-06T10:56:41.982532+00:00",
+  "server": {
+    "status": "ready",
+    "engine": "llm",
+    "model": "Qwen/Qwen3.5-4B",
+    "device": "cuda",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "suite": "capabilities",
+  "suite_sha256": "9be067c38bc969e14cc39fc33803e9670d700aa8efb65e55d8830e286f6e2629",
+  "n": 47,
+  "passed": 6,
+  "pass_rate": 0.1276595744680851,
+  "classification_accuracy": 1.0,
+  "errors": 1,
+  "routes": {
+    "no_answer": 33,
+    "knowledge_graph": 13,
+    "error": 1
+  },
+  "latency_ms": {
+    "mean": 2344.9693617021276,
+    "median": 1965.44,
+    "p95": 3739.88,
+    "max": 3822.46
+  },
+  "groups": {
+    "article_title": {
+      "n": 7,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "classification_accuracy": 1.0
+    },
+    "count_cast": {
+      "n": 6,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "classification_accuracy": 1.0
+    },
+    "count_tags": {
+      "n": 7,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "classification_accuracy": 1.0
+    },
+    "lookup_rating": {
+      "n": 6,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "classification_accuracy": 1.0
+    },
+    "lookup_tags": {
+      "n": 6,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "classification_accuracy": 1.0
+    },
+    "rating_filter": {
+      "n": 9,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "classification_accuracy": 1.0
+    },
+    "typo_title": {
+      "n": 6,
+      "passed": 6,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    }
+  },
+  "exact_graph_answer_rate": 0.1276595744680851,
+  "text_all_reference_answers_rate": 0.1276595744680851,
+  "query_visible_rate": 0.2765957446808511,
+  "multi_answer_cases": 15,
+  "multi_answer_pass_rate": 0.0,
+  "directions": {
+    "article_title": {
+      "n": 7,
+      "passed": 0
+    },
+    "count_cast": {
+      "n": 6,
+      "passed": 0
+    },
+    "count_tags": {
+      "n": 7,
+      "passed": 0
+    },
+    "lookup_rating": {
+      "n": 6,
+      "passed": 0
+    },
+    "lookup_tags": {
+      "n": 6,
+      "passed": 0
+    },
+    "rating_filter": {
+      "n": 9,
+      "passed": 0
+    },
+    "typo_title": {
+      "n": 6,
+      "passed": 6
+    }
+  },
+  "splits": {
+    "user_regression": {
+      "n": 3,
+      "passed": 0
+    },
+    "additional": {
+      "n": 44,
+      "passed": 6
+    }
+  },
+  "imported_from": "/home/ariel/thoprojects/atai/atai-for-spark/additional_files/evaluation/capabilities_v2/results_completed"
+}

@@ -1,0 +1,7 @@
+{
+  "seed": 20261108,
+  "cases": 47,
+  "graph_sha256": "11073431030bde60d971f0e5b2c1f9c1e7f7ca2a91519bfe1bb7229cdc6b5c6a",
+  "factual_sha256": "9be067c38bc969e14cc39fc33803e9670d700aa8efb65e55d8830e286f6e2629",
+  "note": "Three user regressions; other fixtures selected from graph before inference, without agent outputs. Templates are coverage checks, not a production sample."
+}

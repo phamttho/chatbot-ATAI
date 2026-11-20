@@ -1,0 +1,5 @@
+{
+  "checked": 143,
+  "query_edge_operation_filter_and_order_mismatches": [],
+  "note": "Post-run trace check against reference queries; does not rerun or modify any model output."
+}

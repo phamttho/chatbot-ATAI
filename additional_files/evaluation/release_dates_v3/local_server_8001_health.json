@@ -1,0 +1,13 @@
+{
+  "status": "ready",
+  "engine": "llm",
+  "model": "Qwen/Qwen3.5-4B",
+  "device": "cuda",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "version": "release-date-filters-v3.1",
+  "source_hashes": {
+    "movie_agent.py": "a58b279fe932ee64d7db1cb1eaf05b0d4f0fe2a8c268bd6b5e74f2f2bffa4982",
+    "graph_store.py": "d9727331fc8a92ade62fb262f02df435ca909fbd977694e4302ff420c5ac6f80",
+    "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+  }
+}

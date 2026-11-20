@@ -1,0 +1,37 @@
+{
+  "manifest": {
+    "cases": 10,
+    "graph_sha256": "11073431030bde60d971f0e5b2c1f9c1e7f7ca2a91519bfe1bb7229cdc6b5c6a",
+    "cases_sha256": "ba8c0da73c22df96f1e590a5709c63083f0d531b603de24bbc142ecc3542cd64",
+    "source_hashes": {
+      "factual_qa.py": "64f4fe0f6a755a86fa35b0434b62ad0ba6b9676b3630ac1f021ccab11bb584e6",
+      "movie_agent.py": "92d207fba9bb17b696d286b9325b5340de885ae16d703c07501373cf9dd0b1c0",
+      "llm_client.py": "a624c94c3adc556fa0eb158e2caf7704254132444af756ae6a919da8eef1fc1a",
+      "knowledge_graph.py": "898140ab18cadf743e1f1a2af95c5cc0bbc3a6e3bdb0a8f99f120f7086e822d5",
+      "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18",
+      "graph_store.py": "129cffe99cb3e4b6d9a4b4569f265a494dcee7fce17fcf1435e6fe1e6ea157c4",
+      "main.py": "d349a4cfdc5d9820404f0e73d24d13858dfe0e382d954e7c1314afa08deb62ad",
+      "stage3_agent.py": "49c0643e95e09d65d8e137bbc3643be33c23b2a98bfb7255db27490c5e01eeb2",
+      "local_api.py": "f5cabde326265873f9fe59c4798263e460b33e41ed018b423e500a0efcdaf78e",
+      "guardrails.py": "b93dac44d34acd2619e480b9721331d77f6a2bf1d22d0e6a9afc17313060a1b0",
+      "speakeasy_client.py": "b413ef41fb4eea1b3c9f96cd1ba76d6b3909338116a4816e9f58114d30e44f1a"
+    },
+    "validation": "Director counts: Oxigraph SPARQL vs independent RDFLib predicate-projection traversal. Other cases reuse independently validated frozen gold with matching graph hashes.",
+    "quality_scorer_sha256": "f5ca3ea7d46e4f7c0d5f84a84719a5e10899022138c319b67b4b66be75ef5fe9"
+  },
+  "server": {
+    "status": "ready",
+    "engine": "llm",
+    "model": "Qwen/Qwen3.5-4B",
+    "device": "cuda",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "version": "bounded-lists-and-counts-v4.2",
+    "source_hashes": {
+      "movie_agent.py": "92d207fba9bb17b696d286b9325b5340de885ae16d703c07501373cf9dd0b1c0",
+      "graph_store.py": "129cffe99cb3e4b6d9a4b4569f265a494dcee7fce17fcf1435e6fe1e6ea157c4",
+      "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+    }
+  },
+  "runner_sha256": "cc7ec6a5b55fcf53195c6464266556224eb61ab4d1c23baf5d136e432b3e28d6",
+  "note": "Ten live requests, sending only inputs. Offline replay below is separately labelled; no Speakeasy login or sends."
+}

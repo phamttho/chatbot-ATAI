@@ -1,0 +1,122 @@
+{
+  "timestamp": "2026-11-06T11:21:07.785282+00:00",
+  "server": {
+    "status": "ready",
+    "engine": "llm",
+    "model": "Qwen/Qwen3.5-4B",
+    "device": "cuda",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "version": "capabilities-v2",
+    "source_hashes": {
+      "movie_agent.py": "5f18094a25707435ffe4383fc746f5ecd266e3941af3c281ec572777154c837a",
+      "graph_store.py": "6f05320b445f7c59a30648689adce4b7d80ed8cbfb7d17d4df889448ff6f0c02",
+      "model_runtime.py": "0a83d99859b119e17fc3742c6f5075f734ec5fbe9855dde1bf267de870c60c18"
+    }
+  },
+  "suite": "capabilities",
+  "suite_sha256": "9be067c38bc969e14cc39fc33803e9670d700aa8efb65e55d8830e286f6e2629",
+  "n": 47,
+  "passed": 46,
+  "pass_rate": 0.9787234042553191,
+  "classification_accuracy": 1.0,
+  "errors": 1,
+  "routes": {
+    "knowledge_graph": 46,
+    "error": 1
+  },
+  "latency_ms": {
+    "mean": 3152.6621276595743,
+    "median": 3182.37,
+    "p95": 3876.26,
+    "max": 3942.6
+  },
+  "groups": {
+    "article_title": {
+      "n": 7,
+      "passed": 6,
+      "pass_rate": 0.8571428571428571,
+      "classification_accuracy": 1.0
+    },
+    "count_cast": {
+      "n": 6,
+      "passed": 6,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "count_tags": {
+      "n": 7,
+      "passed": 7,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "lookup_rating": {
+      "n": 6,
+      "passed": 6,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "lookup_tags": {
+      "n": 6,
+      "passed": 6,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "rating_filter": {
+      "n": 9,
+      "passed": 9,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    },
+    "typo_title": {
+      "n": 6,
+      "passed": 6,
+      "pass_rate": 1.0,
+      "classification_accuracy": 1.0
+    }
+  },
+  "exact_graph_answer_rate": 0.9787234042553191,
+  "text_all_reference_answers_rate": 0.9787234042553191,
+  "query_visible_rate": 0.9787234042553191,
+  "multi_answer_cases": 15,
+  "multi_answer_pass_rate": 1.0,
+  "directions": {
+    "article_title": {
+      "n": 7,
+      "passed": 6
+    },
+    "count_cast": {
+      "n": 6,
+      "passed": 6
+    },
+    "count_tags": {
+      "n": 7,
+      "passed": 7
+    },
+    "lookup_rating": {
+      "n": 6,
+      "passed": 6
+    },
+    "lookup_tags": {
+      "n": 6,
+      "passed": 6
+    },
+    "rating_filter": {
+      "n": 9,
+      "passed": 9
+    },
+    "typo_title": {
+      "n": 6,
+      "passed": 6
+    }
+  },
+  "splits": {
+    "user_regression": {
+      "n": 3,
+      "passed": 3
+    },
+    "additional": {
+      "n": 44,
+      "passed": 43
+    }
+  }
+}
